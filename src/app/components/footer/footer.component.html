@@ -1,0 +1,27 @@
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>About Me</h4>
+      <p>A developer with a passion for solving challenging problems and turning ideas into clean, functional code. Always learning, always building</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/blog">Blog</a></li>
+        <li><a routerLink="/projects">Projects</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Connect</h4>
+      <div class="social-links">
+        <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" rel="noopener noreferrer">
+          <fa-icon [icon]="link.icon"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {{ currentYear }} Zahid Hasan. All rights reserved.</p>
+  </div>
+</footer>

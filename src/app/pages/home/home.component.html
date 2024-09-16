@@ -1,0 +1,108 @@
+<div class="home-container">
+  <section class="hero-about fade-in">
+    <div class="hero-content">
+      <div class="hero-left">
+        <img src="/assets/images/profile-pic.png" alt="Zahid Hasan" class="profile-pic">
+        <h1>Zahid Hasan</h1>
+        <h2>Full Stack Engineer</h2>
+        <div class="social-links">
+          <a href="https://github.com/zahidhasann88" target="_blank" rel="noopener noreferrer"><fa-icon [icon]="faGithub"></fa-icon></a>
+          <a href="https://linkedin.com/in/zahidhasann" target="_blank" rel="noopener noreferrer"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+          <a href="https://x.com/zahidhasann15" target="_blank" rel="noopener noreferrer"><fa-icon [icon]="faTwitter"></fa-icon></a>
+          <a href="https://stackoverflow.com/users/12301102/zahid-hasan" target="_blank" rel="noopener noreferrer"><fa-icon [icon]="faStackOverflow"></fa-icon></a>
+          <a href="https://medium.com/@jahidhasann67" target="_blank" rel="noopener noreferrer"><fa-icon [icon]="faMedium"></fa-icon></a>
+          <a href="mailto:zahidhasann67@gmail.com" target="_blank" rel="noopener noreferrer"><fa-icon [icon]="faEnvelope"></fa-icon></a>
+        </div>
+        <a [href]="cvLink" target="_blank" rel="noopener noreferrer" class="btn btn-cv">Check out my CV</a>
+      </div>
+      <div class="hero-right">
+        <div class="terminal">
+          <div class="terminal-header">
+            <span class="terminal-button"></span>
+            <span class="terminal-button"></span>
+            <span class="terminal-button"></span>
+          </div>
+          <div class="terminal-body">
+            <p class="command-line">
+              <span class="prompt">$</span>
+              <span class="command">{{ typedText }}</span>
+              <span class="cursor">|</span>
+            </p>
+          </div>
+        </div>
+        <div class="about-content">
+          <p>{{ aboutMe1 }}</p>
+          <p>{{ aboutMe2 }}</p>
+          <p>{{ aboutMe3 }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills fade-in">
+    <h2>My Tech Toolbox</h2>
+    <div class="skill-grid">
+      <div *ngFor="let skill of skills" class="skill-item animate-item">
+        <i class="fas fa-code"></i>
+        <span>{{ skill }}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience fade-in">
+    <h2>Where I've Made an Impact</h2>
+    <div class="timeline">
+      <div *ngFor="let exp of experiences" class="timeline-item animate-item">
+        <h3>{{ exp.role }}</h3>
+        <h4>
+          <a [href]="exp.companyLink" target="_blank" rel="noopener noreferrer">{{ exp.company }}</a>
+        </h4>
+        <p class="period">{{ exp.period }}</p>
+        <ul>
+          <li *ngFor="let point of exp.description">{{ point }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="education fade-in">
+    <h2>My Learning Journey</h2>
+    <div class="timeline">
+      <div *ngFor="let edu of education" class="timeline-item animate-item">
+        <h3>{{ edu.degree }}</h3>
+        <h4>{{ edu.institution }}</h4>
+        <p class="period">{{ edu.period }}</p>
+        <ul>
+          <li *ngFor="let achievement of edu.achievements">{{ achievement }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured-work">
+    <h2>Featured Projects</h2>
+    <div class="work-grid">
+      <div class="work-item">
+        <img src="/assets/images/kitchen_car.png" alt="Kitchen Car">
+        <h3>Kitchen Car Locator</h3>
+        <p>A web platform for discovering nearby food trucks, leveraging geolocation and real-time data.</p>
+        <a href="https://idoshokudo.com/" target="_blank" rel="noopener" class="btn">View Project</a>
+      </div>
+      <div class="work-item">
+        <img src="/assets/images/cc.jpg" alt="Collaborative Coding">
+        <h3>Collaborative Coding Platform</h3>
+        <p>A real-time collaborative IDE for remote pair programming and code reviews.</p>
+        <a href="https://github.com/zahidhasann88/collaborative-coding" target="_blank" rel="noopener" class="btn">View Project</a>
+      </div>
+    </div>
+    <div class="view-all">
+      <a routerLink="/projects" class="btn btn-large">Explore All Projects</a>
+    </div>
+  </section>
+
+  <section class="cta fade-in">
+    <h2>Let's Build Something Awesome Together!</h2>
+    <p>Whether you've got a challenging project in mind or just want to chat tech, I'm all ears. Don't hesitate to reach out – I'm always excited to connect with fellow tech enthusiasts and potential collaborators!</p>
+    <a href="mailto:zahidhasann67@gmail.com" class="btn btn-large">Drop me a line</a>
+  </section>
+</div>

@@ -1,0 +1,25 @@
+header {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav li {
+    margin: 0 1rem;
+  }
+  
+  nav a {
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  nav a.active {
+    color: var(--accent-color);
+  }
