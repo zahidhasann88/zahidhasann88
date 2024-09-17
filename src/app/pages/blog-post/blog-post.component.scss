@@ -253,3 +253,28 @@
     font-size: 1rem;
   }
 }
+
+pre {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  color: #333;
+  display: block;
+}
+
+.language-typescript,
+.language-javascript,
+.language-c {
+  color: #007acc;
+}
+
+.language-c {
+  color: #d32f2f;
+}
