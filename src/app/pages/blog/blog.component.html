@@ -1,5 +1,5 @@
 <div class="blog-container">
-  <h1>My Blog</h1>
+  <h1>What I’ve Been Exploring</h1>
   <div class="blog-list">
     <article *ngFor="let post of blogPosts" class="blog-post">
       <h2><a [routerLink]="['/blog', post.id]">{{ post.title }}</a></h2>

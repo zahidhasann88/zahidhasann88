@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     {
       company: 'Satcom IT Limited',
       role: 'Software Engineer',
-      companyLink: 'https://www.satcomit.com',
+      companyLink: 'https://satcomit-bd.com/',
       period: 'March 2022 - Present',
       description: [
         'Lead development of scalable web applications using Angular, Node.js, and AWS',
@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
     {
       company: 'PQS Japan',
       role: 'Junior Software Engineer',
-      companyLink: 'https://www.pqs.com',
+      companyLink: 'https://www.pqsjapan.jp/',
       period: 'Oct 2021 - Feb 2022',
       description: [
         'Developed and maintained multiple client projects using React and Express.js',
@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
     {
       company: 'Karamsangsthan Limited',
       role: 'Software Developer',
-      companyLink: 'https://www.karamsangsthan.com',
+      companyLink: 'https://www.karmasangsthan.com.bd/',
       period: 'Dec 2020 - June 2021',
       description: [
         'Developed and maintained client projects using React and Express.js',
