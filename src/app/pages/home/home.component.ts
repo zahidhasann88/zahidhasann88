@@ -27,23 +27,13 @@ export class HomeComponent implements OnInit {
   cvLink: string = 'https://drive.google.com/file/d/your-cv-file-id/view?usp=sharing';
   bio: string = "Passionate Full Stack Engineer with expertise in creating efficient, scalable, and user-friendly web applications. Let's connect and build something amazing together!";
 
-  aboutMe1: string = `
-    As a Fullstack Engineer with 3.5 years of experience, I've had the chance to work on some really cool projects 
-    that have challenged me and helped me grow. I love diving into complex problems and coming up with elegant solutions. 
-    My journey in tech has been an exciting ride, from crafting responsive front-end interfaces to architecting scalable 
-    back-end systems.
-  `;
+  aboutMe1: string = `My name is Zahid Hasan, also known as Zahid. I'm a 28-year-old Software Engineer from Dhaka, Bangladesh.`;
 
-  aboutMe2: string = `
-    When I'm not coding, you'll probably find me tinkering with new technologies, contributing to open-source projects, 
-    or sharing what I've learned through mentoring and tech blogs. I'm a firm believer in continuous learning and always 
-    strive to stay on top of the latest industry trends.
-  `
+  aboutMe2: string = `Currently, I work as a Software Engineer, focusing on developer tooling and infrastructure, with background interest in cloud technologies, 
+                      distributed systems, and web applications. I enjoy seeking out creative solutions to complex problems and building things that empower others 
+                      to do the same..`
 
-  aboutMe3: string = `
-    Outside of tech, I'm an avid hiker and nature enthusiast. There's something about conquering a challenging trail 
-    that feels a lot like solving a tough coding problem – it's all about persistence and enjoying the journey!
-  `
+  aboutMe3: string = `Welcome to my own little corner of the web, where I share notes and resources on topics that interest me.`
 
   experiences: any[] = [
     {
