@@ -12,8 +12,14 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
   navItems = [
     { path: '/', label: 'Home' },
-    { path: '/blog', label: 'Blog' },
     { path: '/projects', label: 'Projects' },
+    { path: '/blog', label: 'Blog' },
     { path: '/photos', label: 'Photos' }
   ];
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
