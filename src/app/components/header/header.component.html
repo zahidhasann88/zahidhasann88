@@ -1,20 +1,25 @@
-<header>
-  <nav>
-    <div class="logo">
-      <a routerLink="/" class="logo-link">://zahid.me</a>
-    </div>
-    <button class="menu-toggle" (click)="toggleMenu()" [class.open]="isMenuOpen">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-    <ul [class.open]="isMenuOpen">
-      <li *ngFor="let item of navItems">
-        <a [routerLink]="item.path" routerLinkActive="active" (click)="isMenuOpen = false">
-          {{ item.label }}
-          <span class="underline"></span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
+<div class="site-wrapper">
+  <header [class.menu-open]="isMenuOpen">
+    <nav>
+      <div class="logo">
+        <a routerLink="/" class="logo-link">://zahid.me</a>
+      </div>
+      <button class="menu-toggle" (click)="toggleMenu()" [class.open]="isMenuOpen">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul [class.open]="isMenuOpen">
+        <li *ngFor="let item of navItems">
+          <a [routerLink]="item.path" routerLinkActive="active" (click)="closeMenu()">
+            {{ item.label }}
+            <span class="underline"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
