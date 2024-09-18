@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { listAnimations, routeAnimations } from '../../animation/animations';
 
 interface BlogPost {
   id: number;
@@ -17,7 +18,8 @@ interface BlogPost {
   standalone: true,
   imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss'
+  styleUrl: './blog.component.scss',
+  animations: [routeAnimations, listAnimations]
 })
 export class BlogComponent {
   blogPosts: BlogPost[] = [

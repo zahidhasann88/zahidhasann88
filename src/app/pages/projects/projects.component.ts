@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { listAnimations, routeAnimations } from '../../animation/animations';
 
 interface Project {
   id: number;
@@ -18,6 +19,7 @@ interface Project {
   imports: [CommonModule, RouterModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
+  animations: [routeAnimations, listAnimations]
 })
 export class ProjectsComponent {
   projects: Project[] = [

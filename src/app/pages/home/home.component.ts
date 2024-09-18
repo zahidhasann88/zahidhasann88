@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   faCode = faCode;
   skills: string[] = ['JavaScript', 'TypeScript', 'Golang', 'Node.js', 'Express.js', 'Nest.js', 'Angular', 'React', 'SQL', 'Git', 'AWS', 'Docker'];
   cvLink: string = 'https://drive.google.com/file/d/your-cv-file-id/view?usp=sharing';
+  bio: string = "Passionate Full Stack Engineer with expertise in creating efficient, scalable, and user-friendly web applications. Let's connect and build something amazing together!";
 
   aboutMe1: string = `
     As a Fullstack Engineer with 3.5 years of experience, I've had the chance to work on some really cool projects 
