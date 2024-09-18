@@ -13,6 +13,7 @@ export class HeaderComponent {
   navItems = [
     { path: '/', label: 'Home' },
     { path: '/blog', label: 'Blog' },
-    { path: '/projects', label: 'Projects' }
+    { path: '/projects', label: 'Projects' },
+    { path: '/photos', label: 'Photos' }
   ];
 }

@@ -1,0 +1,40 @@
+<div class="photos-container">
+    <h1>A Collection Of Moments Captured In Time</h1>
+    
+    <div class="category-filter">
+      <button [class.active]="selectedCategory === ''" (click)="filterByCategory('')">All</button>
+      <button *ngFor="let category of categories" 
+              [class.active]="selectedCategory === category"
+              (click)="filterByCategory(category)">
+        {{ category }}
+      </button>
+    </div>
+
+    <div class="image-gallery" [@listAnimation]="filteredImages.length">
+      <div *ngFor="let image of filteredImages" class="image-item" [@fadeInOut]>
+        <img [src]="image.url" [alt]="image.title" (click)="openImage(image)" loading="lazy">
+        <div class="image-overlay">
+          <h3>{{ image.title }}</h3>
+          <span class="category-tag">{{ image.category }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="loading-spinner">
+      <div class="spinner"></div>
+    </div>
+  </div>
+
+  <div *ngIf="selectedImage" class="modal" (click)="closeImage()" [@fadeInOut]>
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <img [src]="selectedImage.url" [alt]="selectedImage.title">
+      <div class="image-info">
+        <h2>{{ selectedImage.title }}</h2>
+        <p>{{ selectedImage.description }}</p>
+        <span class="category-tag">{{ selectedImage.category }}</span>
+      </div>
+      <button class="close-button" (click)="closeImage()">&times;</button>
+      <button class="nav-button prev" (click)="navigate(-1)" *ngIf="currentIndex > 0">&lsaquo;</button>
+      <button class="nav-button next" (click)="navigate(1)" *ngIf="currentIndex < filteredImages.length - 1">&rsaquo;</button>
+    </div>
+  </div>
