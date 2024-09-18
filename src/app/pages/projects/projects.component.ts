@@ -28,7 +28,7 @@ export class ProjectsComponent {
       title: 'Kitchen Car Locator',
       description: 'A web platform for discovering nearby food trucks, leveraging geolocation and real-time data.',
       technologies: ['Next.js', 'Node.js', 'Nest.js', 'Prisma', 'MySQL', 'AWS'],
-      imageUrl: '/assets/images/kitchen_car.png',
+      imageUrl: '/profile/assets/images/kitchen_car.png',
       githubUrl: '',
       liveUrl: 'https://idoshokudo.com/'
     },
@@ -37,7 +37,7 @@ export class ProjectsComponent {
       title: 'Collaborative Coding Platform',
       description: 'A real-time collaborative IDE for remote pair programming and code reviews.',
       technologies: ['React', 'Typescript', 'Node.js', 'Socket.io'],
-      imageUrl: '/assets/images/cc.jpg',
+      imageUrl: '/profile/assets/images/cc.jpg',
       githubUrl: 'https://github.com/zahidhasann88/collaborative-coding',
       liveUrl: 'https://weather-app-demo.com'
     },
