@@ -21,9 +21,9 @@ export class HomeComponent implements OnInit {
                       distributed systems, and web applications. I enjoy seeking out creative solutions to complex problems and building things that empower others 
                       to do the same..`
 
-                      aboutMe3: string = `Welcome to my own little corner of the web, where I share <a href="/blog" class="inline-link">notes</a> and resources on topics that interest me. 
-                      I spend my free time building new <a href="/projects" class="inline-link">things</a> and capturing in time
-                      <a href="/photos" class="inline-link">moments</a>. For a closer look at my career journey, 
+                      aboutMe3: string = `Welcome to my own little corner of the web, where I share <a href="/profile/blog" class="inline-link">notes</a> and resources on topics that interest me. 
+                      I spend my free time building new <a href="/profile/projects" class="inline-link">things</a> and capturing in time
+                      <a href="/profile/photos" class="inline-link">moments</a>. For a closer look at my career journey, 
                       <a href="${this.cvLink}" target="_blank" rel="noopener noreferrer" class="inline-link">check out my CV</a>. 
                       And if something's on your mind, <a href="mailto:zahidhasann67@gmail.com" class="inline-link">drop me a line</a>!`;
 
