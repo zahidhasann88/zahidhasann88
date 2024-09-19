@@ -58,6 +58,18 @@
   }
 }
 
+.inline-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.inline-link:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
 .image-container {
   flex: 0.8;
   display: flex;

@@ -52,10 +52,19 @@ export class BlogComponent {
   categories: string[] = ['All', ...new Set(this.blogPosts.map(post => post.category))];
   selectedCategory: string = 'All';
   searchTerm: string = '';
-  filteredPosts: BlogPost[] = this.blogPosts;
+  filteredPosts: BlogPost[] = [];
+  
+  currentPage: number = 1;
+  postsPerPage: number = 10;
+  totalPages: number = 1;
+
+  ngOnInit() {
+    this.filterPosts();
+  }
 
   selectCategory(category: string) {
     this.selectedCategory = category;
+    this.currentPage = 1;
     this.filterPosts();
   }
 
@@ -67,5 +76,19 @@ export class BlogComponent {
                           post.tags.some(tag => tag.toLowerCase().includes(this.searchTerm.toLowerCase()));
       return categoryMatch && searchMatch;
     });
+    this.totalPages = Math.ceil(this.filteredPosts.length / this.postsPerPage);
+  }
+
+  get paginatedPosts(): BlogPost[] {
+    const startIndex = (this.currentPage - 1) * this.postsPerPage;
+    return this.filteredPosts.slice(startIndex, startIndex + this.postsPerPage);
+  }
+
+  changePage(page: number) {
+    this.currentPage = page;
+  }
+
+  get pages(): number[] {
+    return Array.from({ length: this.totalPages }, (_, i) => i + 1);
   }
 }

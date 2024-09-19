@@ -6,21 +6,13 @@
         <div class="about-text-container">
           <p class="about-text">{{ aboutMe1 }}</p>
           <p class="about-text">{{ aboutMe2 }}</p>
-          <p class="about-text">{{ aboutMe3 }}</p>
+          <p class="about-text" [innerHTML]="aboutMe3"></p>
         </div>
-      </div>
-      <div class="links">
-        <a [href]="cvLink" target="_blank" rel="noopener noreferrer" class="cv-link">
-          Check out my CV
-        </a>
-        <a href="mailto:zahidhasann67@gmail.com" class="contact-link">
-          Drop me a line
-        </a>
       </div>
     </div>
     <div class="image-container">
       <div class="image-frame">
-        <img src="/assets/images/profile-pic.png" alt="Zahid Hasan" class="profile-pic">
+        <img ngSrc="/profile/assets/images/profile-pic.png" alt="Zahid Hasan" class="profile-pic" width="300" height="357" priority>
       </div>
     </div>
   </div>

@@ -12,7 +12,7 @@
 
     <div class="image-gallery" [@listAnimation]="filteredImages.length">
       <div *ngFor="let image of filteredImages" class="image-item" [@fadeInOut]>
-        <img [src]="image.url" [alt]="image.title" (click)="openImage(image)" loading="lazy">
+        <img [src]="image.url" [alt]="image.title" (click)="openImage(image)" loading="lazy" title="imgae">
         <div class="image-overlay">
           <h3>{{ image.title }}</h3>
           <span class="category-tag">{{ image.category }}</span>
@@ -27,7 +27,7 @@
 
   <div *ngIf="selectedImage" class="modal" (click)="closeImage()" [@fadeInOut]>
     <div class="modal-content" (click)="$event.stopPropagation()">
-      <img [src]="selectedImage.url" [alt]="selectedImage.title">
+      <img [src]="selectedImage.url" [alt]="selectedImage.title" title="image">
       <div class="image-info">
         <h2>{{ selectedImage.title }}</h2>
         <p>{{ selectedImage.description }}</p>

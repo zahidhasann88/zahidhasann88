@@ -10,18 +10,27 @@
     </button>
   </div>
 
-  <div class="blog-list">
-    <article *ngFor="let post of filteredPosts" class="blog-post">
+  <div class="blog-list" [@listAnimation]="paginatedPosts.length">
+    <article *ngFor="let post of paginatedPosts" class="blog-post">
       <h2><a [routerLink]="['/blog', post.id]">{{ post.title }}</a></h2>
       <div class="post-meta">
-        <span class="date">{{ post.date | date:'mediumDate' }}</span>&nbsp;
+        <span class="date">{{ post.date | date:'mediumDate' }}</span>
         <span class="category">{{ post.category }}</span>
-        <span class="tags">
-          <span *ngFor="let tag of post.tags" class="tag">{{ tag }}</span>
-        </span>
       </div>
       <p class="excerpt">{{ post.excerpt }}</p>
+      <div class="tags">
+        <span *ngFor="let tag of post.tags" class="tag">{{ tag }}</span>
+      </div>
       <a [routerLink]="['/blog', post.id]" class="read-more">Read more</a>
     </article>
+  </div>
+
+  <div class="pagination" *ngIf="totalPages > 1">
+    <button 
+      *ngFor="let page of pages" 
+      (click)="changePage(page)"
+      [class.active]="page === currentPage">
+      {{ page }}
+    </button>
   </div>
 </div>
