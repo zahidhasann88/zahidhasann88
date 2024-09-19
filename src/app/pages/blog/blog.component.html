@@ -10,14 +10,6 @@
     </button>
   </div>
 
-  <div class="search-box">
-    <input 
-      type="text" 
-      [(ngModel)]="searchTerm" 
-      (ngModelChange)="filterPosts()"
-      placeholder="Search posts...">
-  </div>
-
   <div class="blog-list">
     <article *ngFor="let post of filteredPosts" class="blog-post">
       <h2><a [routerLink]="['/blog', post.id]">{{ post.title }}</a></h2>

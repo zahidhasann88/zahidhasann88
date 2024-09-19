@@ -33,64 +33,6 @@ export class BlogPostComponent implements OnInit {
     this.post = this.getPost(id);
   }
 
-//   getPost(id: number): BlogPost {
-//     return {
-//       id: id,
-//       title: 'Understanding Asynchronous Programming in JavaScript',
-//       date: '2023-09-20',
-//       author: 'Jane Doe',
-//       authorBio: 'Jane is a senior frontend developer with 10 years of experience in building scalable web applications. She is passionate about JavaScript and loves sharing her knowledge with the community.',
-//       authorAvatar: 'https://i.pravatar.cc/300',
-//       readingTime: 5,
-//       content: `
-//         <p>Asynchronous programming is a crucial concept in JavaScript, especially when dealing with operations that might take some time to complete, such as fetching data from a server or reading a file.</p>
-
-//         <h2>What is Asynchronous Programming?</h2>
-//         <p>In synchronous programming, tasks are completed one after another. Each task waits for the previous one to complete before starting. However, this can lead to blocking behavior, especially for time-consuming operations.</p>
-
-//         <p>Asynchronous programming allows multiple tasks to be processed simultaneously. When an asynchronous operation is initiated, the program continues to run without waiting for the operation to complete. Once the operation finishes, a callback function is triggered to handle the result.</p>
-
-//         <h2>Promises in JavaScript</h2>
-//         <p>Promises are objects representing the eventual completion or failure of an asynchronous operation. They provide a cleaner way to handle asynchronous code compared to traditional callbacks.</p>
-
-//         <pre><code>
-// function fetchData() {
-//   return new Promise((resolve, reject) => {
-//     // Simulating an API call
-//     setTimeout(() => {
-//       const data = { id: 1, name: 'John Doe' };
-//       resolve(data);
-//     }, 2000);
-//   });
-// }
-
-// fetchData()
-//   .then(data => console.log(data))
-//   .catch(error => console.error(error));
-//         </code></pre>
-
-//         <h2>Async/Await</h2>
-//         <p>Async/await is syntactic sugar built on top of promises, making asynchronous code look and behave more like synchronous code.</p>
-
-//         <pre><code>
-// async function getData() {
-//   try {
-//     const data = await fetchData();
-//     console.log(data);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
-// getData();
-//         </code></pre>
-
-//         <p>By understanding and utilizing these asynchronous programming concepts, you can write more efficient and responsive JavaScript applications.</p>
-//       `,
-//       tags: ['JavaScript', 'Asynchronous Programming', 'Promises', 'Async/Await'],
-//     };
-//   }
-
 getPost(id: number): BlogPost | undefined {
   const blogPosts: BlogPost[] = [
     {

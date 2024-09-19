@@ -1,17 +1,15 @@
 .site-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 90vh;
   }
   
   header {
     background-color: var(--primary-color);
-    // position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    // height: var(--header-height);
     transition: height var(--transition-speed);
   
     &.menu-open {
@@ -23,10 +21,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 1rem;
-    // height: var(--header-height);
     box-sizing: border-box;
   }
   

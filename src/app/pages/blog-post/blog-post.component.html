@@ -24,30 +24,4 @@
     <a [routerLink]="['/blog', post.id - 1]" class="nav-link prev" *ngIf="post.id > 1">← Previous Post</a>
     <a [routerLink]="['/blog', post.id + 1]" class="nav-link next">Next Post →</a>
   </div>
-  <div class="author-bio">
-    <img [src]="post.authorAvatar" [alt]="post.author" class="author-avatar" title="auth">
-    <div class="author-info">
-      <h3>{{ post.author }}</h3>
-      <p>{{ post.authorBio }}</p>
-      <div class="author-social">
-        <a href="#" target="_blank" title="Twitter" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-        <a href="#" target="_blank" title="LinkedIn" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-        <a href="#" target="_blank" title="GitHub" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="comments-section">
-    <h3>Comments</h3>
-    <div class="comment-form">
-      <textarea [(ngModel)]="newComment" placeholder="Leave a comment..." rows="4"></textarea>
-      <button (click)="submitComment()">Submit Comment</button>
-    </div>
-    <div class="comments-list">
-      <!-- Placeholder for comments list -->
-      <div class="comment">
-        <strong>John Doe</strong>
-        <p>Great article! I learned a lot about asynchronous programming.</p>
-      </div>
-    </div>
-  </div>
 </div>
