@@ -1,18 +1,18 @@
-<div class="profile-container">
+<div class="profile-container" [@pageLoadAnimation] [@routeAnimations]>
   <div class="content-wrapper">
     <div class="text-content">
-      <h1 class="name">👋 Hello!</h1>
+      <h1 class="name fade-in">👋 Hello!</h1>
       <div class="about-section">
         <div class="about-text-container">
-          <p class="about-text">{{ aboutMe1 }}</p>
-          <p class="about-text">{{ aboutMe2 }}</p>
-          <p class="about-text" [innerHTML]="aboutMe3"></p>
+          <p class="about-text fade-in">{{ state.aboutMe.part1 }}</p>
+          <p class="about-text fade-in">{{ state.aboutMe.part2 }}</p>
+          <p class="about-text fade-in" [innerHTML]="state.aboutMe.part3 | safeHtml"></p>
         </div>
       </div>
     </div>
-    <div class="image-container">
+    <div class="image-container fade-in">
       <div class="image-frame">
-        <img ngSrc="/profile/assets/images/profile-pic.png" alt="Zahid Hasan" class="profile-pic" width="300" height="357" priority>
+        <img ngSrc="/assets/images/profile-pic.png" alt="Zahid Hasan" class="profile-pic" width="300" height="357" priority>
       </div>
     </div>
   </div>

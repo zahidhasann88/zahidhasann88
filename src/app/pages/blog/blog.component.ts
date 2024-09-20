@@ -3,15 +3,10 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { listAnimations, routeAnimations } from '../../animation/animations';
-
-interface BlogPost {
-  id: number;
-  title: string;
-  date: string;
-  excerpt: string;
-  tags: string[];
-  category: string;
-}
+import { Blog } from '../../models/global-state.model';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { GlobalStateService } from '../../services/global-state.service';
 
 @Component({
   selector: 'app-blog',
@@ -22,44 +17,26 @@ interface BlogPost {
   animations: [routeAnimations, listAnimations]
 })
 export class BlogComponent {
-  blogPosts: BlogPost[] = [
-    {
-      id: 1,
-      title: 'Understanding Asynchronous Programming in JavaScript',
-      date: '2023-09-15',
-      excerpt: 'In this post, we delve into asynchronous programming concepts in JavaScript, including callbacks, promises, and async/await.',
-      tags: ['JavaScript', 'Asynchronous Programming', 'Web Development'],
-      category: 'Web Development'
-    },
-    {
-      id: 2,
-      title: 'The Power of TypeScript',
-      date: '2023-08-30',
-      excerpt: 'Discover how TypeScript can improve your JavaScript development experience.',
-      tags: ['TypeScript', 'JavaScript'],
-      category: 'Programming Languages'
-    },
-    {
-      id: 3,
-      title: 'Angular vs React: A Comprehensive Comparison',
-      date: '2023-10-05',
-      excerpt: 'We compare two popular front-end frameworks, Angular and React, to help you choose the right one for your project.',
-      tags: ['Angular', 'React', 'Front-end Development'],
-      category: 'Frameworks'
-    },
-  ];
-
-  categories: string[] = ['All', ...new Set(this.blogPosts.map(post => post.category))];
+  blogs: Blog[] = [];
+  filteredPosts: Blog[] = [];
+  categories: string[] = ['All'];
   selectedCategory: string = 'All';
   searchTerm: string = '';
-  filteredPosts: BlogPost[] = [];
-  
   currentPage: number = 1;
   postsPerPage: number = 10;
   totalPages: number = 1;
+  private unsubscribe$ = new Subject<void>();
+
+  constructor(private globalStateService: GlobalStateService) {}
 
   ngOnInit() {
-    this.filterPosts();
+    this.globalStateService.getBlogs()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(blogs => {
+        this.blogs = [...blogs];
+        this.categories = ['All', ...new Set(blogs.map(post => post.category))];
+        this.filterPosts();
+      });
   }
 
   selectCategory(category: string) {
@@ -69,7 +46,7 @@ export class BlogComponent {
   }
 
   filterPosts() {
-    this.filteredPosts = this.blogPosts.filter(post => {
+    this.filteredPosts = this.blogs.filter(post => {
       const categoryMatch = this.selectedCategory === 'All' || post.category === this.selectedCategory;
       const searchMatch = post.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
                           post.excerpt.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
@@ -79,7 +56,7 @@ export class BlogComponent {
     this.totalPages = Math.ceil(this.filteredPosts.length / this.postsPerPage);
   }
 
-  get paginatedPosts(): BlogPost[] {
+  get paginatedPosts(): Blog[] {
     const startIndex = (this.currentPage - 1) * this.postsPerPage;
     return this.filteredPosts.slice(startIndex, startIndex + this.postsPerPage);
   }
@@ -90,5 +67,10 @@ export class BlogComponent {
 
   get pages(): number[] {
     return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 }
