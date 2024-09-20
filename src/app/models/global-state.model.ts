@@ -1,4 +1,4 @@
-import { SafeHtml } from "@angular/platform-browser";
+import { SafeHtml } from '@angular/platform-browser';
 
 export interface GlobalState {
   cvLink: string;
@@ -8,7 +8,6 @@ export interface GlobalState {
     part3: string;
   };
 }
-
 export interface Project {
   id: number;
   title: string;
@@ -20,7 +19,6 @@ export interface Project {
   imageWidth: number;
   imageHeight: number;
 }
-
 export interface GalleryImage {
   id: number;
   url: string;
@@ -28,7 +26,6 @@ export interface GalleryImage {
   description: string;
   category: string;
 }
-
 export interface Blog {
   id: number;
   title: string;
@@ -47,7 +44,6 @@ export interface BlogPost {
   tags: string[];
   readingTime: number;
 }
-
 export interface SafeBlogPost extends Omit<BlogPost, 'content'> {
   content: SafeHtml;
 }
