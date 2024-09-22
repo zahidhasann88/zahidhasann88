@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Blog, BlogPost, GalleryImage, GlobalState, Project, SafeBlogPost } from '../models/global-state.model';
-import { GLOBAL_STATE, PROJECTS, IMAGES, BLOGS, BLOG_POSTS } from '../data/static-data';
+import { GLOBAL_STATE, PROJECTS, IMAGES } from '../data/static-data';
+import { BLOGS, BLOG_POSTS } from '../data/blog-data';
 import { map } from 'rxjs/operators';
 import { DomSanitizer } from '@angular/platform-browser';
 

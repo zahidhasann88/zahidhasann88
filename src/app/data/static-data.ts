@@ -1,10 +1,4 @@
-import {
-  Blog,
-  BlogPost,
-  GalleryImage,
-  GlobalState,
-  Project,
-} from '../models/global-state.model';
+import { GalleryImage, GlobalState, Project } from '../models/global-state.model';
 
 export const GLOBAL_STATE: Readonly<GlobalState> = {
   cvLink: 'https://drive.google.com/file/d/your-cv-file-id/view?usp=sharing',
@@ -40,8 +34,8 @@ export const PROJECTS: ReadonlyArray<Readonly<Project>> = [
     description:
       'A real-time collaborative IDE for remote pair programming and code reviews.',
     technologies: ['React', 'Typescript', 'Node.js', 'Socket.io'],
-    imageUrl: '/profile/assets/images/cc.jpg',
-    githubUrl: 'https://github.com/zahidhasann88/collaborative-coding',
+    imageUrl: '/profile/assets/images/code.png',
+    githubUrl: 'https://github.com/zahidhasann88/code-collab',
     liveUrl: 'https://weather-app-demo.com',
     imageWidth: 5952,
     imageHeight: 3968,
@@ -83,83 +77,5 @@ export const IMAGES: ReadonlyArray<Readonly<GalleryImage>> = [
     title: 'Urban Nigh',
     description: 'A beautiful image of nature.',
     category: 'Nature',
-  },
-] as const;
-
-export const BLOGS: ReadonlyArray<Readonly<Blog>> = [
-  {
-    id: 1,
-    title: 'Understanding Asynchronous Programming in JavaScript',
-    date: '2023-09-15',
-    excerpt:
-      'In this post, we delve into asynchronous programming concepts in JavaScript, including callbacks, promises, and async/await.',
-    tags: ['JavaScript', 'Asynchronous Programming', 'Web Development'],
-    category: 'Web Development',
-  },
-  {
-    id: 2,
-    title: 'The Power of TypeScript',
-    date: '2023-08-30',
-    excerpt:
-      'Discover how TypeScript can improve your JavaScript development experience.',
-    tags: ['TypeScript', 'JavaScript'],
-    category: 'Programming Languages',
-  },
-  {
-    id: 3,
-    title: 'Angular vs React: A Comprehensive Comparison',
-    date: '2023-10-05',
-    excerpt:
-      'We compare two popular front-end frameworks, Angular and React, to help you choose the right one for your project.',
-    tags: ['Angular', 'React', 'Front-end Development'],
-    category: 'Frameworks',
-  },
-] as const;
-
-export const BLOG_POSTS: ReadonlyArray<Readonly<BlogPost>> = [
-  {
-    id: 1,
-    title: 'Mastering Angular: Best Practices for Modern Web Development',
-    date: '2024-09-12',
-    author: 'John Smith',
-    readingTime: 7,
-    content: `
-        <p>Angular is a powerful framework for building dynamic web applications. Here are some of the best practices to follow.</p>
-        <h2>Follow Modular Architecture</h2>
-        <p>Organizing your application into modules improves scalability and maintainability.</p>
-        <h2>Lazy Loading</h2>
-        <p>Lazy loading allows you to load modules only when needed, reducing the initial load time.</p>
-      `,
-    tags: ['Angular', 'Best Practices', 'Web Development'],
-  },
-  {
-    id: 2,
-    title: 'A Deep Dive into TypeScript for JavaScript Developers',
-    date: '2024-08-22',
-    author: 'Jane Doe',
-    readingTime: 5,
-    content: `
-          <p>TypeScript enhances JavaScript by providing static types. Here’s how TypeScript can help JavaScript developers.</p>
-          <h2>Types and Interfaces</h2>
-          <p>Adding types and interfaces to your code makes it easier to maintain and reduces bugs.</p>
-          <h2>Advanced Type Features</h2>
-          <p>TypeScript comes with advanced features such as union types, intersection types, and type inference.</p>
-        `,
-    tags: ['TypeScript', 'JavaScript', 'Programming Languages'],
-  },
-  {
-    id: 3,
-    title: 'The Future of JavaScript: Emerging Trends and Technologies',
-    date: '2024-07-15',
-    author: 'Sam Johnson',
-    readingTime: 6,
-    content: `
-          <p>JavaScript is constantly evolving. Let’s look at some of the trends that will shape the future of JavaScript.</p>
-          <h2>WebAssembly</h2>
-          <p>WebAssembly allows running high-performance code alongside JavaScript.</p>
-          <h2>Server-side Rendering</h2>
-          <p>With server-side rendering, JavaScript frameworks like Next.js can boost performance and SEO.</p>
-        `,
-    tags: ['JavaScript', 'Web Development', 'Trends'],
   },
 ] as const;
