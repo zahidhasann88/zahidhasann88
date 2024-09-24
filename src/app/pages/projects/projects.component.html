@@ -17,4 +17,16 @@
       </div>
     </div>
   </div>
-</div>
+  <div class="repos-container">
+    <h1>GitHub Repositories</h1>
+    <div class="repo-grid">
+      <div *ngFor="let repo of repos" class="repo-card">
+        <h2>{{ repo.name }}</h2>
+        <p>{{ repo.description }}</p>
+        <p><strong>Language:</strong> {{ repo.language }}</p>
+        <a [href]="repo.url" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+  </div>
+

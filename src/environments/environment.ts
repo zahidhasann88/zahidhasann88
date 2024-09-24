@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000/api',
+  githubApiUrl: 'https://api.github.com/users/zahidhasann88/repos',
 };

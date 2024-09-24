@@ -5,7 +5,7 @@ import { listAnimations, photoGalleryAnimations } from '../../animation/animatio
 import { GlobalStateService } from '../../services/global-state.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { Project } from '../../models/global-state.model';
+import { GitHubRepo, Project } from '../../models/global-state.model';
 
 @Component({
   selector: 'app-projects',
@@ -17,6 +17,7 @@ import { Project } from '../../models/global-state.model';
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
   projects: readonly Project[] = [];
+  repos: ReadonlyArray<GitHubRepo> = [];
   private unsubscribe$ = new Subject<void>();
 
   constructor(private globalStateService: GlobalStateService) {}
@@ -26,6 +27,12 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(projects => {
         this.projects = projects;
+      });
+
+      this.globalStateService.getGitHubRepos()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(repos => {
+        this.repos = repos;
       });
   }
 

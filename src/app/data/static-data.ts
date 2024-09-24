@@ -4,33 +4,33 @@ export const GLOBAL_STATE: Readonly<GlobalState> = {
   cvLink: 'https://drive.google.com/file/d/your-cv-file-id/view?usp=sharing',
   aboutMe: {
     part1: `My name is Zahid Hasan, also known as Zahid. I'm a 28-year-old Software Engineer from Dhaka, Bangladesh.`,
-    part2: `Currently, I work as a Software Engineer, focusing on developer tooling and infrastructure, with background interest in cloud technologies, 
-              distributed systems, and web applications. I enjoy seeking out creative solutions to complex problems and building things that empower others 
-              to do the same.`,
-    part3: `Welcome to my own little corner of the web, where I share <a href="/blog" class="inline-link">notes</a> and resources on topics that interest me. 
-              I spend my free time building new <a href="/projects" class="inline-link">things</a> and capturing in time
-              <a href="/photos" class="inline-link">moments</a>. For a closer look at my career journey, 
-              <a href="{{cvLink}}" target="_blank" rel="noopener noreferrer" class="inline-link">check out my CV</a>. 
-              And if something's on your mind, <a href="mailto:zahidhasann67@gmail.com" class="inline-link">drop me a line</a>!`,
+    part2: `Currently, I work as a Software Engineer, focusing on backend development, with a keen interest in cloud technologies. 
+            I am skilled in cloud infrastructure provisioning, monitoring and serverless architectures. I enjoy seeking out creative solutions to 
+            complex problems and building things that empower others to do the same.`,
+    part3: `Welcome to my own little corner of the web, where I share <a [routerLink]="['/blog']" class="inline-link">notes</a> and resources on topics that interest me. 
+            I spend my free time building new <a [routerLink]="['/projects']" class="inline-link">things</a> and capturing in time
+            <a [routerLink]="['/photos']" class="inline-link">moments</a>. For a closer look at my career journey, 
+            <a [href]="cvLink" target="_blank" rel="noopener noreferrer" class="inline-link">check out my CV</a>. 
+            And if something's on your mind, <a href="mailto:zahidhasann67@gmail.com" class="inline-link">drop me a line</a>!`,
   },
 } as const;
 
 export const PROJECTS: ReadonlyArray<Readonly<Project>> = [
+  // {
+  //   id: 1,
+  //   title: 'Kitchen Car Locator',
+  //   description:
+  //     'A web platform for discovering nearby food trucks, leveraging geolocation and real-time data.',
+  //   technologies: ['Next.js', 'Node.js', 'Nest.js', 'Prisma', 'MySQL', 'AWS'],
+  //   imageUrl: '/assets/images/kitchen_car.png',
+  //   githubUrl: '',
+  //   liveUrl: 'https://idoshokudo.com/',
+  //   imageWidth: 1920,
+  //   imageHeight: 930,
+  // },
   {
     id: 1,
-    title: 'Kitchen Car Locator',
-    description:
-      'A web platform for discovering nearby food trucks, leveraging geolocation and real-time data.',
-    technologies: ['Next.js', 'Node.js', 'Nest.js', 'Prisma', 'MySQL', 'AWS'],
-    imageUrl: '/profile/assets/images/kitchen_car.png',
-    githubUrl: '',
-    liveUrl: 'https://idoshokudo.com/',
-    imageWidth: 1920,
-    imageHeight: 930,
-  },
-  {
-    id: 2,
-    title: 'Collaborative Coding Platform',
+    title: 'Code Collab Platform',
     description:
       'A real-time collaborative IDE for remote pair programming and code reviews.',
     technologies: ['React', 'Typescript', 'Node.js', 'Socket.io'],

@@ -47,3 +47,11 @@ export interface BlogPost {
 export interface SafeBlogPost extends Omit<BlogPost, 'content'> {
   content: SafeHtml;
 }
+
+export interface GitHubRepo {
+  id: number;
+  name: string;
+  description: string;
+  url: string;
+  language: string;
+}

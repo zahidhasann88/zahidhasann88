@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Blog, BlogPost, GalleryImage, GlobalState, Project, SafeBlogPost } from '../models/global-state.model';
+import { Blog, BlogPost, GalleryImage, GitHubRepo, GlobalState, Project, SafeBlogPost } from '../models/global-state.model';
 import { GLOBAL_STATE, PROJECTS, IMAGES } from '../data/static-data';
 import { BLOGS, BLOG_POSTS } from '../data/blog-data';
 import { map } from 'rxjs/operators';
 import { DomSanitizer } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,7 @@ export class GlobalStateService {
   private blogsSubject = new BehaviorSubject<ReadonlyArray<Readonly<Blog>>>(BLOGS);
   private blogPostsSubject = new BehaviorSubject<ReadonlyArray<Readonly<BlogPost>>>(BLOG_POSTS);
 
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(private sanitizer: DomSanitizer, private http: HttpClient) {}
 
   getState(): Observable<Readonly<GlobalState>> {
     return this.stateSubject.asObservable();
@@ -59,5 +61,15 @@ export class GlobalStateService {
     );
   }
 
-  // Similar methods can be added for other data types if needed
+  getGitHubRepos(): Observable<ReadonlyArray<GitHubRepo>> {
+    return this.http.get<any[]>(environment.githubApiUrl).pipe(
+      map(repos => repos.map(repo => ({
+        id: repo.id,
+        name: repo.name,
+        description: repo.description,
+        url: repo.html_url,
+        language: repo.language,
+      })))
+    );
+  }
 }
