@@ -63,13 +63,20 @@ export class GlobalStateService {
 
   getGitHubRepos(): Observable<ReadonlyArray<GitHubRepo>> {
     return this.http.get<any[]>(environment.githubApiUrl).pipe(
-      map(repos => repos.map(repo => ({
-        id: repo.id,
-        name: repo.name,
-        description: repo.description,
-        url: repo.html_url,
-        language: repo.language,
-      })))
+      map(repos =>
+        repos
+          .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
+          .slice(0, 20)
+          .map(repo => ({
+            id: repo.id,
+            name: repo.name,
+            description: repo.description,
+            url: repo.html_url,
+            language: repo.language,
+            updatedAt: repo.updated_at
+          }))
+      )
     );
   }
+  
 }
