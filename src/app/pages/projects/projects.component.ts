@@ -16,7 +16,9 @@ import { GitHubRepo, Project } from '../../models/global-state.model';
   animations: [photoGalleryAnimations, listAnimations],
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
+  repoDescription: string = 'These projects represent pivotal moments in my learning journey, each inspired by a personal need or curiosity. They embody my commitment to exploring new technologies and my passion for continuous improvement and innovation.'
   projects: readonly Project[] = [];
+  loading = true;
   repos: ReadonlyArray<GitHubRepo> = [];
   private unsubscribe$ = new Subject<void>();
 
@@ -33,6 +35,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(repos => {
         this.repos = repos;
+        this.loading = false;
       });
   }
 

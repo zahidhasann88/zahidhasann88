@@ -1,32 +1,23 @@
 <div class="projects-container">
   <h1>Things I've Built</h1>
-  <div class="project-grid" [@listAnimation]="projects.length">
-    <div *ngFor="let project of projects" class="project-card">
-      <img [ngSrc]="project.imageUrl" [alt]="project.title" [title]="project.title" class="project-image" 
-            [width]="300" [height]="200" priority title="project-image">
-      <div class="project-info">
-        <h2>{{ project.title }}</h2>
-        <p>{{ project.description }}</p>
-        <div class="technologies">
-          <span *ngFor="let tech of project.technologies" class="technology">{{ tech }}</span>
-        </div>
-        <div class="project-links">
-          <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
-          <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" rel="noopener noreferrer" class="btn">Live Demo</a>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="repos-container">
-    <h1>GitHub Repositories</h1>
+    <p>{{ repoDescription }}</p>
     <div class="repo-grid">
-      <div *ngFor="let repo of repos" class="repo-card">
-        <h2>{{ repo.name }}</h2>
-        <p>{{ repo.description }}</p>
-        <p><strong>Language:</strong> {{ repo.language }}</p>
-        <a [href]="repo.url" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
-      </div>
+      <ng-container *ngIf="loading">
+        <div class="skeleton-loader" *ngFor="let item of [].constructor(3); let i = index">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-description"></div>
+          <div class="skeleton-language"></div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="!loading">
+        <div *ngFor="let repo of repos" class="repo-card">
+          <h2>{{ repo.name }}</h2>
+          <p>{{ repo.description }}</p>
+          <p><strong>Language:</strong> {{ repo.language }}</p>
+          <a [href]="repo.url" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
+        </div>
+      </ng-container>
     </div>
   </div>
-  </div>
-
+</div>
