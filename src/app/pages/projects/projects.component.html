@@ -4,13 +4,16 @@
     <p>{{ repoDescription }}</p>
     <div class="repo-grid">
       <ng-container *ngIf="loading">
-        <div class="skeleton-loader" *ngFor="let item of [].constructor(3); let i = index">
-          <div class="skeleton-title"></div>
-          <div class="skeleton-description"></div>
-          <div class="skeleton-language"></div>
+        <div class="skeleton-loader" *ngFor="let item of [].constructor(3)">
+          <div class="skeleton-content">
+            <div class="skeleton-title"></div>
+            <div class="skeleton-description"></div>
+            <div class="skeleton-description"></div>
+            <div class="skeleton-language"></div>
+          </div>
         </div>
       </ng-container>
-      <ng-container *ngIf="!loading">
+      <ng-container *ngIf="!loading" [@listAnimation]="repos.length">
         <div *ngFor="let repo of repos" class="repo-card">
           <h2>{{ repo.name }}</h2>
           <p>{{ repo.description }}</p>

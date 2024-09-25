@@ -50,38 +50,56 @@ h1 {
 }
 
 .skeleton-loader {
-  background-color: #e0e0e0;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.skeleton-content {
+  padding: 1.25rem;
+}
+
+.skeleton-title,
+.skeleton-description,
+.skeleton-language {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
   border-radius: 4px;
+}
+
+.skeleton-title {
+  height: 1.5rem;
+  width: 80%;
   margin-bottom: 1rem;
-  padding: 1rem;
-  animation: shimmer 1.5s infinite linear;
+}
 
-  .skeleton-title {
-    height: 1.5rem;
-    width: 60%;
-    margin-bottom: 0.5rem;
-  }
+.skeleton-description {
+  height: 0.8rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
 
-  .skeleton-description {
-    height: 1rem;
-    width: 80%;
-    margin-bottom: 0.5rem;
-  }
+.skeleton-description:last-of-type {
+  width: 80%;
+}
 
-  .skeleton-language {
-    height: 1rem;
-    width: 40%;
-  }
+.skeleton-language {
+  height: 1rem;
+  width: 40%;
+  margin-top: 1rem;
 }
 
 @keyframes shimmer {
   0% {
-    background-position: -200px 0;
+    background-position: -200% 0;
   }
   100% {
-    background-position: 200px 0;
+    background-position: 200% 0;
   }
 }
+
 
 
 @media (max-width: 768px) {

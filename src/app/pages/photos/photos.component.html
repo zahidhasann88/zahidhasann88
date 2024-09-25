@@ -1,24 +1,36 @@
 <div class="photos-container">
-    <h1>A Collection Of Moments Captured In Time</h1>
-    
-    <div class="category-filter">
-      <button [class.active]="selectedCategory === ''" (click)="filterByCategory('')">All</button>
-      <button *ngFor="let category of categories" 
-              [class.active]="selectedCategory === category"
-              (click)="filterByCategory(category)">
-        {{ category }}
-      </button>
-    </div>
+  <h1>A Collection Of Moments Captured In Time</h1>
+  
+  <div class="category-filter">
+    <button [class.active]="selectedCategory === ''" (click)="filterByCategory('')">All</button>
+    <button *ngFor="let category of categories" 
+            [class.active]="selectedCategory === category"
+            (click)="filterByCategory(category)">
+      {{ category }}
+    </button>
+  </div>
 
-    <div class="image-gallery" [@listAnimation]="filteredImages.length">
+  <div class="image-gallery" [@listAnimation]="filteredImages.length">
+    <ng-container *ngIf="!loading; else skeletonLoader">
       <div *ngFor="let image of filteredImages" class="image-item" [@fadeInOut]>
-        <img [src]="image.url" [alt]="image.title" (click)="openImage(image)" loading="lazy" title="imgae">
+        <img [src]="image.url" [alt]="image.title" (click)="openImage(image)" loading="lazy" title="image">
         <div class="image-overlay">
           <h3>{{ image.title }}</h3>
           <span class="category-tag">{{ image.category }}</span>
         </div>
       </div>
-    </div>
+    </ng-container>
+    
+    <ng-template #skeletonLoader>
+      <div *ngFor="let i of [1,2,3,4,5,6]" class="image-item skeleton">
+        <div class="skeleton-img"></div>
+        <div class="image-overlay">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-tag"></div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
 
     <div *ngIf="loading" class="loading-spinner">
       <div class="spinner"></div>
