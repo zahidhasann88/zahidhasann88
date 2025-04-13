@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Blog, BlogPost, GalleryImage, GitHubRepo, GlobalState, Project, SafeBlogPost } from '../models/global-state.model';
+import { Blog, BlogPost, GalleryImage, GlobalState, Project, SafeBlogPost } from '../models/global-state.model';
 import { GLOBAL_STATE, PROJECTS, IMAGES } from '../data/static-data';
 import { BLOGS, BLOG_POSTS } from '../data/blog-data';
 import { map } from 'rxjs/operators';
@@ -52,31 +52,6 @@ export class GlobalStateService {
       project.id === updatedProject.id ? { ...updatedProject } : project
     );
     this.projectsSubject.next(updatedProjects);
-  }
-
-  // Implement a method to safely get a project by ID
-  getProjectById(id: number): Observable<Readonly<Project> | undefined> {
-    return this.projectsSubject.pipe(
-      map(projects => projects.find(project => project.id === id))
-    );
-  }
-
-  getGitHubRepos(): Observable<ReadonlyArray<GitHubRepo>> {
-    return this.http.get<any[]>(environment.githubApiUrl).pipe(
-      map(repos =>
-        repos
-          .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
-          .slice(0, 20)
-          .map(repo => ({
-            id: repo.id,
-            name: repo.name,
-            description: repo.description,
-            url: repo.html_url,
-            language: repo.language,
-            updatedAt: repo.updated_at
-          }))
-      )
-    );
   }
   
 }

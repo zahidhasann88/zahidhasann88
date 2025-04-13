@@ -7,7 +7,6 @@ import { GlobalState } from '../../models/global-state.model';
 import { GlobalStateService } from '../../services/global-state.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 
 @Component({
   selector: 'app-home',
@@ -16,8 +15,6 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
     CommonModule,
     RouterModule,
     FontAwesomeModule,
-    NgOptimizedImage,
-    SafeHtmlPipe,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

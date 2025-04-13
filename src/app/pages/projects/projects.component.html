@@ -1,26 +1,22 @@
 <div class="projects-container">
   <h1>Things I've Built</h1>
-  <div class="repos-container" [@listAnimation]="repos.length">
-    <p>{{ repoDescription }}</p>
-    <div class="repo-grid">
-      <ng-container *ngIf="loading">
-        <div class="skeleton-loader" *ngFor="let item of [].constructor(3)">
-          <div class="skeleton-content">
-            <div class="skeleton-title"></div>
-            <div class="skeleton-description"></div>
-            <div class="skeleton-description"></div>
-            <div class="skeleton-language"></div>
+  <div class="projects-content">
+    <p>{{ projectsDescription }}</p>
+    <div class="project-grid">
+      <div class="project-card" *ngFor="let project of projects" [@listAnimation]="'in'" [hidden]="loading">
+        <div class="project-thumbnail">
+          <img [src]="project.thumbnailUrl" alt="{{ project.name }} thumbnail">
+        </div>
+        <div class="project-content">
+          <h2>{{ project.name }}</h2>
+          <p class="project-description">{{ project.shortDescription }}</p>
+          <p class="tech-stack"><strong>Technologies:</strong> {{ project.technologies }}</p>
+          <div class="project-actions">
+            <a [href]="project.githubUrl" *ngIf="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn me-2">View on GitHub</a>
+            <a [routerLink]="['/projects', project.id]" class="btn btn-details">View Details</a>
           </div>
         </div>
-      </ng-container>
-      <ng-container *ngIf="!loading" [@listAnimation]="repos.length">
-        <div *ngFor="let repo of repos" class="repo-card">
-          <h2>{{ repo.name }}</h2>
-          <p>{{ repo.description }}</p>
-          <p><strong>Language:</strong> {{ repo.language }}</p>
-          <a [href]="repo.url" target="_blank" rel="noopener noreferrer" class="btn">View on GitHub</a>
-        </div>
-      </ng-container>
+      </div>
     </div>
   </div>
 </div>

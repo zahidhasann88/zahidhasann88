@@ -1,0 +1,98 @@
+<div class="project-detail-container" *ngIf="project">
+    <div class="project-header">
+      <div class="back-button">
+        <a routerLink="/projects" class="btn-back">
+          <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+      </div>
+      <h1>{{ project.name }}</h1>
+    </div>
+  
+    <div class="project-showcase">
+      <div class="project-image">
+        <img [src]="project.thumbnailUrl" alt="{{ project.name }} thumbnail">
+      </div>
+      <div class="project-info">
+        <div class="project-description">
+          <h2>About this project</h2>
+          <p [innerHTML]="project.fullDescription"></p>
+        </div>
+        
+        <div class="project-meta">
+          <div class="tech-stack">
+            <h3>Technologies Used</h3>
+            <ul>
+              <li *ngFor="let tech of project.techStack">{{ tech }}</li>
+            </ul>
+          </div>
+          
+          <div class="project-features" *ngIf="project.features && project.features.length">
+            <h3>Key Features</h3>
+            <ul>
+              <li *ngFor="let feature of project.features">{{ feature }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="project-details-section">
+      <div class="development-story" *ngIf="project.developmentProcess">
+        <h2>Development Process</h2>
+        <p [innerHTML]="project.developmentProcess"></p>
+      </div>
+      
+      <div class="challenges" *ngIf="project.challenges && project.challenges.length">
+        <h2>Challenges & Solutions</h2>
+        <div class="challenge-item" *ngFor="let challenge of project.challenges">
+          <h3>{{ challenge.title }}</h3>
+          <p>{{ challenge.description }}</p>
+          <p *ngIf="challenge.solution"><strong>Solution:</strong> {{ challenge.solution }}</p>
+        </div>
+      </div>
+      
+      <div class="future-plans" *ngIf="project.futurePlans">
+        <h2>Future Plans</h2>
+        <p [innerHTML]="project.futurePlans"></p>
+      </div>
+    </div>
+  
+    <div class="project-screenshots" *ngIf="project.screenshots && project.screenshots.length">
+      <h2>Screenshots</h2>
+      <div class="screenshots-grid">
+        <div class="screenshot" *ngFor="let screenshot of project.screenshots">
+          <img [src]="screenshot.url" alt="{{ screenshot.caption || 'Project screenshot' }}">
+          <p class="caption" *ngIf="screenshot.caption">{{ screenshot.caption }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="project-actions">
+      <a [href]="project.githubUrl" *ngIf="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn btn-github">
+        <i class="fab fa-github"></i> View on GitHub
+      </a>
+      <a [href]="project.demoUrl" *ngIf="project.demoUrl" target="_blank" rel="noopener noreferrer" class="btn btn-demo">
+        <i class="fas fa-external-link-alt"></i> Live Demo
+      </a>
+    </div>
+  </div>
+  
+  <div class="project-detail-container" *ngIf="loading">
+    <div class="project-detail-skeleton">
+      <div class="skeleton-header"></div>
+      <div class="skeleton-image"></div>
+      <div class="skeleton-text-block"></div>
+      <div class="skeleton-text-line"></div>
+      <div class="skeleton-text-line"></div>
+      <div class="skeleton-text-line"></div>
+      <div class="skeleton-section-header"></div>
+      <div class="skeleton-text-line"></div>
+      <div class="skeleton-text-line"></div>
+    </div>
+  </div>
+  
+  <div class="project-not-found" *ngIf="!loading && !project">
+    <h2>Project Not Found</h2>
+    <p>Sorry, we couldn't find the project you're looking for.</p>
+    <a routerLink="/projects" class="btn">Return to Projects</a>
+  </div>

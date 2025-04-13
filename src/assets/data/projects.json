@@ -1,0 +1,85 @@
+[
+    {
+      "id": "media-analyzer",
+      "name": "Media Analyzer",
+      "shortDescription": "A Flask API for analyzing media files (video and audio) with various features including quality analysis, streaming readiness checks, and content analysis.",
+      "fullDescription": "This is a powerful and extensible Flask-based RESTful API designed for the automated analysis of video and audio files. It provides a wide range of features to evaluate media quality, assess streaming readiness, and perform in-depth content analysis, making it ideal for developers, media platforms, broadcasters, and content management systems.",
+      "thumbnailUrl": "/assets/images/Project-1.png",
+      "technologies": "Python, Flask, Next js, TypeScript, Huggingface, Open AI",
+      "techStack": ["Python", "Flask", "Next js", "TypeScript", "Huggingface", "Open AI", "Artificial Intelligence"],
+      "githubUrl": "https://github.com/zahidhasann88/audio-analyzer",
+      "demoUrl": "https://yourportfolio.com",
+      "features": [
+        "Video & Audio Analysis: Quality checks, streaming readiness, feature extraction, duplicate detection, and transcription (Whisper).",
+        "Content Intelligence: Text summarization, sentiment analysis, content classification, and speech density metrics.",
+        "Metadata & Comparison: Analyze and compare media files, detect artifacts, and extract technical metadata.",
+        "Batch Processing: Analyze multiple files in one request with progress tracking and detailed error reporting."
+      ],
+      "challenges": [
+        {
+          "title": "Performance Optimization",
+          "description": "The initial load time was slow due to unoptimized images and animations.",
+          "solution": "Implemented lazy loading, image optimization, and refined animations to improve performance by 40%."
+        },
+        {
+          "title": "Responsive Design",
+          "description": "Creating a consistent experience across all device sizes was challenging.",
+          "solution": "Used a mobile-first approach with CSS Grid and Flexbox for a fluid layout that adapts to any screen size."
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "/assets/images/screenshot-1.png",
+          "caption": "Home page with all features"
+        },
+        {
+          "url": "assets/images/projects/portfolio-projects.jpg",
+          "caption": "Projects showcase section"
+        }
+      ],
+      "developmentProcess": "I started this project with a clear vision of creating a unique personal brand. After sketching wireframes and designing mockups in Figma, I built the application using Angular for its robust component architecture and powerful animation system. I focused on creating a seamless user experience with smooth transitions and responsive design.",
+      "futurePlans": "I plan to add a blog section where I can share my technical insights and experiences. I'm also considering integrating a CMS to make content updates easier."
+    },
+    {
+      "id": "system-monitor",
+      "name": "System Monitoring",
+      "shortDescription": "A lightweight web-based system monitoring application built with Flask and JavaScript that provides real-time insights into your system's performance.",
+      "fullDescription": "This is a lightweight, web-based system monitoring application designed to provide real-time insights into your system's performance. Built using Flask for the backend and JavaScript (with AJAX) for the frontend, the application offers a clean and responsive user interface accessible through any modern web browser.",
+      "thumbnailUrl": "/assets/images/Project-4.png",
+      "technologies": "Python, Flask, JavaScript, HTML, CSS, Bootstrap, AJAX",
+      "techStack": ["Python", "Flask", "Apsheduler", "JavaScript", "HTML", "CSS", "Bootstrap", "AJAX"],
+      "githubUrl": "https://github.com/zahidhasann88/system-monitor",
+      "demoUrl": "https://yourtaskmanager.com",
+      "features": [
+        "Real-time Monitoring: Track CPU, memory, disk, and network usage in real-time",
+        "Historical Data: View performance trends with interactive charts",
+        "Process Management: See top processes by CPU and memory usage",
+        "Configurable Alerts: Set custom thresholds for system resources and receive alerts",
+        "Scheduling: Schedule automatic metrics collection at custom intervals"
+      ],
+      "challenges": [
+        {
+          "title": "Real-time Updates",
+          "description": "Implementing real-time updates when multiple users are working on the same board.",
+          "solution": "Integrated Socket.io to enable real-time synchronization between clients."
+        },
+        {
+          "title": "Data Persistence",
+          "description": "Ensuring data persistence during network interruptions.",
+          "solution": "Implemented offline storage with IndexedDB and a sync mechanism that resolves conflicts when connection is restored."
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "/assets/images/screenshot-2.PNG",
+          "caption": "Memory and Disk Usage"
+        },
+        {
+          "url": "/assets/images/screenshot-3.PNG",
+          "caption": "Alerts and Historical Data Graph"
+        }
+      ],
+      "developmentProcess": "This project was developed using an Agile methodology. I started with user research to identify key pain points in existing task management apps. The frontend was built with Angular using a component-based architecture, while the backend uses Node.js with Express and MongoDB for data persistence. Authentication is handled with JWT for secure user sessions.",
+      "futurePlans": "Future plans include adding team collaboration features, integrations with calendar applications, and implementing an AI assistant to help with task prioritization and scheduling."
+    }
+  ]
