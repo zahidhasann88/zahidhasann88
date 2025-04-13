@@ -4,7 +4,7 @@
       "name": "Media Analyzer",
       "shortDescription": "A Flask API for analyzing media files (video and audio) with various features including quality analysis, streaming readiness checks, and content analysis.",
       "fullDescription": "This is a powerful and extensible Flask-based RESTful API designed for the automated analysis of video and audio files. It provides a wide range of features to evaluate media quality, assess streaming readiness, and perform in-depth content analysis, making it ideal for developers, media platforms, broadcasters, and content management systems.",
-      "thumbnailUrl": "/docs/assets/images/Project-1.png",
+      "thumbnailUrl": "docs/assets/images/Project-1.png",
       "technologies": "Python, Flask, Next js, TypeScript, Huggingface, Open AI",
       "techStack": ["Python", "Flask", "Next js", "TypeScript", "Huggingface", "Open AI", "Artificial Intelligence"],
       "githubUrl": "https://github.com/zahidhasann88/audio-analyzer",
@@ -29,7 +29,7 @@
       ],
       "screenshots": [
         {
-          "url": "/docs/assets/images/screenshot-1.png",
+          "url": "docs/assets/images/screenshot-1.png",
           "caption": "Home page with all features"
         },
         {
@@ -45,7 +45,7 @@
       "name": "System Monitoring",
       "shortDescription": "A lightweight web-based system monitoring application built with Flask and JavaScript that provides real-time insights into your system's performance.",
       "fullDescription": "This is a lightweight, web-based system monitoring application designed to provide real-time insights into your system's performance. Built using Flask for the backend and JavaScript (with AJAX) for the frontend, the application offers a clean and responsive user interface accessible through any modern web browser.",
-      "thumbnailUrl": "/docs/assets/images/Project-4.png",
+      "thumbnailUrl": "docs/assets/images/Project-4.png",
       "technologies": "Python, Flask, JavaScript, HTML, CSS, Bootstrap, AJAX",
       "techStack": ["Python", "Flask", "Apsheduler", "JavaScript", "HTML", "CSS", "Bootstrap", "AJAX"],
       "githubUrl": "https://github.com/zahidhasann88/system-monitor",
@@ -71,11 +71,11 @@
       ],
       "screenshots": [
         {
-          "url": "/docs/assets/images/screenshot-2.PNG",
+          "url": "docs/assets/images/screenshot-2.PNG",
           "caption": "Memory and Disk Usage"
         },
         {
-          "url": "/docs/assets/images/screenshot-3.PNG",
+          "url": "docs/assets/images/screenshot-2.PNG",
           "caption": "Alerts and Historical Data Graph"
         }
       ],
