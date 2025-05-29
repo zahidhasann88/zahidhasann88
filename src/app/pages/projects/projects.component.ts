@@ -21,7 +21,6 @@ export class ProjectsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    // Load projects data from assets folder
     this.http.get<Project[]>('assets/data/projects.json')
       .subscribe({
         next: (data) => {
@@ -30,19 +29,13 @@ export class ProjectsComponent implements OnInit {
         },
         error: (err) => {
           console.error('Error loading projects:', err);
-          // If the data doesn't load, we can use the data from your paste.txt file
-          // This is for development purposes and should be removed in production
           this.handleFallbackData();
           this.loading = false;
         }
       });
   }
 
-  // Fallback method to handle data loading errors during development
   private handleFallbackData() {
-    // This is just a temporary solution for development
-    // In production, you should ensure your data file exists at the correct path
     console.log('Using fallback project data');
-    // You could add your JSON data directly here if needed
   }
 }

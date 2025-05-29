@@ -83,13 +83,13 @@
       "futurePlans": "Future plans include adding team collaboration features, integrations with calendar applications, and implementing an AI assistant to help with task prioritization and scheduling."
     },
     {
-      "id": "kitchen-car-web-app",
-      "name": "Kitchen Car Web App",
-      "shortDescription": "A lightweight web-based system monitoring application built with Flask and JavaScript that provides real-time insights into your system's performance.",
-      "fullDescription": "This is a lightweight, web-based system monitoring application designed to provide real-time insights into your system's performance. Built using Flask for the backend and JavaScript (with AJAX) for the frontend, the application offers a clean and responsive user interface accessible through any modern web browser.",
+      "id": "geo-enabled-kitchen-car-finder",
+      "name": "Geo-Enabled Kitchen Car Finder for Japan",
+      "shortDescription": "A web-based application that helps users find Kitchen Cars across Japan using a map interface.",
+      "fullDescription": "The app was designed with a map to help users easily find Kitchen Cars all over Japan. The client wanted a scalable solution where vendors manually update their locations to ensure up-to-date information. On the user side, the app offers an intuitive map interface, enabling users to quickly discover nearby kitchen cars and making the experience across Japan.",
       "thumbnailUrl": "assets/images/Project-4.png",
       "technologies": "JavaScript, TypeScript, Node.js, Nest.js, Prisma, MySQL, Next.js, Ant Design, Docker, Redis, AWS",
-      "techStack": ["Python", "Flask", "Apsheduler", "JavaScript", "HTML", "CSS", "Bootstrap", "AJAX"],
+      "techStack": ["JavaScript", "TypeScript", "Node.js", "Nest.js", "Prisma", "MySQL", "Next.js", "Ant Design", "Docker", "Redis", "AWS"],
       "githubUrl": "https://github.com/zahidhasann88/system-monitor",
       "demoUrl": "https://yourtaskmanager.com",
       "features": [

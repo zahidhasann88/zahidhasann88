@@ -2,18 +2,24 @@
   <h1>Things I've Built</h1>
   <div class="projects-content">
     <p>{{ projectsDescription }}</p>
-    <div class="project-grid">
-      <div class="project-card" *ngFor="let project of projects" [@listAnimation]="'in'" [hidden]="loading">
-        <div class="project-thumbnail">
+    <div class="project-list">
+      <div class="project-item" *ngFor="let project of projects" [@listAnimation]="'in'" [hidden]="loading">
+        <div class="project-image">
           <img [src]="project.thumbnailUrl" alt="{{ project.name }} thumbnail">
         </div>
-        <div class="project-content">
-          <h2>{{ project.name }}</h2>
+        <div class="project-details">
+          <div class="project-header">
+            <h3>{{ project.name }}</h3>
+            <div class="project-links">
+              <a [href]="project.githubUrl" *ngIf="project.githubUrl" target="_blank" rel="noopener noreferrer" class="link">GitHub</a>
+              <a [routerLink]="['/projects', project.id]" class="link">Details</a>
+            </div>
+          </div>
           <p class="project-description">{{ project.shortDescription }}</p>
-          <p class="tech-stack"><strong>Technologies:</strong> {{ project.technologies }}</p>
-          <div class="project-actions">
-            <a [href]="project.githubUrl" *ngIf="project.githubUrl" target="_blank" rel="noopener noreferrer" class="btn me-2">View on GitHub</a>
-            <a [routerLink]="['/projects', project.id]" class="btn btn-details">View Details</a>
+          <div class="tech-list">
+            <ng-container *ngFor="let tech of project.technologies?.split(','); let i = index">
+              <span class="tech" *ngIf="i < 4">{{ tech.trim() }}</span>
+            </ng-container>
           </div>
         </div>
       </div>
