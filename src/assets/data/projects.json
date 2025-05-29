@@ -81,5 +81,89 @@
       ],
       "developmentProcess": "This project was developed using an Agile methodology. I started with user research to identify key pain points in existing task management apps. The frontend was built with Angular using a component-based architecture, while the backend uses Node.js with Express and MongoDB for data persistence. Authentication is handled with JWT for secure user sessions.",
       "futurePlans": "Future plans include adding team collaboration features, integrations with calendar applications, and implementing an AI assistant to help with task prioritization and scheduling."
+    },
+    {
+      "id": "kitchen-car-web-app",
+      "name": "Kitchen Car Web App",
+      "shortDescription": "A lightweight web-based system monitoring application built with Flask and JavaScript that provides real-time insights into your system's performance.",
+      "fullDescription": "This is a lightweight, web-based system monitoring application designed to provide real-time insights into your system's performance. Built using Flask for the backend and JavaScript (with AJAX) for the frontend, the application offers a clean and responsive user interface accessible through any modern web browser.",
+      "thumbnailUrl": "assets/images/Project-4.png",
+      "technologies": "JavaScript, TypeScript, Node.js, Nest.js, Prisma, MySQL, Next.js, Ant Design, Docker, Redis, AWS",
+      "techStack": ["Python", "Flask", "Apsheduler", "JavaScript", "HTML", "CSS", "Bootstrap", "AJAX"],
+      "githubUrl": "https://github.com/zahidhasann88/system-monitor",
+      "demoUrl": "https://yourtaskmanager.com",
+      "features": [
+        "Real-time Monitoring: Track CPU, memory, disk, and network usage in real-time",
+        "Historical Data: View performance trends with interactive charts",
+        "Process Management: See top processes by CPU and memory usage",
+        "Configurable Alerts: Set custom thresholds for system resources and receive alerts",
+        "Scheduling: Schedule automatic metrics collection at custom intervals"
+      ],
+      "challenges": [
+        {
+          "title": "Real-time Updates",
+          "description": "Implementing real-time updates when multiple users are working on the same board.",
+          "solution": "Integrated Socket.io to enable real-time synchronization between clients."
+        },
+        {
+          "title": "Data Persistence",
+          "description": "Ensuring data persistence during network interruptions.",
+          "solution": "Implemented offline storage with IndexedDB and a sync mechanism that resolves conflicts when connection is restored."
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "assets/images/screenshot-2.PNG",
+          "caption": "Memory and Disk Usage"
+        },
+        {
+          "url": "assets/images/screenshot-2.PNG",
+          "caption": "Alerts and Historical Data Graph"
+        }
+      ],
+      "developmentProcess": "This project was developed using an Agile methodology. I started with user research to identify key pain points in existing task management apps. The frontend was built with Angular using a component-based architecture, while the backend uses Node.js with Express and MongoDB for data persistence. Authentication is handled with JWT for secure user sessions.",
+      "futurePlans": "Future plans include adding team collaboration features, integrations with calendar applications, and implementing an AI assistant to help with task prioritization and scheduling."
+    },
+    {
+      "id": "employee-hierarchy-system",
+      "name": "Employee Hierarchy System",
+      "shortDescription": "This project implements an employee hierarchy system with a NestJS backend API and a NextJS frontend application. The system allows users to view all employees under any given position in the company's organizational structure.",
+      "fullDescription": "This is a lightweight, web-based system monitoring application designed to provide real-time insights into your system's performance. Built using Flask for the backend and JavaScript (with AJAX) for the frontend, the application offers a clean and responsive user interface accessible through any modern web browser.",
+      "thumbnailUrl": "assets/images/Project-4.png",
+      "technologies": "JavaScript, TypeScript, Node.js, Nest.js, TypeOrm, PostgreSQL, Next.js, Bootstrap, Docker",
+      "techStack": ["Python", "Flask", "Apsheduler", "JavaScript", "HTML", "CSS", "Bootstrap", "AJAX"],
+      "githubUrl": "https://github.com/zahidhasann88/system-monitor",
+      "demoUrl": "https://yourtaskmanager.com",
+      "features": [
+        "Real-time Monitoring: Track CPU, memory, disk, and network usage in real-time",
+        "Historical Data: View performance trends with interactive charts",
+        "Process Management: See top processes by CPU and memory usage",
+        "Configurable Alerts: Set custom thresholds for system resources and receive alerts",
+        "Scheduling: Schedule automatic metrics collection at custom intervals"
+      ],
+      "challenges": [
+        {
+          "title": "Real-time Updates",
+          "description": "Implementing real-time updates when multiple users are working on the same board.",
+          "solution": "Integrated Socket.io to enable real-time synchronization between clients."
+        },
+        {
+          "title": "Data Persistence",
+          "description": "Ensuring data persistence during network interruptions.",
+          "solution": "Implemented offline storage with IndexedDB and a sync mechanism that resolves conflicts when connection is restored."
+        }
+      ],
+      "screenshots": [
+        {
+          "url": "assets/images/dashboard.JPG",
+          "caption": "Memory and Disk Usage"
+        },
+        {
+          "url": "assets/images/dashboard-1.JPG",
+          "caption": "Alerts and Historical Data Graph"
+        }
+      ],
+      "developmentProcess": "This project was developed using an Agile methodology. I started with user research to identify key pain points in existing task management apps. The frontend was built with Angular using a component-based architecture, while the backend uses Node.js with Express and MongoDB for data persistence. Authentication is handled with JWT for secure user sessions.",
+      "futurePlans": "Future plans include adding team collaboration features, integrations with calendar applications, and implementing an AI assistant to help with task prioritization and scheduling."
     }
   ]
