@@ -7,7 +7,7 @@
         <div class="project-image">
           <img [src]="project.thumbnailUrl" alt="{{ project.name }} thumbnail">
         </div>
-        <div class="project-details">
+        <div class="project-details" [routerLink]="['/projects', project.id]">
           <div class="project-header">
             <h3>{{ project.name }}</h3>
             <div class="project-links">
