@@ -87,7 +87,7 @@
       "name": "Geo-Enabled Kitchen Car Finder for Japan",
       "shortDescription": "A web-based application that helps users find Kitchen Cars across Japan using a map interface.",
       "fullDescription": "The app was designed with a map to help users easily find Kitchen Cars all over Japan. The client wanted a scalable solution where vendors manually update their locations to ensure up-to-date information. On the user side, the app offers an intuitive map interface, enabling users to quickly discover nearby kitchen cars and making the experience across Japan.",
-      "thumbnailUrl": "assets/images/Project-4.png",
+      "thumbnailUrl": "assets/images/Kitchen-Signin.png",
       "technologies": "JavaScript, TypeScript, Node.js, Nest.js, Prisma, MySQL, Next.js, Ant Design, Docker, Redis, AWS",
       "techStack": ["JavaScript", "TypeScript", "Node.js", "Nest.js", "Prisma", "MySQL", "Next.js", "Ant Design", "Docker", "Redis", "AWS"],
       "githubUrl": "https://github.com/zahidhasann88/system-monitor",
@@ -113,11 +113,11 @@
       ],
       "screenshots": [
         {
-          "url": "assets/images/screenshot-2.PNG",
+          "url": "assets/images/Kitchen-Signin.png",
           "caption": "Memory and Disk Usage"
         },
         {
-          "url": "assets/images/screenshot-2.PNG",
+          "url": "assets/images/Kitchen-Signin.png",
           "caption": "Alerts and Historical Data Graph"
         }
       ],
@@ -129,7 +129,7 @@
       "name": "Employee Hierarchy System",
       "shortDescription": "This project implements an employee hierarchy system with a NestJS backend API and a NextJS frontend application. The system allows users to view all employees under any given position in the company's organizational structure.",
       "fullDescription": "This is a lightweight, web-based system monitoring application designed to provide real-time insights into your system's performance. Built using Flask for the backend and JavaScript (with AJAX) for the frontend, the application offers a clean and responsive user interface accessible through any modern web browser.",
-      "thumbnailUrl": "assets/images/Project-4.png",
+      "thumbnailUrl": "assets/images/dsahboard.JPG",
       "technologies": "JavaScript, TypeScript, Node.js, Nest.js, TypeOrm, PostgreSQL, Next.js, Bootstrap, Docker",
       "techStack": ["Python", "Flask", "Apsheduler", "JavaScript", "HTML", "CSS", "Bootstrap", "AJAX"],
       "githubUrl": "https://github.com/zahidhasann88/system-monitor",
@@ -155,7 +155,7 @@
       ],
       "screenshots": [
         {
-          "url": "assets/images/dashboard.JPG",
+          "url": "assets/images/dsahboard.JPG",
           "caption": "Memory and Disk Usage"
         },
         {
