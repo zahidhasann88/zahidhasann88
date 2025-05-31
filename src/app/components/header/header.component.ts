@@ -13,7 +13,7 @@ export class HeaderComponent {
   navItems = [
     { path: '/', label: 'Home' },
     { path: '/projects', label: 'Projects' },
-    // { path: '/blog', label: 'Blog' },
+    { path: '/blog', label: 'Blog' },
   ];
 
   isMenuOpen = false;

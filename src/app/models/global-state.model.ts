@@ -8,30 +8,27 @@ export interface GlobalState {
     part3: string;
   };
 }
-export interface GalleryImage {
-  id: number;
-  url: string;
-  title: string;
-  description: string;
-  category: string;
-}
+
 export interface Blog {
   id: number;
   title: string;
-  date: string;
+  date: Date;
   excerpt: string;
   tags: string[];
   category: string;
+  readingTime: number;
 }
 
 export interface BlogPost {
   id: number;
   title: string;
-  date: string;
+  date: Date;
   author: string;
   content: string;
   tags: string[];
   readingTime: number;
+  excerpt: string;
+  category: string;
 }
 export interface SafeBlogPost extends Omit<BlogPost, 'content'> {
   content: SafeHtml;

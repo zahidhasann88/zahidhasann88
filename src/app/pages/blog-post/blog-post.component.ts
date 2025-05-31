@@ -59,7 +59,7 @@ export class BlogPostComponent implements OnInit, OnDestroy {
   }
 
   getNextPostId(): number | null {
-    const maxId = 3; // This should ideally be dynamic based on the total number of posts
+    const maxId = 3;
     return this.post && this.post.id < maxId ? this.post.id + 1 : null;
   }
 

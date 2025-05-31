@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Blog, BlogPost, GalleryImage, GlobalState, Project, SafeBlogPost } from '../models/global-state.model';
-import { GLOBAL_STATE, PROJECTS, IMAGES } from '../data/static-data';
+import { Blog, BlogPost, GlobalState, Project, SafeBlogPost } from '../models/global-state.model';
+import { GLOBAL_STATE, PROJECTS } from '../data/static-data';
 import { BLOGS, BLOG_POSTS } from '../data/blog-data';
 import { map } from 'rxjs/operators';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -14,7 +14,6 @@ import { environment } from '../../environments/environment.prod';
 export class GlobalStateService {
   private stateSubject = new BehaviorSubject<Readonly<GlobalState>>(GLOBAL_STATE);
   private projectsSubject = new BehaviorSubject<ReadonlyArray<Readonly<Project>>>(PROJECTS);
-  private photosSubject = new BehaviorSubject<ReadonlyArray<Readonly<GalleryImage>>>(IMAGES);
   private blogsSubject = new BehaviorSubject<ReadonlyArray<Readonly<Blog>>>(BLOGS);
   private blogPostsSubject = new BehaviorSubject<ReadonlyArray<Readonly<BlogPost>>>(BLOG_POSTS);
 
@@ -26,10 +25,6 @@ export class GlobalStateService {
 
   getProjects(): Observable<ReadonlyArray<Readonly<Project>>> {
     return this.projectsSubject.asObservable();
-  }
-
-  getPhotos(): Observable<ReadonlyArray<Readonly<GalleryImage>>> {
-    return this.photosSubject.asObservable();
   }
 
   getBlogs(): Observable<ReadonlyArray<Readonly<Blog>>> {

@@ -26,6 +26,7 @@ export class BlogComponent {
   postsPerPage: number = 10;
   totalPages: number = 1;
   private unsubscribe$ = new Subject<void>();
+  blogDescription: string = 'A collection of thoughts, discoveries, and lessons learned along my journey as a developer. These posts capture the moments of curiosity that drive me to explore new ideas and share what I\'ve discovered.';
 
   constructor(private globalStateService: GlobalStateService) {}
 
