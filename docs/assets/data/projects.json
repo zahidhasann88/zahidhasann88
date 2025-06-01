@@ -129,7 +129,7 @@
       "name": "Employee Hierarchy System",
       "shortDescription": "This project implements an employee hierarchy system with a NestJS backend API and a NextJS frontend application. The system allows users to view all employees under any given position in the company's organizational structure.",
       "fullDescription": "This is a lightweight, web-based system monitoring application designed to provide real-time insights into your system's performance. Built using Flask for the backend and JavaScript (with AJAX) for the frontend, the application offers a clean and responsive user interface accessible through any modern web browser.",
-      "thumbnailUrl": "assets/images/dsahboard.JPG",
+      "thumbnailUrl": "assets/images/employee-hierarchy.png",
       "technologies": "JavaScript, TypeScript, Node.js, Nest.js, TypeOrm, PostgreSQL, Next.js, Bootstrap, Docker",
       "techStack": ["Python", "Flask", "Apsheduler", "JavaScript", "HTML", "CSS", "Bootstrap", "AJAX"],
       "githubUrl": "https://github.com/zahidhasann88/system-monitor",
