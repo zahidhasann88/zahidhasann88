@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Blog, BlogPost, GlobalState, Project, SafeBlogPost } from '../utils/models/global-state.model';
-import { GLOBAL_STATE, PROJECTS } from '../utils/data/static-data';
-import { BLOGS, BLOG_POSTS } from './../utils/data/blog-data';
+import { Blog, BlogPost, GlobalState, Project, SafeBlogPost } from '../models/global-state.model';
+import { GLOBAL_STATE, PROJECTS } from '../data/static-data';
+import { BLOGS, BLOG_POSTS } from '../data/blog-data';
 import { map } from 'rxjs/operators';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';

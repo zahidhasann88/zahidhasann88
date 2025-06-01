@@ -4,9 +4,9 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
-import { pageLoadAnimation, routeAnimations } from '../../utils/animation/animations';
-import { SafeBlogPost } from '../../utils/models/global-state.model';
-import { GlobalStateService } from '../../services/global-state.service';
+import { pageLoadAnimation, routeAnimations } from '../../../utils/animation/animations';
+import { SafeBlogPost } from '../../../utils/models/global-state.model';
+import { GlobalStateService } from '../../../utils/services/global-state.service';
 
 @Component({
   selector: 'app-blog-post',

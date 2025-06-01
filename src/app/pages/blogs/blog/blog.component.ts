@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { listAnimations, routeAnimations } from '../../utils/animation/animations';
-import { Blog } from '../../utils/models/global-state.model';
+import { listAnimations, routeAnimations } from '../../../utils/animation/animations';
+import { Blog } from '../../../utils/models/global-state.model';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { GlobalStateService } from '../../services/global-state.service';
+import { GlobalStateService } from '../../../utils/services/global-state.service';
 
 @Component({
   selector: 'app-blog',

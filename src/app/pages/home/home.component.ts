@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { pageLoadAnimation, routeAnimations } from '../../utils/animation/animations';
 import { GlobalState } from '../../utils/models/global-state.model';
-import { GlobalStateService } from '../../services/global-state.service';
+import { GlobalStateService } from '../../utils/services/global-state.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
