@@ -1,5 +1,5 @@
 <!-- Simple Project Detail Template -->
-<div class="project-detail-container" *ngIf="project">
+<div class="project-detail-container" *ngIf="project" [@pageLoadAnimation] [@routeAnimations]>
   <div class="project-header">
     <a routerLink="/projects" class="back-link">← Back to Projects</a>
     <h1>{{ project.name }}</h1>

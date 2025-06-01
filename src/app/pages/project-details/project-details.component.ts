@@ -3,13 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Project } from '../../models/global-state.model';
 import { CommonModule } from '@angular/common';
+import { pageLoadAnimation, routeAnimations } from '../../animation/animations';
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './project-details.component.html',
-  styleUrl: './project-details.component.scss'
+  styleUrl: './project-details.component.scss',
+  animations: [routeAnimations, pageLoadAnimation]
 })
 export class ProjectDetailsComponent implements OnInit {
   project: Project | null = null;
