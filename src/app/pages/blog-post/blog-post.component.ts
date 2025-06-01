@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { switchMap, takeUntil } from 'rxjs/operators';
 import { pageLoadAnimation, routeAnimations } from '../../animation/animations';
 import { SafeBlogPost } from '../../models/global-state.model';
 import { GlobalStateService } from '../../services/global-state.service';
@@ -14,25 +14,63 @@ import { GlobalStateService } from '../../services/global-state.service';
   imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './blog-post.component.html',
   styleUrls: ['./blog-post.component.scss'],
-  animations: [routeAnimations, pageLoadAnimation]
+  animations: [routeAnimations, pageLoadAnimation],
 })
 export class BlogPostComponent implements OnInit, OnDestroy {
-  
   post: SafeBlogPost | undefined;
+  previousPost: SafeBlogPost | null = null;
+  nextPost: SafeBlogPost | null = null;
+  loading: boolean = true;
   private unsubscribe$ = new Subject<void>();
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private globalStateService: GlobalStateService
   ) {}
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.globalStateService.getBlogPosts()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(blogPosts => {
-        this.post = blogPosts.find(post => post.id === id);
-      });
+    this.route.paramMap
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        switchMap((params) => {
+          const slug = params.get('id');
+
+          if (!slug) {
+            this.router.navigate(['/blog']);
+            return [];
+          }
+
+          this.loading = true;
+          this.post = undefined;
+          this.previousPost = null;
+          this.nextPost = null;
+
+          this.globalStateService
+            .getBlogPostBySlug(slug)
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe((post) => {
+              this.post = post;
+              this.loading = false;
+
+              if (!post) {
+                console.error(`Blog post with slug "${slug}" not found`);
+                this.router.navigate(['/blog']);
+              }
+            });
+
+          this.globalStateService
+            .getBlogPostNavigation(slug)
+            .pipe(takeUntil(this.unsubscribe$))
+            .subscribe((navigation) => {
+              this.previousPost = navigation.previous;
+              this.nextPost = navigation.next;
+            });
+
+          return [];
+        })
+      )
+      .subscribe();
   }
 
   share(platform: string) {
@@ -41,26 +79,43 @@ export class BlogPostComponent implements OnInit, OnDestroy {
 
     switch (platform) {
       case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(this.post?.title || '')}`;
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+          url
+        )}&text=${encodeURIComponent(this.post?.title || '')}`;
         break;
       case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          url
+        )}`;
         break;
       case 'linkedin':
-        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(this.post?.title || '')}`;
+        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
+          url
+        )}&title=${encodeURIComponent(this.post?.title || '')}`;
         break;
     }
 
     window.open(shareUrl, '_blank');
   }
 
-  getPreviousPostId(): number | null {
-    return this.post && this.post.id > 1 ? this.post.id - 1 : null;
+  getPreviousPost(): SafeBlogPost | null {
+    return this.previousPost;
   }
 
-  getNextPostId(): number | null {
-    const maxId = 3;
-    return this.post && this.post.id < maxId ? this.post.id + 1 : null;
+  getNextPost(): SafeBlogPost | null {
+    return this.nextPost;
+  }
+
+  navigateToPrevious() {
+    if (this.previousPost) {
+      this.router.navigate(['/blog', this.previousPost.id]);
+    }
+  }
+
+  navigateToNext() {
+    if (this.nextPost) {
+      this.router.navigate(['/blog', this.nextPost.id]);
+    }
   }
 
   ngOnDestroy() {

@@ -6,7 +6,6 @@ import { BLOGS, BLOG_POSTS } from '../data/blog-data';
 import { map } from 'rxjs/operators';
 import { DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -40,13 +39,29 @@ export class GlobalStateService {
     );
   }
 
-  // If you need to update data (e.g., for demo purposes or local storage), you can add methods like this:
-  updateProject(updatedProject: Readonly<Project>): void {
-    const currentProjects = this.projectsSubject.getValue();
-    const updatedProjects = currentProjects.map(project => 
-      project.id === updatedProject.id ? { ...updatedProject } : project
+  getBlogPostBySlug(slug: string): Observable<SafeBlogPost | undefined> {
+    return this.getBlogPosts().pipe(
+      map(posts => posts.find(post => post.id === slug))
     );
-    this.projectsSubject.next(updatedProjects);
   }
-  
+
+  getBlogBySlug(slug: string): Observable<Blog | undefined> {
+    return this.getBlogs().pipe(
+      map(blogs => blogs.find(blog => blog.id === slug))
+    );
+  }
+
+  // Get navigation for blog posts (previous/next)
+  getBlogPostNavigation(currentSlug: string): Observable<{previous: SafeBlogPost | null, next: SafeBlogPost | null}> {
+    return this.getBlogPosts().pipe(
+      map(posts => {
+        const currentIndex = posts.findIndex(post => post.id === currentSlug);
+        
+        return {
+          previous: currentIndex > 0 ? posts[currentIndex - 1] : null,
+          next: currentIndex < posts.length - 1 ? posts[currentIndex + 1] : null
+        };
+      })
+    );
+  }
 }

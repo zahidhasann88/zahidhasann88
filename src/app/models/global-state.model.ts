@@ -10,7 +10,7 @@ export interface GlobalState {
 }
 
 export interface Blog {
-  id: number;
+  id: string;
   title: string;
   date: Date;
   excerpt: string;
@@ -20,7 +20,7 @@ export interface Blog {
 }
 
 export interface BlogPost {
-  id: number;
+  id: string;
   title: string;
   date: Date;
   author: string;

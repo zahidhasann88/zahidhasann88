@@ -1,8 +1,9 @@
 import { Blog, BlogPost } from '../models/global-state.model';
+import { generateSlug } from '../utils/slug';
 
 export const BLOGS: ReadonlyArray<Readonly<Blog>> = [
   {
-    id: 1,
+    id: generateSlug("My Go-To Learning Resources: A Developer's Toolkit"),
     title: "My Go-To Learning Resources: A Developer's Toolkit",
     excerpt: "A curated collection of websites and books that have genuinely helped me grow as a programmer. From JavaScript to System Design, these are the resources I actually use and return to.",
     category: "Resources",
@@ -11,7 +12,7 @@ export const BLOGS: ReadonlyArray<Readonly<Blog>> = [
     readingTime: 8
   },
   {
-    id: 2,
+    id: generateSlug("Exploring the Depths of TypeScript"),
     title: "Exploring the Depths of TypeScript",
     excerpt: "A deep dive into TypeScript's advanced features, including generics, decorators, and more.",
     category: "Programming",
@@ -23,7 +24,7 @@ export const BLOGS: ReadonlyArray<Readonly<Blog>> = [
 
 export const BLOG_POSTS: ReadonlyArray<Readonly<BlogPost>> = [
   {
-    id: 1,
+    id: generateSlug("My Go-To Learning Resources: A Developer's Toolkit"),
     title: "My Go-To Learning Resources: A Developer's Toolkit",
     content: `
       <div class="blog-post">
@@ -594,7 +595,7 @@ export const BLOG_POSTS: ReadonlyArray<Readonly<BlogPost>> = [
     readingTime: 8
   },
   {
-    id: 2,
+    id: generateSlug("Exploring the Depths of TypeScript"),
     title: "Exploring the Depths of TypeScript",
     content: `
       <div class="blog-post">
