@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { listAnimations, photoGalleryAnimations } from '../../animation/animations';
-import { Project } from '../../models/global-state.model';
+import { listAnimations, photoGalleryAnimations } from '../../utils/animation/animations';
+import { Project } from '../../utils/models/global-state.model';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

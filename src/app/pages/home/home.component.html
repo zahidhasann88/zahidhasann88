@@ -7,10 +7,8 @@
           <p class="about-text fade-in">{{ state.aboutMe.part1 }}</p>
           <p class="about-text fade-in">{{ state.aboutMe.part2 }}</p>
           <p class="about-text fade-in">
-            Welcome to my own little corner of the web, where I share notes and resources on topics that interest me. 
-            You'll find my thoughts collected in  
-            <a [routerLink]="['/blog']" class="inline-link">notes</a>, 
-            spend my free time building new 
+            Welcome to my own little corner of the web, where I share <a [routerLink]="['/blog']" class="inline-link">notes</a> and resources on topics that interest me.
+            I spend my free time building new 
             <a [routerLink]="['/projects']" class="inline-link">things</a>, 
             and get a glimpse into the tech that keeps me curious. For a closer look at my career journey 
             <a [href]="state.cvLink" target="_blank" rel="noopener noreferrer" class="inline-link">check out my CV</a>. 

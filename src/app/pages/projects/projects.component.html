@@ -3,15 +3,18 @@
   <div class="projects-content">
     <p>{{ projectsDescription }}</p>
     <div class="project-list">
-      <div class="project-item" *ngFor="let project of projects" [@listAnimation]="'in'" [hidden]="loading">
+      <div class="project-item" *ngFor="let project of projects" 
+          [@listAnimation]="'in'" [hidden]="loading" 
+          [routerLink]="['/projects', project.id]">
         <div class="project-image">
           <img [src]="project.thumbnailUrl" alt="{{ project.name }} thumbnail">
         </div>
-        <div class="project-details" [routerLink]="['/projects', project.id]">
+        <div class="project-details">
           <div class="project-header">
             <h3>{{ project.name }}</h3>
             <div class="project-links">
-              <a [href]="project.githubUrl" *ngIf="project.githubUrl" target="_blank" rel="noopener noreferrer" class="link">GitHub</a>
+              <a [href]="project.githubUrl" *ngIf="project.githubUrl" target="_blank" 
+              rel="noopener noreferrer" class="link">GitHub</a>
               <a [routerLink]="['/projects', project.id]" class="link">Details</a>
             </div>
           </div>

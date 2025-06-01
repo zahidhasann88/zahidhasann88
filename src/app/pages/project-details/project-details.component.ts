@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { Project } from '../../models/global-state.model';
+import { Project } from '../../utils/models/global-state.model';
 import { CommonModule } from '@angular/common';
-import { pageLoadAnimation, routeAnimations } from '../../animation/animations';
+import { pageLoadAnimation, routeAnimations } from '../../utils/animation/animations';
 
 @Component({
   selector: 'app-project-details',

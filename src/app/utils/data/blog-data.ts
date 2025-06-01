@@ -1,5 +1,5 @@
 import { Blog, BlogPost } from '../models/global-state.model';
-import { generateSlug } from '../utils/slug';
+import { generateSlug } from './../../utils/slug';
 
 export const BLOGS: ReadonlyArray<Readonly<Blog>> = [
   {
