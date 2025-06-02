@@ -27,19 +27,38 @@ nav {
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
 
   .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     color: var(--secondary-color);
-    font-size: 1.2rem;
-    font-weight: bold;
     text-decoration: none;
-    text-transform: lowercase;
     transition: color var(--transition-speed);
 
     &:hover {
       color: var(--accent-color);
+      
+      .logo-icon {
+        transform: scale(1.05);
+      }
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+      transition: transform var(--transition-speed), fill var(--transition-speed);
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      // text-transform: lowercase;
+      letter-spacing: -0.5px;
     }
   }
 }
@@ -133,6 +152,21 @@ nav a {
     flex-wrap: wrap;
   }
 
+  .logo {
+    .logo-link {
+      gap: 0.5rem;
+      
+      .logo-icon {
+        width: 28px;
+        height: 28px;
+      }
+      
+      .logo-text {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
   nav ul {
     display: none;
     flex-direction: column;
@@ -168,6 +202,19 @@ nav a {
     height: 28px;
   }
 
+  .logo {
+    .logo-link {
+      .logo-icon {
+        width: 24px;
+        height: 24px;
+      }
+      
+      .logo-text {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
   nav a {
     font-size: 1rem;
   }
@@ -180,6 +227,19 @@ nav a {
 
   nav {
     padding: 1.2rem;
+  }
+
+  .logo {
+    .logo-link {
+      .logo-icon {
+        width: 36px;
+        height: 36px;
+      }
+      
+      .logo-text {
+        font-size: 1.6rem;
+      }
+    }
   }
 
   nav a {
