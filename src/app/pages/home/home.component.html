@@ -16,6 +16,20 @@
             <a href="mailto:zahidhasann67@gmail.com" class="inline-link">drop me a line</a>!
           </p>
         </div>
+        
+        <!-- See More About Me Button -->
+        <div class="see-more-section">
+          <a [routerLink]="['/about']" class="see-more-btn">
+            See More About Me <fa-icon [icon]="faArrowUpLong"></fa-icon>
+          </a>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="social-links">
+          <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" rel="noopener noreferrer">
+            <fa-icon [icon]="link.icon"></fa-icon>
+          </a>
+        </div>
       </div>
     </div>
   </div>
