@@ -17,10 +17,35 @@ h1 {
   color: var(--text-color-light, #666);
 }
 
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+
+.category-tabs button {
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+
+  &.active,
+  &:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+  }
+}
+
 .project-list {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  margin-top: 2rem;
 }
 
 .project-item {
@@ -162,6 +187,9 @@ h1 {
   .project-links {
     gap: 1.5rem;
   }
+  .category-tabs {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -177,5 +205,8 @@ h1 {
 
   .tech-list {
     gap: 0.5rem;
+  }
+  .category-tabs {
+    justify-content: flex-start;
   }
 }

@@ -2,8 +2,16 @@
   <h1>Things I've Built</h1>
   <div class="projects-content">
     <p>{{ projectsDescription }}</p>
+    <div class="category-tabs">
+      <button 
+        *ngFor="let category of categories" 
+        (click)="selectCategory(category)"
+        [class.active]="category === selectedCategory">
+        {{ category }}
+      </button>
+    </div>
     <div class="project-list" [@listAnimation]="projects.length">
-      <div class="project-item" *ngFor="let project of projects"
+      <div class="project-item" *ngFor="let project of paginatedPosts"
         [hidden]="loading" [routerLink]="['/projects', project.id]"
       >
         <div class="project-image">
@@ -39,6 +47,14 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="pagination" *ngIf="totalPages > 1">
+      <button 
+        *ngFor="let page of pages" 
+        (click)="changePage(page)"
+        [class.active]="page === currentPage">
+        {{ page }}
+      </button>
     </div>
   </div>
 </div>

@@ -56,4 +56,6 @@ export interface Project {
   }[];
   developmentProcess?: string;
   futurePlans?: string;
+  category: string;
+  tags: string[];
 }
