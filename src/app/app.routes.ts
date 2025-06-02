@@ -4,6 +4,7 @@ import { BlogComponent } from './pages/blogs/blog/blog.component';
 import { ProjectsComponent } from './pages/project/projects/projects.component';
 import { BlogPostComponent } from './pages/blogs/blog-post/blog-post.component';
 import { ProjectDetailsComponent } from './pages/project/project-details/project-details.component';
+import { AboutMeComponent } from './pages/about-me/about-me.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent, data: { animation: 'HomePage' } },
@@ -22,6 +23,11 @@ export const routes: Routes = [
     path: 'blog/:id',
     component: BlogPostComponent,
     data: { animation: 'BlogPostsPage' },
+  },
+  {
+    path: 'about-me',
+    component: AboutMeComponent,
+    data: { animation: 'AboutMePage' },
   },
   { path: '**', redirectTo: '' },
 ];

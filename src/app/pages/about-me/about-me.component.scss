@@ -1,0 +1,176 @@
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: var(--text-color);
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+  }
+}
+
+.content-section {
+  margin-bottom: 4rem;
+}
+
+.skill-item {
+  margin-bottom: 2.5rem;
+
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    .view-link {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  p {
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+}
+
+.reads-section,
+.playlist-section,
+.lens-section {
+  margin-bottom: 4rem;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+.read-item,
+.playlist-item,
+.lens-item {
+  margin-bottom: 2rem;
+
+  .read-header,
+  .playlist-header,
+  .lens-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+
+    h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-color);
+    }
+
+    .year {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.85rem;
+    }
+
+    .status-current {
+      background: rgba(34, 197, 94, 0.2);
+      color: #22c55e;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+    }
+
+    .view-link {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  p {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}
+
+.footer-section {
+  margin-top: 4rem;
+  text-align: center;
+
+  .continue-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1.5rem 1rem;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .skill-item .skill-header,
+  .read-item .read-header,
+  .playlist-item .playlist-header,
+  .lens-item .lens-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    .view-link,
+    .year,
+    .status-current {
+      align-self: flex-end;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+    padding: 1rem 0.5rem;
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+
+  .skill-item .skill-header h2,
+  .read-item .read-header h3,
+  .playlist-item .playlist-header h3,
+  .lens-item .lens-header h3 {
+    font-size: 0.95rem;
+  }
+}
