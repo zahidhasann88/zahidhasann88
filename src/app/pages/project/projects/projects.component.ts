@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { listAnimations, photoGalleryAnimations } from '../../../utils/animation/animations';
+import { listAnimations, routeAnimations } from '../../../utils/animation/animations';
 import { Project } from '../../../utils/models/global-state.model';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   imports: [CommonModule, RouterModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
-  animations: [photoGalleryAnimations, listAnimations],
+  animations: [routeAnimations, listAnimations]
 })
 export class ProjectsComponent implements OnInit {
   projectsDescription: string = 'These projects represent pivotal moments in my learning journey, each inspired by a personal need or curiosity. They embody my commitment to exploring new technologies and my passion for continuous improvement and innovation.';

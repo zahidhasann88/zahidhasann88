@@ -2,19 +2,12 @@
   <h1>Things I've Built</h1>
   <div class="projects-content">
     <p>{{ projectsDescription }}</p>
-    <div class="project-list">
-      <div
-        class="project-item"
-        *ngFor="let project of projects"
-        [@listAnimation]="'in'"
-        [hidden]="loading"
-        [routerLink]="['/projects', project.id]"
+    <div class="project-list" [@listAnimation]="projects.length">
+      <div class="project-item" *ngFor="let project of projects"
+        [hidden]="loading" [routerLink]="['/projects', project.id]"
       >
         <div class="project-image">
-          <img
-            [src]="project.thumbnailUrl"
-            alt="{{ project.name }} thumbnail"
-          />
+          <img [src]="project.thumbnailUrl" alt="{{ project.name }} thumbnail" />
         </div>
         <div class="project-details">
           <div class="project-header">
