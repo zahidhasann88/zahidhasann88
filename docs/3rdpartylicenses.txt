@@ -243,6 +243,11 @@ License: "MIT"
 
 
 --------------------------------------------------------------------------------
+Package: @angular/animations
+License: "MIT"
+
+
+--------------------------------------------------------------------------------
 Package: @fortawesome/fontawesome-svg-core
 License: "MIT"
 
@@ -777,11 +782,6 @@ All brand icons are trademarks of their respective owners. The use of these
 trademarks does not indicate endorsement of the trademark holder by Font
 Awesome, nor vice versa. **Please do not use brand logos for any purpose except
 to represent the company, product, or service to which they refer.**
-
---------------------------------------------------------------------------------
-Package: @angular/animations
-License: "MIT"
-
 
 --------------------------------------------------------------------------------
 Package: @angular/forms
