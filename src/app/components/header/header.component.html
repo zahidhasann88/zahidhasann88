@@ -1,5 +1,5 @@
 <div class="site-wrapper">
-  <header [class.menu-open]="isMenuOpen">
+  <header>
     <nav>
       <div class="logo">
         <a routerLink="/" class="logo-link">
@@ -9,14 +9,9 @@
           <span class="logo-text">Zahid Hasan</span>
         </a>
       </div>
-      <button type="button" class="menu-toggle" (click)="toggleMenu()" [class.open]="isMenuOpen" title="Toggle Menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-      <ul [class.open]="isMenuOpen">
+      <ul>
         <li *ngFor="let item of navItems">
-          <a [routerLink]="item.path" routerLinkActive="active" (click)="closeMenu()">
+          <a [routerLink]="item.path" routerLinkActive="active">
             {{ item.label }}
             <span class="underline"></span>
           </a>

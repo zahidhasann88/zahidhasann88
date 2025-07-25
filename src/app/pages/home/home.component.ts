@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   faCode = faCode;
   faArrowUpLong = faArrowRightLong;
   currentYear: number = new Date().getFullYear();
+  
   socialLinks = [
     { name: 'GitHub', url: 'https://github.com/zahidhasann88', icon: faGithub },
     {

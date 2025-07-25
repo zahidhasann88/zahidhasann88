@@ -1,22 +1,65 @@
-<div class="about-container container">
+<div class="about-container" [@pageLoadAnimation] [@routeAnimations]>
   <div class="about-header">
+    <button class="back-button" (click)="goBack()" aria-label="Go back">
+      <fa-icon [icon]="faArrowLeft"></fa-icon>
+      <span>Back</span>
+    </button>
     <h1>About Me.</h1>
   </div>
 
-  <div class="timeline" [@listAnimation]>
+  <div class="personal-intro">
+    <p>
+      Hey there! I'm Zahid, a software engineer who loves turning complex problems into elegant solutions. 
+      When I'm not deep in code, you'll find me exploring new technologies, reading about system design, 
+      or probably debugging something that "worked fine yesterday." I believe great software is built by 
+      people who care about both the technical craft and the humans who use it.
+    </p>
+  </div>
+
+  <div class="timeline">
+    <!-- What I Do Section -->
     <div class="timeline-section">
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-content intro-section">
+        <div class="timeline-content">
           <div class="content-header">
-            <h3>Engineering</h3>
-            <a href="#" class="view-link inline-link">View GitHub</a>
+            <h3>Engineering & Development</h3>
+            <a href="https://github.com/zahidhasann88" target="_blank" class="view-link">
+              <fa-icon [icon]="faGithub"></fa-icon>
+              View GitHub
+            </a>
           </div>
           <p>
-            From architecting scalable backend systems to crafting pixel-perfect frontends, I thrive at the intersection of logic 
-            and creativity. I specialize in building performant web applications, applying modern engineering principles, clean code 
-            practices, and automation to solve real-world problems. Whether it's designing robust APIs or optimizing client-side 
-            performance, I ensure every layer of the stack works in harmony.
+            I build scalable web applications with clean, maintainable code. My sweet spot is full-stack development 
+            where I can work on everything from database design to user interfaces. I'm passionate about writing 
+            code that's not just functional, but also readable and efficient. Whether it's optimizing API performance 
+            or crafting smooth user experiences, I love the challenge of making complex systems feel simple.
+          </p>
+          <div class="tech-highlights">
+            <span class="tech-tag">Angular</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="content-header">
+            <h3>Product Development</h3>
+            <a href="mailto:zahidhasann67@gmail.com" class="view-link">
+              <fa-icon [icon]="faEnvelope"></fa-icon>
+              Get In Touch
+            </a>
+          </div>
+          <p>
+            I believe the best products come from understanding real problems. I work closely with teams to bridge 
+            the gap between "what users need" and "what's technically possible." My approach involves asking lots 
+            of questions, prototyping quickly, and iterating based on feedback. I've learned that good product 
+            development is as much about knowing what NOT to build as it is about building the right things.
           </p>
         </div>
       </div>
@@ -25,47 +68,41 @@
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="content-header">
-            <h3>Product</h3>
-            <a href="#" class="view-link inline-link">View Projects</a>
+            <h3>Problem Solving</h3>
+            <a href="#" class="view-link">
+              <fa-icon [icon]="faBrain"></fa-icon>
+              My Approach
+            </a>
           </div>
           <p>
-            My experience spans more than just development. I collaborate closely with product teams to understand the "why" behind 
-            the features we build. With a strong eye for system design and user needs, I help translate complex business requirements 
-            into reliable, maintainable software. I'm passionate about building products that are intuitive, scalable, and genuinely 
-            useful.
-          </p>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="content-header">
-            <h3>Technology</h3>
-            <a href="#" class="view-link inline-link">View Stack</a>
-          </div>
-          <p>
-            Technology is at the core of everything I build. I stay curious and continually explore new stacks, libraries, and 
-            architectures — from frontend frameworks like Angular and React to backend platforms like Node.js, Go, and PostgreSQL. 
-            I believe in choosing the right tools for the job, balancing innovation with reliability, and always optimizing for 
-            maintainability and performance.
+            Every bug is a puzzle, every feature is an opportunity to make someone's day better. I approach problems 
+            methodically—breaking them down, understanding the root cause, and finding solutions that are sustainable. 
+            I'm that person who actually enjoys debugging sessions and finds satisfaction in refactoring messy code 
+            into something beautiful. Sometimes the best solution is the simplest one.
           </p>
         </div>
       </div>
     </div>
 
+    <!-- Learning Journey Section -->
     <div class="timeline-section">
-      <h2>My Reads.</h2>
+      <h2>My Journey.</h2>
+      
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-content intro-section">
+        <div class="timeline-content">
           <div class="content-header">
-            <h3>Full Stack Web Development</h3>
-            <a class="view-link inline-link"><fa-icon [icon]="faCalendar"></fa-icon> 2017-2018</a>
+            <h3>The Beginning: First Hello World</h3>
+            <span class="date-label">
+              <fa-icon [icon]="faCalendar"></fa-icon> 
+              2017-2018
+            </span>
           </div>
           <p>
-            A journey sparked by curiosity and fueled by consistent learning. I took the unconventional path, teaching myself how to 
-            build things from scratch — from setting up servers to deploying production-ready apps.
+            Started my coding journey with a simple HTML page and thought I was a wizard when I made text change colors. 
+            Those late nights learning JavaScript fundamentals, struggling with CSS layouts, and the pure joy of seeing 
+            my first dynamic web page work—that's when I knew I found my calling. Every error message was a lesson, 
+            and every working feature felt like magic.
           </p>
         </div>
       </div>
@@ -74,12 +111,17 @@
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="content-header">
-            <h3>System Design</h3>
-            <a class="view-link inline-link"><fa-icon [icon]="faCalendar"></fa-icon> 2024-2025</a>
+            <h3>Building Real Things</h3>
+            <span class="date-label">
+              <fa-icon [icon]="faCalendar"></fa-icon> 
+              2019-2021
+            </span>
           </div>
           <p>
-            Through books, courses, and real-world experience, I’ve developed a deep understanding of designing distributed systems, 
-            scalability strategies, and microservices.
+            This is when things got serious. Started building actual applications that people could use, not just 
+            tutorial projects. Learned about databases, APIs, authentication, and all the "boring" stuff that makes 
+            applications actually work in the real world. Also discovered that deployment is an art form and that 
+            "it works on my machine" is not a valid argument.
           </p>
         </div>
       </div>
@@ -88,15 +130,101 @@
         <div class="timeline-dot"></div>
         <div class="timeline-content">
           <div class="content-header">
-            <h3>Learning Something Great 😉</h3>
-            <a class="view-link inline-link"><fa-icon [icon]="faCalendar"></fa-icon> Currently</a>
+            <h3>Scaling & Architecture</h3>
+            <span class="date-label">
+              <fa-icon [icon]="faCalendar"></fa-icon> 
+              2022-2024
+            </span>
           </div>
-          <p>We continue learning everyday.</p>
+          <p>
+            Started thinking beyond individual features to entire systems. Learned about microservices, database 
+            optimization, caching strategies, and how to design systems that don't fall over when more than 10 people 
+            use them. Discovered that premature optimization is real, but so is the pain of rebuilding everything 
+            when you didn't plan for growth.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="content-header">
+            <h3>Always Learning 🚀</h3>
+            <span class="date-label">
+              <fa-icon [icon]="faCalendar"></fa-icon> 
+              Currently
+            </span>
+          </div>
+          <p>
+            The tech world moves fast, and I love that about it. Currently diving deep into AI/ML integration, 
+            exploring cloud-native architectures, and always on the lookout for tools that can solve problems better. 
+            I'm also getting more interested in developer experience and how we can make the process of building 
+            software more enjoyable and efficient.
+          </p>
         </div>
       </div>
     </div>
 
-  <div class="footer-section">
-    <a href="#" class="continue-link inline-link">Let’s Build Something Great → [Projects]</a>
+    <!-- Personal Side Section -->
+    <div class="timeline-section">
+      <h2>Beyond the Code.</h2>
+      
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="content-header">
+            <h3>When I'm Not Coding</h3>
+            <span class="interest-label">
+              <fa-icon [icon]="faHeart"></fa-icon> 
+              Interests
+            </span>
+          </div>
+          <p>
+            I'm a curious person by nature. I love reading about technology trends, watching YouTube videos about 
+            random engineering topics, and occasionally attempting to cook something more complex than instant noodles 
+            (with mixed results). I also enjoy long walks where I inevitably end up thinking about code architecture 
+            or that bug I couldn't fix earlier.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="content-header">
+            <h3>Philosophy & Approach</h3>
+            <span class="interest-label">
+              <fa-icon [icon]="faLightbulb"></fa-icon> 
+              Values
+            </span>
+          </div>
+          <p>
+            I believe in writing code like someone else has to maintain it (because they probably will). 
+            I think the best solutions are often the simplest ones, and that good software should feel invisible 
+            to the user. I also believe in the power of good documentation, meaningful commit messages, and that 
+            code reviews are opportunities to learn, not battles to win.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="content-header">
+            <h3>Let's Connect</h3>
+            <span class="interest-label">
+              <fa-icon [icon]="faCoffee"></fa-icon> 
+              Coffee Chat?
+            </span>
+          </div>
+          <p>
+            I'm always up for interesting conversations about technology, product development, or just about anything 
+            really. Whether you want to discuss a project idea, share a cool technical challenge, or just chat about 
+            the latest developments in our field, feel free to reach out. The best collaborations often start with 
+            simple conversations.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

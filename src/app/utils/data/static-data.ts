@@ -1,4 +1,4 @@
-import { GlobalState, Project } from '../models/global-state.model';
+import { GlobalState } from '../models/global-state.model';
 
 export const GLOBAL_STATE: Readonly<GlobalState> = {
   cvLink: 'https://drive.google.com/file/d/1mbhr8CXB8KrRrDGIBt11mLUlkcgGBYlS/view?usp=sharing',
@@ -13,6 +13,3 @@ export const GLOBAL_STATE: Readonly<GlobalState> = {
             And if something's on your mind, <a href="mailto:zahidhasann67@gmail.com" class="inline-link">drop me a line</a>!`,
   },
 } as const;
-
-export const PROJECTS: ReadonlyArray<Readonly<Project>> = [
-] as const;
