@@ -1,10 +1,6 @@
-<div class="about-container" [@pageLoadAnimation] [@routeAnimations]>
+<div class="about-container" [@listAnimation]>
   <div class="about-header">
-    <button class="back-button" (click)="goBack()" aria-label="Go back">
-      <fa-icon [icon]="faArrowLeft"></fa-icon>
-      <span>Back</span>
-    </button>
-    <h1>About Me.</h1>
+    <h1 (click)="goBack()"><fa-icon [icon]="faArrowLeft"></fa-icon> About Me.</h1>
   </div>
 
   <div class="personal-intro">
