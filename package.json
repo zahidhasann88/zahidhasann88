@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration=production --output-path docs --base-href /profile/",
+    "build": "ng build --configuration=production --output-path docs --base-href /me/",
+    "build:gh-pages": "ng build --configuration=production --output-path docs --base-href /me/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
