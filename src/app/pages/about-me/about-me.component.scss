@@ -35,6 +35,7 @@
     }
   }
 
+
   .personal-intro {
     background: var(--card-background);
     padding: 2rem;
@@ -346,6 +347,117 @@
             font-size: 0.7rem;
             padding: 0.25rem 0.6rem;
           }
+        }
+      }
+    }
+  }
+}
+
+// Quick Stats Section - Updated to match existing design system
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 3rem 0;
+  padding: 0;
+
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all var(--transition-speed) ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-color);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--accent-color);
+      border-radius: 12px;
+      color: var(--background-color);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .stat-content {
+      flex: 1;
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-color);
+        line-height: 1;
+        margin-bottom: 0.25rem;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem 0;
+
+    .stat-item {
+      padding: 1.25rem;
+      gap: 0.75rem;
+
+      .stat-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+      }
+
+      .stat-content {
+        .stat-number {
+          font-size: 1.75rem;
+        }
+
+        .stat-label {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    margin: 1rem 0 1.5rem 0;
+    
+    .stat-item {
+      padding: 1rem;
+      gap: 0.75rem;
+
+      .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+
+      .stat-content {
+        .stat-number {
+          font-size: 1.5rem;
+        }
+
+        .stat-label {
+          font-size: 0.8rem;
         }
       }
     }
