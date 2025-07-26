@@ -93,10 +93,10 @@ export class AboutMeComponent implements OnInit {
   faTools = faTools;
 
   // Personal Introduction
-  personalIntro = `Hey there! I'm Zahid, a software engineer who loves turning complex problems into elegant solutions. 
-    When I'm not deep in code, you'll find me exploring new technologies, reading about system design, 
-    or probably debugging something that "worked fine yesterday." I believe great software is built by 
-    people who care about both the technical craft and the humans who use it.`;
+  personalIntro = `Hey there! I'm Zahid, a software engineer who enjoys breaking down tricky problems and figuring out 
+  how to make things work better. When I'm not deep in code, you’ll usually find me exploring new technologies, 
+  reading up on system design, or chasing down a bug that mysteriously appeared overnight. I believe the best software 
+  comes from people who care — not just about the code, but about the people using it.`;
 
   // Quick Stats
   quickStats = [
@@ -113,10 +113,10 @@ export class AboutMeComponent implements OnInit {
       items: [
         {
           title: 'Engineering & Development',
-          description: `I build scalable web applications with clean, maintainable code. My sweet spot is full-stack development 
-            where I can work on everything from database design to user interfaces. I'm passionate about writing 
-            code that's not just functional, but also readable and efficient. Whether it's optimizing API performance 
-            or crafting smooth user experiences, I love the challenge of making complex systems feel simple.`,
+          description: `I build web applications that scale well and are easy to maintain. I enjoy working across the stack — 
+          from designing databases to building user interfaces. What matters to me is writing code that’s not just working, 
+          but also clean and easy to understand. Whether I’m improving API performance or refining the user experience, I 
+          like the challenge of making complex things feel simple.`,
           link: {
             url: 'https://github.com/zahidhasann88',
             text: 'View GitHub',
@@ -133,10 +133,10 @@ export class AboutMeComponent implements OnInit {
         },
         {
           title: 'Product Development',
-          description: `I believe the best products come from understanding real problems. I work closely with teams to bridge 
-            the gap between "what users need" and "what's technically possible." My approach involves asking lots 
-            of questions, prototyping quickly, and iterating based on feedback. I've learned that good product 
-            development is as much about knowing what NOT to build as it is about building the right things.`,
+          description: `I believe the best products start with a real understanding of the problem. I like working closely 
+          with teams to connect what users actually need with what we can realistically build. My process is all about asking 
+          the right questions, prototyping early, and learning from feedback. Over time, I’ve realized that building great 
+          products isn’t just about what you create — it’s also about knowing what to leave out.`,
           link: {
             url: 'mailto:zahidhasann67@gmail.com',
             text: 'Get In Touch',
@@ -158,14 +158,13 @@ export class AboutMeComponent implements OnInit {
       ],
     },
     {
-      // Skills & Tools Section
       title: 'Skills & Tools.',
       items: [
         {
           title: 'Frontend Technologies',
-          description: `I love crafting user interfaces that are both beautiful and functional. From pixel-perfect designs 
-            to smooth animations, I focus on creating experiences that users actually enjoy. I'm comfortable with modern 
-            frameworks and always excited to learn the latest frontend innovations.`,
+          description: `I enjoy building user interfaces that look good and feel great to use. Whether it’s getting the 
+          details right in a design or adding subtle animations, I focus on creating experiences people actually enjoy. 
+          I’m comfortable working with modern frontend frameworks and always curious about what’s new in the frontend world.`,
           dateLabel: {
             text: 'UI/UX Focus',
             icon: this.faCode,
@@ -181,9 +180,9 @@ export class AboutMeComponent implements OnInit {
         },
         {
           title: 'Backend & Database',
-          description: `Building robust server-side applications is where logic meets scalability. I enjoy designing APIs 
-            that are intuitive for frontend developers and database schemas that can grow with the business. Performance 
-            optimization and security are always top priorities.`,
+          description: `I like building solid backends where logic, performance, and scalability come together. 
+          I focus on designing APIs that are easy for frontend teams to work with, and database structures that 
+          can handle growth over time. Performance and security are always part of the equation.`,
           dateLabel: {
             text: 'Server Side',
             icon: this.faTools,
@@ -218,7 +217,7 @@ export class AboutMeComponent implements OnInit {
         },
       ],
     },
-      
+
     {
       title: 'My Journey.',
       items: [
@@ -268,8 +267,8 @@ export class AboutMeComponent implements OnInit {
         },
       ],
     },
+    
     {
-      // Personal Side Section
       title: 'Beyond the Code.',
       items: [
         {
