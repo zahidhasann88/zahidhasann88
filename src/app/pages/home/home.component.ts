@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faGithub, faLinkedin, faTwitter, faStackOverflow, faMedium } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faXTwitter, faStackOverflow, faMedium } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   faGithub = faGithub;
   faLinkedin = faLinkedin;
-  faTwitter = faTwitter;
+  faTwitter = faXTwitter;
   faStackOverflow = faStackOverflow;
   faMedium = faMedium;
   faEnvelope = faEnvelope;
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       url: 'https://linkedin.com/in/zahidhasann',
       icon: faLinkedin,
     },
-    { name: 'Twitter', url: 'https://x.com/zahidhasann15', icon: faTwitter },
+    { name: 'Twitter', url: 'https://x.com/zahidhasann15', icon: faXTwitter },
     {
       name: 'Stack Overflow',
       url: 'https://stackoverflow.com/users/12301102/zahid-hasan',
