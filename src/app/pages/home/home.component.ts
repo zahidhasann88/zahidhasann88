@@ -10,7 +10,7 @@ import {
   pageLoadAnimation,
   routeAnimations,
 } from '../../utils/animation/animations';
-import { GlobalState } from '../../utils/models/global-state.model';
+import { GlobalState, Project } from '../../utils/models/global-state.model';
 import { GlobalStateService } from '../../utils/services/global-state.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -25,6 +25,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   state!: GlobalState;
+  projects: Project[] = [];
   private unsubscribe$ = new Subject<void>();
 
   faGithub = faGithub;
@@ -71,6 +72,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((state) => {
         this.state = state;
+        this.projects = state.projects;
       });
   }
 

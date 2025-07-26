@@ -12,4 +12,20 @@ export const GLOBAL_STATE: Readonly<GlobalState> = {
             <a [href]="cvLink" target="_blank" rel="noopener noreferrer" class="inline-link">check out my CV</a>. 
             And if something's on your mind, <a href="mailto:zahidhasann67@gmail.com" class="inline-link">drop me a line</a>!`,
   },
-} as const;
+  projects: [
+    {
+      name: 'media-analyzer',
+      description:
+        'A Flask API for video and audio analysis using OpenAI Whisper and Hugging Face. Features speech-to-text conversion, content summarization, quality checks, and streaming optimization.',
+      url: 'https://github.com/zahidhasann88/audio-analyzer',
+      tech: ['Flask', 'AI/ML', 'OpenCV', 'Whisper'],
+    },
+    {
+      name: 'kvstore',
+      description:
+        'A Redis-like key-value store implementation in Go with CLI interface and TCP server support.',
+      url: 'https://github.com/zahidhasann88/kvstore',
+      tech: ['Go', 'TCP', 'CLI', 'Redis-like'],
+    },
+  ],
+};
