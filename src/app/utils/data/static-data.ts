@@ -1,7 +1,7 @@
 import { GlobalState } from '../models/global-state.model';
 
 export const GLOBAL_STATE: Readonly<GlobalState> = {
-  cvLink: 'https://drive.google.com/file/d/1mbhr8CXB8KrRrDGIBt11mLUlkcgGBYlS/view?usp=sharing',
+  cvLink: 'https://drive.google.com/file/d/1Mn3h-lyylnh18ELnqAV7RH-PHjlsK84W/view?usp=sharing',
   aboutMe: {
     part1: `My name is Zahid Hasan, also known as Zahid. I'm a 28-year-old Software Engineer from Dhaka, Bangladesh.`,
     part2: `Currently, my focus is on web applications and infrastructure, with a background interest in cloud technologies and distributed systems. 
