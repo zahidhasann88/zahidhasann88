@@ -15,7 +15,7 @@ export const GLOBAL_STATE: Readonly<GlobalState> = {
   },
   projects: [
     {
-      name: 'media-analyzer',
+      name: 'audio-analyzer',
       description:
         'A Flask API for video and audio analysis using OpenAI Whisper and Hugging Face. Features speech-to-text conversion, content summarization, quality checks, and streaming optimization.',
       url: 'https://github.com/zahidhasann88/audio-analyzer',
