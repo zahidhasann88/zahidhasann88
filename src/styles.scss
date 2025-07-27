@@ -588,6 +588,17 @@ main {
         color: var(--text-color);
         text-align: left;
       }
+      
+      &.has-multiple-actions {
+        .view-link,
+        .link-button,
+        .date-label,
+        .interest-label {
+          &:not(:first-of-type) {
+            margin-left: 0.5rem;
+          }
+        }
+      }
     }
   }
 }
@@ -946,19 +957,40 @@ a:hover {
         margin-left: 2rem;
 
         .content-header {
-          flex-direction: column;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
           align-items: flex-start;
-          gap: 0.5rem;
+          gap: 1rem;
+          flex-wrap: wrap;
 
           h3 {
             font-size: 1.1rem;
+            margin: 0;
+            flex: 1;
+            min-width: 0;
           }
 
           .view-link,
-          .link-button,
+          .link-button {
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            align-self: flex-start;
+            white-space: nowrap;
+          }
+
           .date-label,
           .interest-label {
             font-size: 0.85rem;
+            flex-shrink: 0;
+            align-self: flex-start;
+          }
+
+          .view-link + .date-label,
+          .view-link + .interest-label,
+          .link-button + .date-label,
+          .link-button + .interest-label {
+            margin-top: 0.5rem;
           }
         }
 
@@ -989,17 +1021,29 @@ a:hover {
 
     .project-item {
       .project-header {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: flex-start;
-        gap: 0.5rem;
+        gap: 1rem;
+        flex-wrap: wrap;
       }
 
       h3 {
         font-size: 1.1rem;
+        margin: 0;
+        flex: 1;
+        min-width: 0;
       }
 
       .project-description {
         font-size: 0.95rem;
+      }
+
+      .link-button {
+        font-size: 0.85rem;
+        flex-shrink: 0;
+        white-space: nowrap;
       }
     }
   }
@@ -1090,8 +1134,18 @@ a:hover {
         margin-left: 1.75rem;
 
         .content-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+
           h3 {
             font-size: 1rem;
+          }
+
+          .view-link,
+          .link-button {
+            font-size: 0.8rem;
+            align-self: flex-start;
           }
 
           .date-label,
@@ -1138,6 +1192,15 @@ a:hover {
 
       .project-description {
         font-size: 0.9rem;
+      }
+
+      .link-button {
+        font-size: 0.8rem;
+        align-self: flex-start;
+
+        fa-icon {
+          font-size: 0.75rem;
+        }
       }
     }
   }
