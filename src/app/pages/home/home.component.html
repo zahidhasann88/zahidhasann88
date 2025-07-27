@@ -54,6 +54,8 @@
           </a>
         </div>
       </div>
+      
+      <!-- Featured Projects with Keyword Highlighting -->
       <div class="featured-project-section" *ngIf="projects.length">
         <div class="section-header">
           <h2>Featured Projects</h2>
@@ -67,10 +69,7 @@
               View GitHub
             </a>
           </div>
-          <p class="project-description">{{ project.description }}</p>
-          <div class="project-tech">
-            <span class="tech-tag" *ngFor="let tag of project.tech">{{ tag }}</span>
-          </div>
+          <p class="project-description" [innerHTML]="highlightKeywords(project.description, project.keywords)"></p>
         </div>
       </div>
     </div>

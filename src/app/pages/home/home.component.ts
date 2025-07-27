@@ -2,7 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faGithub, faLinkedin, faXTwitter, faStackOverflow, faMedium } from '@fortawesome/free-brands-svg-icons';
+import {
+  faGithub,
+  faLinkedin,
+  faXTwitter,
+  faStackOverflow,
+  faMedium,
+} from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
@@ -14,6 +20,7 @@ import { GlobalState, Project } from '../../utils/models/global-state.model';
 import { GlobalStateService } from '../../utils/services/global-state.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -37,7 +44,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   faCode = faCode;
   faArrowUpLong = faArrowRightLong;
   currentYear: number = new Date().getFullYear();
-  
+
   socialLinks = [
     { name: 'GitHub', url: 'https://github.com/zahidhasann88', icon: faGithub },
     {
@@ -64,7 +71,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     },
   ];
 
-  constructor(private globalStateService: GlobalStateService) {}
+  constructor(
+    private globalStateService: GlobalStateService,
+    private sanitizer: DomSanitizer
+  ) {}
 
   ngOnInit() {
     this.globalStateService
@@ -74,6 +84,27 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.state = state;
         this.projects = state.projects;
       });
+  }
+
+  highlightKeywords(description: string, keywords: string[] = []): SafeHtml {
+    if (!keywords || keywords.length === 0) {
+      return this.sanitizer.bypassSecurityTrustHtml(description);
+    }
+
+    let highlightedText = description;
+
+    const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
+
+    sortedKeywords.forEach((keyword) => {
+      const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`\\b(${escapedKeyword})\\b`, 'gi');
+      highlightedText = highlightedText.replace(
+        regex,
+        '<span class="keyword-highlight">$1</span>'
+      );
+    });
+
+    return this.sanitizer.bypassSecurityTrustHtml(highlightedText);
   }
 
   ngOnDestroy() {

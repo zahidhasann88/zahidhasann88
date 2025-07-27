@@ -49,11 +49,19 @@ main {
   background: #555;
 }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
-  box-sizing: border-box;
+*::-webkit-scrollbar {
+  width: 6px;
 }
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
 
 // =============================================================================
 // COMMON LAYOUT COMPONENTS
@@ -588,7 +596,7 @@ main {
         color: var(--text-color);
         text-align: left;
       }
-      
+
       &.has-multiple-actions {
         .view-link,
         .link-button,
@@ -721,7 +729,7 @@ main {
       font-size: 1rem;
       line-height: 1.6;
       color: var(--text-color);
-      margin-bottom: 1rem;
+      margin-bottom: 0; /* Remove bottom margin since no tech tags */
     }
   }
 }
@@ -1009,6 +1017,8 @@ a:hover {
   }
 
   .featured-project-section {
+    margin-bottom: 2rem;
+
     .section-header {
       flex-direction: column;
       align-items: flex-start;
