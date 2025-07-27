@@ -93,10 +93,10 @@ export class AboutMeComponent implements OnInit {
   faTools = faTools;
 
   // Personal Introduction
-  personalIntro = `Hey there! I'm Zahid, a software engineer who enjoys breaking down tricky problems and figuring out 
-  how to make things work better. When I'm not deep in code, you’ll usually find me exploring new technologies, 
-  reading up on system design, or chasing down a bug that mysteriously appeared overnight. I believe the best software 
-  comes from people who care — not just about the code, but about the people using it.`;
+  personalIntro = `Hey there! I'm a software engineer who enjoys building things for the internet and figuring out how to 
+  make things work better. When I'm not deep in code, you’ll usually find me exploring new technologies, reading about 
+  system design, or chasing down a bug that mysteriously appeared overnight. I believe the best software comes from 
+  people who care — not just about the code, but about the people using it.`;
 
   // Quick Stats
   quickStats = [
@@ -112,31 +112,36 @@ export class AboutMeComponent implements OnInit {
       // What I Do Section
       items: [
         {
-          title: 'Engineering & Development',
-          description: `I build web applications that scale well and are easy to maintain. I enjoy working across the stack — 
-          from designing databases to building user interfaces. What matters to me is writing code that’s not just working, 
-          but also clean and easy to understand. Whether I’m improving API performance or refining the user experience, I 
-          like the challenge of making complex things feel simple.`,
+          title: 'Engineering',
+          description: `At the heart of every great application is a backend that’s thoughtfully designed and rock solid. 
+          I focus on building those foundations—crafting APIs that handle data efficiently, designing databases that scale 
+          gracefully, and ensuring systems stay reliable as they grow. But I don’t just stay behind the scenes. I also dive 
+          into frontend work to connect the dots and create seamless experiences users actually enjoy. Writing clear, 
+          maintainable code is important to me because software should be easy to understand and evolve over time. 
+          I enjoy unraveling complex challenges and turning them into straightforward solutions that perform well 
+          today and adapt tomorrow. Engineering, to me, is about blending precision with practicality to build tools 
+          that truly work — quietly and confidently.`,
           link: {
             url: 'https://github.com/zahidhasann88',
             text: 'View GitHub',
             icon: this.faGithub,
           },
-          techTags: [
-            'Golang',
-            'Node.js',
-            '.NET Core',
-            'Angular',
-            'React',
-            'PostgreSQL',
-          ],
+          // techTags: [
+          //   'Golang',
+          //   'Node.js',
+          //   '.NET Core',
+          //   'Angular',
+          //   'React',
+          //   'PostgreSQL',
+          // ],
         },
         {
-          title: 'Product Development',
-          description: `I believe the best products start with a real understanding of the problem. I like working closely 
-          with teams to connect what users actually need with what we can realistically build. My process is all about asking 
-          the right questions, prototyping early, and learning from feedback. Over time, I’ve realized that building great 
-          products isn’t just about what you create — it’s also about knowing what to leave out.`,
+          title: 'Product',
+          description: `Great products begin with a deep understanding of the real problems people face. I enjoy collaborating 
+          closely with teams to bridge the gap between user needs and practical solutions we can build. My approach focuses 
+          on asking thoughtful questions, prototyping early, and iterating based on feedback. Over time, I’ve learned that 
+          building something truly valuable isn’t just about adding features — it’s about knowing what to leave out to keep 
+          things simple and effective.`,
           link: {
             url: 'mailto:zahidhasann67@gmail.com',
             text: 'Get In Touch',
@@ -162,11 +167,13 @@ export class AboutMeComponent implements OnInit {
       items: [
         {
           title: 'Frontend Technologies',
-          description: `I enjoy building user interfaces that look good and feel great to use. Whether it’s getting the 
-          details right in a design or adding subtle animations, I focus on creating experiences people actually enjoy. 
-          I’m comfortable working with modern frontend frameworks and always curious about what’s new in the frontend world.`,
+          description: `More than just what users see, the frontend is about making sure everything runs smoothly behind the 
+          scenes — syncing perfectly with backend systems and delivering a seamless, dependable experience. 
+          Crafting components that communicate well, manage data efficiently, and respond without delay is essential. 
+          The goal is to simplify complex processes into interfaces that feel natural and reliable. Keeping up with the 
+          latest frontend tools helps keep these systems strong and adaptable.`,
           dateLabel: {
-            text: 'UI/UX Focus',
+            text: 'Integration First',
             icon: this.faCode,
           },
           techTags: [
@@ -180,9 +187,11 @@ export class AboutMeComponent implements OnInit {
         },
         {
           title: 'Backend & Database',
-          description: `I like building solid backends where logic, performance, and scalability come together. 
-          I focus on designing APIs that are easy for frontend teams to work with, and database structures that 
-          can handle growth over time. Performance and security are always part of the equation.`,
+          description: `Backends are where the core of an application lives — the place where complex logic, data, and 
+          performance come together. My focus is on crafting APIs that don’t just work, but feel clear and predictable for 
+          frontend teams to build upon. I design databases with growth in mind, so they can handle increasing demands without 
+          breaking a sweat. Performance and security aren’t just boxes to check; they’re woven into the fabric of everything 
+          I build, ensuring the system stays strong and reliable long-term.`,
           dateLabel: {
             text: 'Server Side',
             icon: this.faTools,
@@ -255,11 +264,8 @@ export class AboutMeComponent implements OnInit {
           },
         },
         {
-          title: 'Always Learning 🚀',
-          description: `The tech world moves fast, and I love that about it. Currently diving deep into AI/ML integration, 
-            exploring cloud-native architectures, and always on the lookout for tools that can solve problems better. 
-            I'm also getting more interested in developer experience and how we can make the process of building 
-            software more enjoyable and efficient.`,
+          title: 'Learning Something Great 😉',
+          description: `We continue learning everyday.`,
           dateLabel: {
             text: 'Currently',
             icon: this.faCalendar,
@@ -267,7 +273,7 @@ export class AboutMeComponent implements OnInit {
         },
       ],
     },
-    
+
     {
       title: 'Beyond the Code.',
       items: [
@@ -282,17 +288,17 @@ export class AboutMeComponent implements OnInit {
             icon: this.faHeart,
           },
         },
-        {
-          title: 'Philosophy & Approach',
-          description: `I believe in writing code like someone else has to maintain it (because they probably will). 
-            I think the best solutions are often the simplest ones, and that good software should feel invisible 
-            to the user. I also believe in the power of good documentation, meaningful commit messages, and that 
-            code reviews are opportunities to learn, not battles to win.`,
-          dateLabel: {
-            text: 'Values',
-            icon: this.faLightbulb,
-          },
-        },
+        // {
+        //   title: 'Philosophy & Approach',
+        //   description: `I believe in writing code like someone else has to maintain it (because they probably will). 
+        //     I think the best solutions are often the simplest ones, and that good software should feel invisible 
+        //     to the user. I also believe in the power of good documentation, meaningful commit messages, and that 
+        //     code reviews are opportunities to learn, not battles to win.`,
+        //   dateLabel: {
+        //     text: 'Values',
+        //     icon: this.faLightbulb,
+        //   },
+        // },
         {
           title: "Let's Connect",
           description: `I'm always up for interesting conversations about technology, product development, or just about anything 

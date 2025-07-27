@@ -3,12 +3,12 @@
     <h1 (click)="goBack()"><fa-icon [icon]="faArrowLeft"></fa-icon> About Me.</h1>
   </div>
 
-  <div class="personal-intro">
+  <!-- <div class="personal-intro">
     <p>{{ personalIntro }}</p>
-  </div>
+  </div> -->
 
   <!-- Quick Stats Section -->
-  <div class="quick-stats">
+  <!-- <div class="quick-stats">
     <div 
       class="stat-item" 
       *ngFor="let stat of quickStats"
@@ -21,18 +21,15 @@
         <div class="stat-label">{{ stat.label }}</div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="timeline">
-    <!-- Timeline Sections -->
     <div 
       class="timeline-section" 
       *ngFor="let section of timelineSections; let sectionIndex = index"
     >
-      <!-- Section Title (if exists) -->
       <h2 *ngIf="section.title">{{ section.title }}</h2>
       
-      <!-- Timeline Items -->
       <div 
         class="timeline-item" 
         *ngFor="let item of section.items; let itemIndex = index"
@@ -42,7 +39,6 @@
           <div class="content-header content-header-inline">
             <h3>{{ item.title }}</h3>
             
-            <!-- Link (if exists) -->
             <a 
               *ngIf="item.link" 
               [href]="item.link.url" 
