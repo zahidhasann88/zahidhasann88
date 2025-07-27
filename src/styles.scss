@@ -62,7 +62,6 @@ main {
   border-radius: 4px;
 }
 
-
 // =============================================================================
 // COMMON LAYOUT COMPONENTS
 // =============================================================================
@@ -317,16 +316,11 @@ main {
 // BUTTON COMPONENTS
 // =============================================================================
 
-// CTA Buttons
 .cta-section {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-
-  @media (max-width: 600px) {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
+  margin-top: 2rem;
 }
 
 .cta-button,
@@ -346,11 +340,7 @@ main {
   white-space: nowrap;
   min-width: 150px;
   justify-content: center;
-
-  @media (max-width: 600px) {
-    width: 100%;
-    min-width: auto;
-  }
+  text-align: center;
 
   &.primary {
     background: var(--primary-color);
@@ -677,7 +667,6 @@ main {
 // =============================================================================
 
 .featured-project-section {
-
   .section-header {
     display: flex;
     justify-content: space-between;
@@ -918,12 +907,7 @@ a:hover {
   .cta-section {
     flex-direction: column;
     gap: 0.75rem;
-  }
-
-  .cta-button,
-  .btn {
-    width: 100%;
-    justify-content: center;
+    margin-top: 1.5rem;
   }
 
   .stats-grid,
@@ -1121,6 +1105,11 @@ a:hover {
         }
       }
     }
+  }
+
+  .cta-section {
+    gap: 0.5rem;
+    margin-top: 1rem;
   }
 
   .timeline-section {
