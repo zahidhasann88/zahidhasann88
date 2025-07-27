@@ -8,7 +8,6 @@ export interface Project {
 export interface AboutMe {
   part1: string;
   part2: string;
-  part3: string;
 }
 
 export interface GlobalState {
