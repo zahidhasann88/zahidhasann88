@@ -3,10 +3,10 @@
     <div class="text-content">
       <!-- Hero Section -->
       <div class="hero-section">
-        <h1 class="name fade-in">{{ state.profile.greeting }}</h1>
-        <p class="tagline fade-in">{{ state.profile.tagline }}</p>
+        <h1 class="name fade-in">{{ configData.profile.greeting }}</h1>
+        <p class="tagline fade-in">{{ configData.profile.tagline }}</p>
       </div>
-      
+
       <!-- Social Links -->
       <div class="social-links">
         <span class="social-label">Connect with me</span>
@@ -22,36 +22,36 @@
           </a>
         </div>
       </div>
-      
+
       <!-- About Section -->
       <div class="about-section">
         <div class="about-text-container">
-          <p class="about-text fade-in">{{ state.aboutMe.part1 }}</p>
-          <p class="about-text fade-in">{{ state.aboutMe.part2 }}</p>
-          <p class="about-text fade-in">{{ state.aboutMe.part3 }}</p>
+          <p class="about-text fade-in">{{ configData.aboutMe.part1 }}</p>
+          <p class="about-text fade-in">{{ configData.aboutMe.part2 }}</p>
+          <p class="about-text fade-in">{{ configData.aboutMe.part3 }}</p>
         </div>
-       
+
         <div class="cta-section">
           <a
-            [href]="state.cvLink"
+            [href]="configData.cvLink"
             target="_blank"
             rel="noopener noreferrer"
             class="cta-button primary"
           >
-            <fa-icon [icon]="state.icons.faArrowRightLong"></fa-icon>
+            <fa-icon [icon]="configData.icons.faArrowRightLong"></fa-icon>
             View Resume
           </a>
           <a href="mailto:zahidhasann67@gmail.com" class="cta-button secondary">
-            <fa-icon [icon]="state.icons.faEnvelope"></fa-icon>
+            <fa-icon [icon]="configData.icons.faEnvelope"></fa-icon>
             Get In Touch
           </a>
           <a [routerLink]="['/about-me']" class="cta-button tertiary">
-            <fa-icon [icon]="state.icons.faArrowRightLong"></fa-icon>
+            <fa-icon [icon]="configData.icons.faArrowRightLong"></fa-icon>
             Know More About Me
           </a>
         </div>
       </div>
-      
+
       <div class="featured-project-section" *ngIf="projects.length">
         <div class="section-header">
           <h2>Featured Projects</h2>
@@ -60,11 +60,16 @@
           <div class="project-header content-header-inline">
             <h3>{{ project.name }}</h3>
             <a [href]="project.url" target="_blank" class="link-button">
-              <fa-icon [icon]="state.icons.faGithub"></fa-icon>
+              <fa-icon [icon]="configData.icons.faGithub"></fa-icon>
               View GitHub
             </a>
           </div>
-          <p class="project-description" [innerHTML]="highlightKeywords(project.description, project.keywords)"></p>
+          <p
+            class="project-description"
+            [innerHTML]="
+              getHighlightedDescription(project.description, project.keywords)
+            "
+          ></p>
         </div>
       </div>
     </div>

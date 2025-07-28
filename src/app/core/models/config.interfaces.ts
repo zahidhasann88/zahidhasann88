@@ -88,7 +88,7 @@ export interface Icons {
   faMedium: IconDefinition;
 }
 
-export interface GlobalState {
+export interface Config {
   cvLink: string;
   profile: ProfileInfo;
   aboutMe: AboutMe;

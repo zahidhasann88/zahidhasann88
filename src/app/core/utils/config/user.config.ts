@@ -1,4 +1,4 @@
-import { GlobalState } from '../models/global-state.model';
+import { Config } from '../../../core/models/config.interfaces';
 import {
   faArrowLeft,
   faBrain,
@@ -31,7 +31,7 @@ import {
   faMedium,
 } from '@fortawesome/free-brands-svg-icons';
 
-export const GLOBAL_STATE: Readonly<GlobalState> = {
+export const USER_CONFIG: Readonly<Config> = {
   cvLink:
     'https://drive.google.com/file/d/1Mn3h-lyylnh18ELnqAV7RH-PHjlsK84W/view?usp=sharing',
 

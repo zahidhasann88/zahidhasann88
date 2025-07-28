@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { routeAnimations } from './utils/animation/animations';
-import { SmoothScrollService } from './utils/services/smoth.service';
-import { FooterComponent } from './components/footer/footer.component';
+import { routeAnimations } from './core/utils/animation/animations';
+import { SmoothScrollService } from './core/services/smoth.service';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-root',

@@ -8,13 +8,13 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import {
   pageLoadAnimation,
   routeAnimations,
-} from '../../utils/animation/animations';
+} from '../../core/utils/animation/animations';
 import {
   TimelineSection,
   QuickStat,
-  GlobalState,
-} from '../../utils/models/global-state.model';
-import { GlobalStateService } from '../../utils/services/global-state.service';
+  Config,
+} from '../../core/models/config.interfaces';
+import { ConfigService } from '../../core/services/config.service';
 
 @Component({
   selector: 'app-about-me',
@@ -28,23 +28,23 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   faArrowLeft = faArrowLeft;
 
-  globalState!: GlobalState;
+  config!: Config;
   personalIntro!: string;
   quickStats!: QuickStat[];
   timelineSections!: TimelineSection[];
 
   constructor(
     private location: Location,
-    private globalStateService: GlobalStateService
+    private configService: ConfigService
   ) {}
 
   ngOnInit(): void {
-    this.globalStateService
-      .getState()
+    this.configService
+      .getConfig()
       .pipe(takeUntil(this.destroy$))
-      .subscribe((state) => {
-        this.globalState = state;
-        this.timelineSections = state.aboutMe.timelineSections;
+      .subscribe((data) => {
+        this.config = data;
+        this.timelineSections = data.aboutMe.timelineSections;
       });
   }
 
@@ -58,6 +58,6 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   }
 
   get icons() {
-    return this.globalState?.icons;
+    return this.config?.icons;
   }
 }

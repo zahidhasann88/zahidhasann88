@@ -5,12 +5,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   pageLoadAnimation,
   routeAnimations,
-} from '../../utils/animation/animations';
-import { GlobalState, Project, SocialLink } from '../../utils/models/global-state.model';
-import { GlobalStateService } from '../../utils/services/global-state.service';
+} from '../../core/utils/animation/animations';
+import {
+  Config,
+  Project,
+  SocialLink,
+} from '../../core/models/config.interfaces';
+import { ConfigService } from '../../core/services/config.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { SafeHtml } from '@angular/platform-browser';
+import { HighlightService } from '../../core/services/highlight.service';
 
 @Component({
   selector: 'app-home',
@@ -21,46 +26,30 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   animations: [routeAnimations, pageLoadAnimation],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  state!: GlobalState;
+  configData!: Config;
   projects: Project[] = [];
   socialLinks: SocialLink[] = [];
   private unsubscribe$ = new Subject<void>();
   currentYear: number = new Date().getFullYear();
 
   constructor(
-    private globalStateService: GlobalStateService,
-    private sanitizer: DomSanitizer
+    private configService: ConfigService,
+    private highlightService: HighlightService
   ) {}
 
   ngOnInit() {
-    this.globalStateService
-      .getState()
+    this.configService
+      .getConfig()
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((state) => {
-        this.state = state;
-        this.projects = state.projects;
-        this.socialLinks = state.socialLinks;
+      .subscribe((data) => {
+        this.configData = data;
+        this.projects = data.projects;
+        this.socialLinks = data.socialLinks;
       });
   }
 
-  highlightKeywords(description: string, keywords: string[] = []): SafeHtml {
-    if (!keywords || keywords.length === 0) {
-      return this.sanitizer.bypassSecurityTrustHtml(description);
-    }
-
-    let highlightedText = description;
-    const sortedKeywords = [...keywords].sort((a, b) => b.length - a.length);
-
-    sortedKeywords.forEach((keyword) => {
-      const escapedKeyword = keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const regex = new RegExp(`\\b(${escapedKeyword})\\b`, 'gi');
-      highlightedText = highlightedText.replace(
-        regex,
-        '<span class="keyword-highlight">$1</span>'
-      );
-    });
-
-    return this.sanitizer.bypassSecurityTrustHtml(highlightedText);
+  getHighlightedDescription(description: string, keywords: string[]): SafeHtml {
+    return this.highlightService.highlightKeywords(description, keywords);
   }
 
   ngOnDestroy() {
