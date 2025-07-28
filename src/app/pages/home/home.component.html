@@ -3,10 +3,10 @@
     <div class="text-content">
       <!-- Hero Section -->
       <div class="hero-section">
-        <h1 class="name fade-in">👋 Hello, I'm Zahid!</h1>
-        <p class="tagline fade-in">Full-Stack Engineer & Building Things for Internet</p>
+        <h1 class="name fade-in">{{ state.profile.greeting }}</h1>
+        <p class="tagline fade-in">{{ state.profile.tagline }}</p>
       </div>
-
+      
       <!-- Social Links -->
       <div class="social-links">
         <span class="social-label">Connect with me</span>
@@ -22,18 +22,15 @@
           </a>
         </div>
       </div>
-
+      
       <!-- About Section -->
       <div class="about-section">
         <div class="about-text-container">
           <p class="about-text fade-in">{{ state.aboutMe.part1 }}</p>
           <p class="about-text fade-in">{{ state.aboutMe.part2 }}</p>
-          <p class="about-text fade-in">
-            Welcome to my web corner where I share my journey in software development 
-            and explore new technologies that keep me curious and motivated.
-          </p>
+          <p class="about-text fade-in">{{ state.aboutMe.part3 }}</p>
         </div>
-        
+       
         <div class="cta-section">
           <a
             [href]="state.cvLink"
@@ -41,29 +38,29 @@
             rel="noopener noreferrer"
             class="cta-button primary"
           >
-            <fa-icon [icon]="faArrowUpLong"></fa-icon>
+            <fa-icon [icon]="state.icons.faArrowRightLong"></fa-icon>
             View Resume
           </a>
           <a href="mailto:zahidhasann67@gmail.com" class="cta-button secondary">
-            <fa-icon [icon]="faEnvelope"></fa-icon>
+            <fa-icon [icon]="state.icons.faEnvelope"></fa-icon>
             Get In Touch
           </a>
           <a [routerLink]="['/about-me']" class="cta-button tertiary">
-            <fa-icon [icon]="faArrowUpLong"></fa-icon>
+            <fa-icon [icon]="state.icons.faArrowRightLong"></fa-icon>
             Know More About Me
           </a>
         </div>
       </div>
+      
       <div class="featured-project-section" *ngIf="projects.length">
         <div class="section-header">
           <h2>Featured Projects</h2>
         </div>
-
         <div class="project-item" *ngFor="let project of projects">
           <div class="project-header content-header-inline">
             <h3>{{ project.name }}</h3>
             <a [href]="project.url" target="_blank" class="link-button">
-              <fa-icon [icon]="faGithub"></fa-icon>
+              <fa-icon [icon]="state.icons.faGithub"></fa-icon>
               View GitHub
             </a>
           </div>

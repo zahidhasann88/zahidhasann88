@@ -3,26 +3,6 @@
     <h1 (click)="goBack()"><fa-icon [icon]="faArrowLeft"></fa-icon> About Me.</h1>
   </div>
 
-  <!-- <div class="personal-intro">
-    <p>{{ personalIntro }}</p>
-  </div> -->
-
-  <!-- Quick Stats Section -->
-  <!-- <div class="quick-stats">
-    <div 
-      class="stat-item" 
-      *ngFor="let stat of quickStats"
-    >
-      <div class="stat-icon">
-        <fa-icon [icon]="stat.icon"></fa-icon>
-      </div>
-      <div class="stat-content">
-        <div class="stat-number">{{ stat.number }}</div>
-        <div class="stat-label">{{ stat.label }}</div>
-      </div>
-    </div>
-  </div> -->
-
   <div class="timeline">
     <div 
       class="timeline-section" 
@@ -49,7 +29,6 @@
               {{ item.link.text }}
             </a>
             
-            <!-- Date Label (if exists) -->
             <span 
               *ngIf="item.dateLabel" 
               [class]="sectionIndex === 1 ? 'date-label' : 'interest-label'"
@@ -61,7 +40,6 @@
           
           <p>{{ item.description }}</p>
           
-          <!-- Tech Tags (if exists) -->
           <div *ngIf="item.techTags" class="tech-highlights">
             <span 
               *ngFor="let tag of item.techTags" 
