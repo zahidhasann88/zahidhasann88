@@ -35,6 +35,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "baseHref": "/me/",
               "budgets": [
                 {
                   "type": "initial",

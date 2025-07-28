@@ -1,15 +1,24 @@
-<footer class="footer">
+<footer class="footer" role="contentinfo">
   <div class="footer-content">
-    <div class="footer-social-links">
+    <nav
+      class="footer-social-links"
+      role="navigation"
+      aria-label="Social media links"
+    >
+      @for (link of footerSocialLinks; track link.name) {
       <a
-        *ngFor="let link of socialLinks"
         [href]="link.url"
         target="_blank"
         rel="noopener noreferrer"
-        [title]="link.name"
+        [title]="'Visit my ' + link.name + ' profile'"
+        [attr.aria-label]="'Visit my ' + link.name + ' profile'"
+        class="footer-social-link"
+        (click)="onSocialLinkClick(link, $event)"
       >
-        <fa-icon [icon]="link.icon"></fa-icon>
+        <fa-icon [icon]="link.icon" [attr.aria-hidden]="true"></fa-icon>
+        <span class="sr-only">{{ link.name }}</span>
       </a>
-    </div>
+      }
+    </nav>
   </div>
 </footer>

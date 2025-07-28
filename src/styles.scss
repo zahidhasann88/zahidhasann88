@@ -11,11 +11,21 @@
   --header-height: 60px;
 }
 
-// =============================================================================
-// BASE STYLES
-// =============================================================================
+// :root {
+//   --primary-color: #f0f0f3;
+//   --secondary-color: #2a2a2a;
+//   --accent-color: #3a85c6;
+//   --background-color: #e6e6e6;
+//   --text-color: #2a2a2a;
+//   --text-secondary: #666666;
+//   --border-color: #cccccc;
+//   --card-background: #ffffff;
+//   --transition-speed: 0.3s;
+//   --header-height: 60px;
+// }
+
 body {
-  font-family: "Fira Code", monospace;
+  font-family: "Fira Code", Consolas, "Courier New", monospace;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -28,9 +38,6 @@ main {
   transition: margin-top var(--transition-speed);
 }
 
-// =============================================================================
-// SCROLLBAR STYLES
-// =============================================================================
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -62,11 +69,6 @@ main {
   border-radius: 4px;
 }
 
-// =============================================================================
-// COMMON LAYOUT COMPONENTS
-// =============================================================================
-
-// Base container styles
 .page-container {
   max-width: 800px;
   margin: 0 auto;
@@ -91,11 +93,6 @@ main {
   padding: 0 20px;
 }
 
-// =============================================================================
-// TYPOGRAPHY & TEXT STYLES
-// =============================================================================
-
-// Hero/Header styles
 .hero-section,
 .page-header {
   text-align: left;
@@ -136,7 +133,6 @@ main {
   }
 }
 
-// Content text styles
 .content-text,
 .about-text {
   font-size: 1rem;
@@ -155,7 +151,6 @@ main {
   line-height: 1.7;
 }
 
-// Section headings
 .section-heading {
   font-size: 1.75rem;
   font-weight: 600;
@@ -182,60 +177,6 @@ main {
   margin-bottom: 1rem;
   text-align: left;
 }
-
-// =============================================================================
-// CARD & CONTAINER COMPONENTS
-// =============================================================================
-
-// Card styles
-.card {
-  background: var(--card-background);
-  padding: 2rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  border: 1px solid var(--border-color);
-  transition: all var(--transition-speed) ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-color);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  }
-
-  &.compact {
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  &.no-hover {
-    &:hover {
-      transform: none;
-      border-color: var(--border-color);
-      box-shadow: none;
-    }
-  }
-}
-
-// Intro/description cards
-.intro-card {
-  background: var(--card-background);
-  padding: 2rem;
-  border-radius: 12px;
-  margin-bottom: 3rem;
-  border: 1px solid var(--border-color);
-
-  p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin: 0;
-    color: var(--text-color);
-    text-align: left;
-  }
-}
-
-// =============================================================================
-// SOCIAL LINKS COMPONENT
-// =============================================================================
 
 .social-links {
   margin-bottom: 2rem;
@@ -276,7 +217,6 @@ main {
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
-    // Platform-specific hover colors
     &:nth-child(1):hover {
       background: #333;
       color: white;
@@ -311,10 +251,6 @@ main {
     }
   }
 }
-
-// =============================================================================
-// BUTTON COMPONENTS
-// =============================================================================
 
 .cta-section {
   display: flex;
@@ -373,7 +309,7 @@ main {
 
     &:hover {
       border-color: var(--primary-color);
-      color: var(--primary-color);
+      color: var(--secondary-color);
       transform: translateY(-1px);
     }
   }
@@ -395,7 +331,6 @@ main {
   }
 }
 
-// Link buttons
 .link-button,
 .view-link {
   display: flex;
@@ -421,11 +356,6 @@ main {
   }
 }
 
-// =============================================================================
-// TAGS & LABELS
-// =============================================================================
-
-// Tech tags
 .tech-highlights,
 .project-tech {
   display: flex;
@@ -454,7 +384,6 @@ main {
   }
 }
 
-// Label components
 .date-label,
 .info-label,
 .interest-label {
@@ -482,10 +411,6 @@ main {
   );
 }
 
-// =============================================================================
-// TIMELINE COMPONENT
-// =============================================================================
-
 .timeline {
   display: flex;
   flex-direction: column;
@@ -495,7 +420,6 @@ main {
 .timeline-section {
   position: relative;
 
-  // Timeline line
   &:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -601,71 +525,6 @@ main {
   }
 }
 
-// =============================================================================
-// STATS GRID COMPONENT
-// =============================================================================
-
-.stats-grid,
-.quick-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin: 2rem 0 3rem 0;
-  padding: 0;
-
-  .stat-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: var(--card-background);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    transition: all var(--transition-speed) ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      border-color: var(--accent-color);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .stat-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 50px;
-      height: 50px;
-      background: var(--accent-color);
-      border-radius: 12px;
-      color: var(--background-color);
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .stat-content {
-      flex: 1;
-
-      .stat-number {
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--text-color);
-        line-height: 1;
-        margin-bottom: 0.25rem;
-      }
-
-      .stat-label {
-        font-size: 0.9rem;
-        color: var(--text-secondary);
-        font-weight: 500;
-      }
-    }
-  }
-}
-
-// =============================================================================
-// PROJECT COMPONENTS
-// =============================================================================
-
 .featured-project-section {
   .section-header {
     display: flex;
@@ -717,16 +576,11 @@ main {
       font-size: 1rem;
       line-height: 1.6;
       color: var(--text-color);
-      margin-bottom: 0; /* Remove bottom margin since no tech tags */
+      margin-bottom: 0;
     }
   }
 }
 
-// =============================================================================
-// UTILITY CLASSES
-// =============================================================================
-
-// Spacing utilities
 .mb-1 {
   margin-bottom: 1rem;
 }
@@ -746,7 +600,6 @@ main {
   margin-top: 3rem;
 }
 
-// Text utilities
 .text-center {
   text-align: center;
 }
@@ -763,7 +616,6 @@ main {
   color: var(--accent-color);
 }
 
-// Flex utilities
 .flex {
   display: flex;
 }
@@ -788,26 +640,6 @@ main {
 .gap-2 {
   gap: 2rem;
 }
-
-// Animation utilities
-.fade-in {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// =============================================================================
-// LINK STYLES
-// =============================================================================
 
 a {
   color: var(--accent-color);
@@ -842,10 +674,6 @@ a:hover {
   }
 }
 
-// =============================================================================
-// RESPONSIVE DESIGN
-// =============================================================================
-
 @media (max-width: 768px) {
   .page-container {
     padding: 1.5rem 1rem;
@@ -871,24 +699,6 @@ a:hover {
     font-size: 1.1rem;
   }
 
-  .card {
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-
-    &.compact {
-      padding: 1.25rem;
-    }
-  }
-
-  .intro-card {
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-
-    p {
-      font-size: 1rem;
-    }
-  }
-
   .social-links {
     .social-icons {
       gap: 0.5rem;
@@ -908,34 +718,6 @@ a:hover {
     flex-direction: column;
     gap: 0.75rem;
     margin-top: 1.5rem;
-  }
-
-  .stats-grid,
-  .quick-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-    margin: 1.5rem 0 2rem 0;
-
-    .stat-item {
-      padding: 1.25rem;
-      gap: 0.75rem;
-
-      .stat-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-      }
-
-      .stat-content {
-        .stat-number {
-          font-size: 1.75rem;
-        }
-
-        .stat-label {
-          font-size: 0.85rem;
-        }
-      }
-    }
   }
 
   .timeline-section {
@@ -1061,50 +843,6 @@ a:hover {
 
   .subsection-heading {
     font-size: 1rem;
-  }
-
-  .card {
-    padding: 1.25rem;
-
-    &.compact {
-      padding: 1rem;
-    }
-  }
-
-  .intro-card {
-    padding: 1.25rem;
-
-    p {
-      font-size: 0.95rem;
-    }
-  }
-
-  .stats-grid,
-  .quick-stats {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    margin: 1rem 0 1.5rem 0;
-
-    .stat-item {
-      padding: 1rem;
-      gap: 0.75rem;
-
-      .stat-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-      }
-
-      .stat-content {
-        .stat-number {
-          font-size: 1.5rem;
-        }
-
-        .stat-label {
-          font-size: 0.8rem;
-        }
-      }
-    }
   }
 
   .cta-section {

@@ -7,7 +7,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class HighlightService {
   constructor(private sanitizer: DomSanitizer) {}
 
-  highlightKeywords(text: string, keywords: string[] = []): SafeHtml {
+  highlightKeywords(text: string, keywords: readonly string[] = []): SafeHtml {
     if (!text || !keywords.length) {
       return this.sanitizer.bypassSecurityTrustHtml(text);
     }

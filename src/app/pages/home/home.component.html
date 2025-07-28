@@ -1,77 +1,159 @@
 <div class="profile-container" [@pageLoadAnimation] [@routeAnimations]>
+  @if (isLoaded) {
   <div class="content-wrapper">
     <div class="text-content">
-      <!-- Hero Section -->
-      <div class="hero-section">
-        <h1 class="name fade-in">{{ configData.profile.greeting }}</h1>
-        <p class="tagline fade-in">{{ configData.profile.tagline }}</p>
-      </div>
+      <section class="hero-section" role="banner">
+        <h1 class="name" [attr.aria-label]="profile.greeting">
+          {{ profile.greeting }}
+        </h1>
+        <p class="tagline" [attr.aria-label]="profile.tagline">
+          {{ profile.tagline }}
+        </p>
+      </section>
 
-      <!-- Social Links -->
-      <div class="social-links">
-        <span class="social-label">Connect with me</span>
+      <section
+        class="social-links"
+        role="navigation"
+        [attr.aria-label]="sectionTitles.CONNECT_WITH_ME"
+      >
+        <span class="social-label">{{ sectionTitles.CONNECT_WITH_ME }}</span>
         <div class="social-icons">
+          @for (link of componentState.socialLinks; track link.name) {
           <a
-            *ngFor="let link of socialLinks"
             [href]="link.url"
             target="_blank"
             rel="noopener noreferrer"
             [title]="link.name"
+            [attr.aria-label]="'Connect with me on ' + link.name"
+            (click)="onSocialLinkClick(link)"
+            class="social-icon-link"
           >
-            <fa-icon [icon]="link.icon"></fa-icon>
+            <fa-icon [icon]="link.icon" [attr.aria-hidden]="true"></fa-icon>
+            <span class="sr-only">{{ link.name }}</span>
           </a>
+          }
         </div>
-      </div>
+      </section>
 
-      <!-- About Section -->
-      <div class="about-section">
+      <section class="about-section" role="main">
         <div class="about-text-container">
-          <p class="about-text fade-in">{{ configData.aboutMe.part1 }}</p>
-          <p class="about-text fade-in">{{ configData.aboutMe.part2 }}</p>
-          <p class="about-text fade-in">{{ configData.aboutMe.part3 }}</p>
+          <p class="about-text">{{ aboutMe.part1 }}</p>
+          <p class="about-text">{{ aboutMe.part2 }}</p>
+          <p class="about-text">{{ aboutMe.part3 }}</p>
         </div>
 
-        <div class="cta-section">
+        <div
+          class="cta-section"
+          role="group"
+          aria-label="Call to action buttons"
+        >
           <a
-            [href]="configData.cvLink"
+            [href]="componentState.config.cvLink"
             target="_blank"
             rel="noopener noreferrer"
             class="cta-button primary"
+            [attr.aria-label]="buttonLabels.VIEW_RESUME"
+            (click)="onCvLinkClick()"
           >
-            <fa-icon [icon]="configData.icons.faArrowRightLong"></fa-icon>
-            View Resume
+            <fa-icon
+              [icon]="icons.faArrowRightLong"
+              [attr.aria-hidden]="true"
+            ></fa-icon>
+            {{ buttonLabels.VIEW_RESUME }}
           </a>
-          <a href="mailto:zahidhasann67@gmail.com" class="cta-button secondary">
-            <fa-icon [icon]="configData.icons.faEnvelope"></fa-icon>
-            Get In Touch
-          </a>
-          <a [routerLink]="['/about-me']" class="cta-button tertiary">
-            <fa-icon [icon]="configData.icons.faArrowRightLong"></fa-icon>
-            Know More About Me
-          </a>
-        </div>
-      </div>
 
-      <div class="featured-project-section" *ngIf="projects.length">
+          <a
+            [href]="'mailto:' + constants.PROFILE.EMAIL"
+            class="cta-button secondary"
+            [attr.aria-label]="buttonLabels.GET_IN_TOUCH"
+            (click)="onContactClick()"
+          >
+            <fa-icon
+              [icon]="icons.faEnvelope"
+              [attr.aria-hidden]="true"
+            ></fa-icon>
+            {{ buttonLabels.GET_IN_TOUCH }}
+          </a>
+
+          <a
+            [routerLink]="['/about-me']"
+            class="cta-button tertiary"
+            [attr.aria-label]="buttonLabels.KNOW_MORE"
+          >
+            <fa-icon
+              [icon]="icons.faArrowRightLong"
+              [attr.aria-hidden]="true"
+            ></fa-icon>
+            {{ buttonLabels.KNOW_MORE }}
+          </a>
+        </div>
+      </section>
+
+      @if (componentState.projects && componentState.projects.length > 0) {
+      <section
+        class="featured-project-section"
+        role="region"
+        [attr.aria-label]="sectionTitles.FEATURED_PROJECTS"
+      >
         <div class="section-header">
-          <h2>Featured Projects</h2>
+          <h2>{{ sectionTitles.FEATURED_PROJECTS }}</h2>
         </div>
-        <div class="project-item" *ngFor="let project of projects">
-          <div class="project-header content-header-inline">
-            <h3>{{ project.name }}</h3>
-            <a [href]="project.url" target="_blank" class="link-button">
-              <fa-icon [icon]="configData.icons.faGithub"></fa-icon>
-              View GitHub
-            </a>
-          </div>
-          <p
-            class="project-description"
-            [innerHTML]="
-              getHighlightedDescription(project.description, project.keywords)
-            "
-          ></p>
+
+        <div class="projects-grid">
+          @for (project of componentState.projects; track project.name) {
+          <article
+            class="project-item"
+            [attr.aria-label]="'Project: ' + project.name"
+          >
+            <div class="project-header content-header-inline">
+              <h3>{{ project.name }}</h3>
+              <a
+                [href]="project.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-button"
+                [attr.aria-label]="'View ' + project.name + ' on GitHub'"
+                (click)="onProjectLinkClick(project)"
+              >
+                <fa-icon
+                  [icon]="icons.faGithub"
+                  [attr.aria-hidden]="true"
+                ></fa-icon>
+                {{ buttonLabels.VIEW_GITHUB }}
+              </a>
+            </div>
+
+            <p
+              class="project-description"
+              [innerHTML]="
+                getHighlightedDescription(project.description, project.keywords)
+              "
+              [attr.aria-label]="project.description"
+            ></p>
+          </article>
+          }
         </div>
-      </div>
+      </section>
+      } @if (!componentState.projects || componentState.projects.length === 0) {
+      <section
+        class="loading-projects"
+        role="status"
+        aria-label="Loading projects"
+      >
+        <div class="loading-spinner" [attr.aria-hidden]="true"></div>
+        <span class="sr-only">Loading featured projects...</span>
+      </section>
+      }
     </div>
   </div>
+  } @else {
+  <div
+    class="component-loading"
+    role="status"
+    aria-label="Loading page content"
+  >
+    <div class="loading-spinner" [attr.aria-hidden]="true"></div>
+    <span class="sr-only">Loading page content...</span>
+  </div>
+  }
 </div>

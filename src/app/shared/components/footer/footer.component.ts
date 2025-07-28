@@ -1,36 +1,62 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+
 import { ConfigService } from '../../../core/services/config.service';
 import { SocialLink } from '../../../core/models/config.interfaces';
-import { Subject, takeUntil } from 'rxjs';
+import { APP_CONSTANTS } from '../../../core/utils/app.constants';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss',
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit, OnDestroy {
-  currentYear: number = new Date().getFullYear();
+  private readonly configService = inject(ConfigService);
 
-  socialLinks: SocialLink[] = [];
-  private unsubscribe$ = new Subject<void>();
+  private readonly destroy$ = new Subject<void>();
 
-  constructor(private configService: ConfigService) {}
+  socialLinks: readonly SocialLink[] = [];
+  currentYear: number;
 
-  ngOnInit() {
+  readonly constants = APP_CONSTANTS;
+
+  constructor() {
+    this.currentYear = this.configService.getCurrentYear();
+  }
+
+  ngOnInit(): void {
+    this.initializeFooter();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  private initializeFooter(): void {
     this.configService
-      .getConfig()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe((data) => {
-        this.socialLinks = data.socialLinks;
+      .getSocialLinks()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((links) => {
+        this.socialLinks = links;
       });
   }
 
-  ngOnDestroy() {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+  onSocialLinkClick(socialLink: SocialLink, event: Event): void {}
+
+  get footerSocialLinks(): readonly SocialLink[] {
+    return this.socialLinks.filter((link) => link.name !== 'Email');
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 }

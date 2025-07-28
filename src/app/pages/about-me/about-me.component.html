@@ -1,55 +1,113 @@
 <div class="about-container" [@pageLoadAnimation] [@routeAnimations]>
-  <div class="about-header">
-    <h1 (click)="goBack()"><fa-icon [icon]="faArrowLeft"></fa-icon> About Me.</h1>
-  </div>
-
-  <div class="timeline">
-    <div 
-      class="timeline-section" 
-      *ngFor="let section of timelineSections; let sectionIndex = index"
-    >
-      <h2 *ngIf="section.title">{{ section.title }}</h2>
-      
-      <div 
-        class="timeline-item" 
-        *ngFor="let item of section.items; let itemIndex = index"
+  @if (isLoaded) {
+  <header class="about-header" role="banner">
+    <h1 class="page-title">
+      <button
+        type="button"
+        class="back-button"
+        (click)="goBack()"
+        [attr.aria-label]="'Go back to previous page'"
+        title="Go back"
       >
-        <div class="timeline-dot"></div>
-        <div class="timeline-content">
-          <div class="content-header content-header-inline">
-            <h3>{{ item.title }}</h3>
-            
-            <a 
-              *ngIf="item.link" 
-              [href]="item.link.url" 
-              [target]="item.link.url.startsWith('http') ? '_blank' : '_self'"
-              class="view-link"
+        <fa-icon
+          [icon]="icons.SOLID.ARROW_LEFT"
+          [attr.aria-hidden]="true"
+        ></fa-icon>
+      </button>
+      {{ constants.SECTION_TITLES.ABOUT_ME }}
+    </h1>
+  </header>
+
+  <main class="timeline" role="main">
+    @for (section of timelineSections; track trackSection(sectionIndex,
+    section); let sectionIndex = $index) {
+    <section
+      [class]="getSectionClass(sectionIndex)"
+      [attr.aria-label]="section.title || 'Timeline section'"
+    >
+      @if (section.title) {
+      <h2 class="section-title">{{ section.title }}</h2>
+      }
+
+      <div class="timeline-items">
+        @for (item of section.items; track trackItem(itemIndex, item); let
+        itemIndex = $index) {
+        <article
+          [class]="getItemClass(sectionIndex, itemIndex)"
+          [attr.aria-label]="'Timeline item: ' + item.title"
+        >
+          <div class="timeline-dot" [attr.aria-hidden]="true"></div>
+
+          <div class="timeline-content">
+            <header class="content-header content-header-inline">
+              <h3 class="item-title">{{ item.title }}</h3>
+
+              @if (item.link && item.link.url !== '#') {
+              <a
+                [href]="item.link.url"
+                [target]="getLinkTarget(item.link.url)"
+                [rel]="getLinkRel(item.link.url)"
+                class="view-link"
+                [attr.aria-label]="item.link.text + ' for ' + item.title"
+                (click)="onExternalLinkClick(item.link.url, item.link.text)"
+              >
+                <fa-icon
+                  [icon]="item.link.icon"
+                  [attr.aria-hidden]="true"
+                ></fa-icon>
+                {{ item.link.text }}
+              </a>
+              } @if (item.dateLabel) {
+              <span
+                [class]="getDateLabelClass(sectionIndex)"
+                [attr.aria-label]="'Timeline: ' + item.dateLabel.text"
+              >
+                <fa-icon
+                  [icon]="item.dateLabel.icon"
+                  [attr.aria-hidden]="true"
+                ></fa-icon>
+                {{ item.dateLabel.text }}
+              </span>
+              }
+            </header>
+
+            <div class="item-description">
+              <p>{{ item.description }}</p>
+            </div>
+
+            @if (item.techTags && item.techTags.length > 0) {
+            <div
+              class="tech-highlights"
+              role="list"
+              [attr.aria-label]="'Technologies for ' + item.title"
             >
-              <fa-icon [icon]="item.link.icon"></fa-icon>
-              {{ item.link.text }}
-            </a>
-            
-            <span 
-              *ngIf="item.dateLabel" 
-              [class]="sectionIndex === 1 ? 'date-label' : 'interest-label'"
-            >
-              <fa-icon [icon]="item.dateLabel.icon"></fa-icon> 
-              {{ item.dateLabel.text }}
-            </span>
+              @for (tag of item.techTags; track trackTechTag(tagIndex, tag); let
+              tagIndex = $index) {
+              <span
+                class="tech-tag"
+                role="listitem"
+                [attr.aria-label]="'Technology: ' + tag"
+              >
+                {{ tag }}
+              </span>
+              }
+            </div>
+            }
           </div>
-          
-          <p>{{ item.description }}</p>
-          
-          <div *ngIf="item.techTags" class="tech-highlights">
-            <span 
-              *ngFor="let tag of item.techTags" 
-              class="tech-tag"
-            >
-              {{ tag }}
-            </span>
-          </div>
-        </div>
+        </article>
+        }
       </div>
-    </div>
+    </section>
+    }
+  </main>
+  } @else {
+  <div
+    class="about-loading"
+    role="status"
+    aria-label="Loading about page content"
+  >
+    <div class="loading-spinner" [attr.aria-hidden]="true"></div>
+    <span class="sr-only">Loading about page content...</span>
   </div>
+  }
 </div>

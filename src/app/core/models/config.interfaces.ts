@@ -1,98 +1,105 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 export interface Project {
-  name: string;
-  description: string;
-  url: string;
-  keywords: string[];
+  readonly name: string;
+  readonly description: string;
+  readonly url: string;
+  readonly keywords: readonly string[];
 }
 
 export interface SocialLink {
-  name: string;
-  url: string;
-  icon: IconDefinition;
+  readonly name: string;
+  readonly url: string;
+  readonly icon: IconDefinition;
 }
 
 export interface QuickStat {
-  number: string;
-  label: string;
-  icon: IconDefinition;
+  readonly number: string;
+  readonly label: string;
+  readonly icon: IconDefinition;
 }
 
 export interface Link {
-  url: string;
-  text: string;
-  icon: IconDefinition;
+  readonly url: string;
+  readonly text: string;
+  readonly icon: IconDefinition;
 }
 
 export interface DateLabel {
-  text: string;
-  icon: IconDefinition;
+  readonly text: string;
+  readonly icon: IconDefinition;
 }
 
 export interface TimelineItem {
-  title: string;
-  description: string;
-  link?: Link;
-  dateLabel?: DateLabel;
-  techTags?: string[];
+  readonly title: string;
+  readonly description: string;
+  readonly link?: Link;
+  readonly dateLabel?: DateLabel;
+  readonly techTags?: readonly string[];
 }
 
 export interface TimelineSection {
-  title?: string;
-  items: TimelineItem[];
+  readonly title?: string;
+  readonly items: readonly TimelineItem[];
 }
 
 export interface AboutMe {
-  part1: string;
-  part2: string;
-  part3: string;
-  timelineSections: TimelineSection[];
+  readonly part1: string;
+  readonly part2: string;
+  readonly part3: string;
+  readonly timelineSections: readonly TimelineSection[];
 }
 
 export interface ProfileInfo {
-  name: string;
-  title: string;
-  greeting: string;
-  tagline: string;
+  readonly name: string;
+  readonly title: string;
+  readonly greeting: string;
+  readonly tagline: string;
+}
+
+export interface HomeComponentState {
+  config: Config;
+  projects: readonly Project[];
+  socialLinks: readonly SocialLink[];
+  currentYear: number;
 }
 
 export interface Icons {
-  faArrowLeft: IconDefinition;
-  faGithub: IconDefinition;
-  faLinkedin: IconDefinition;
-  faTwitter: IconDefinition;
-  faEnvelope: IconDefinition;
-  faBrain: IconDefinition;
-  faCalendar: IconDefinition;
-  faHeart: IconDefinition;
-  faLightbulb: IconDefinition;
-  faCoffee: IconDefinition;
-  faCode: IconDefinition;
-  faRocket: IconDefinition;
-  faUsers: IconDefinition;
-  faBug: IconDefinition;
-  faBookOpen: IconDefinition;
-  faGamepad: IconDefinition;
-  faMusic: IconDefinition;
-  faCamera: IconDefinition;
-  faMountain: IconDefinition;
-  faQuoteLeft: IconDefinition;
-  faHandshake: IconDefinition;
-  faGraduationCap: IconDefinition;
-  faTrophy: IconDefinition;
-  faTools: IconDefinition;
-  faArrowRightLong: IconDefinition;
-  faXTwitter: IconDefinition;
-  faStackOverflow: IconDefinition;
-  faMedium: IconDefinition;
+  readonly faArrowLeft: IconDefinition;
+  readonly faGithub: IconDefinition;
+  readonly faLinkedin: IconDefinition;
+  readonly faTwitter: IconDefinition;
+  readonly faEnvelope: IconDefinition;
+  readonly faBrain: IconDefinition;
+  readonly faCalendar: IconDefinition;
+  readonly faHeart: IconDefinition;
+  readonly faLightbulb: IconDefinition;
+  readonly faCoffee: IconDefinition;
+  readonly faCode: IconDefinition;
+  readonly faRocket: IconDefinition;
+  readonly faUsers: IconDefinition;
+  readonly faBug: IconDefinition;
+  readonly faBookOpen: IconDefinition;
+  readonly faGamepad: IconDefinition;
+  readonly faMusic: IconDefinition;
+  readonly faCamera: IconDefinition;
+  readonly faMountain: IconDefinition;
+  readonly faQuoteLeft: IconDefinition;
+  readonly faHandshake: IconDefinition;
+  readonly faGraduationCap: IconDefinition;
+  readonly faTrophy: IconDefinition;
+  readonly faTools: IconDefinition;
+  readonly faArrowRightLong: IconDefinition;
+  readonly faXTwitter: IconDefinition;
+  readonly faStackOverflow: IconDefinition;
+  readonly faMedium: IconDefinition;
 }
 
 export interface Config {
-  cvLink: string;
-  profile: ProfileInfo;
-  aboutMe: AboutMe;
-  projects: Project[];
-  socialLinks: SocialLink[];
-  icons: Icons;
+  readonly cvLink: string;
+  readonly profile: ProfileInfo;
+  readonly aboutMe: AboutMe;
+  readonly projects: readonly Project[];
+  readonly socialLinks: readonly SocialLink[];
+  readonly icons: Icons;
 }
