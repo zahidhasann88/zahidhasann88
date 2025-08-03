@@ -6,122 +6,10 @@
 }
 
 .about-header {
-  margin-bottom: 2rem;
-  
-  .header-content {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    
-    .back-button {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--card-background);
-      border: 1px solid var(--border-color);
-      color: var(--text-color);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all var(--transition-speed) ease;
-      font-size: 0.9rem;
-      
-      &:hover {
-        background: var(--accent-color);
-        color: var(--background-color);
-        border-color: var(--accent-color);
-        transform: translateX(-2px);
-      }
-      
-      fa-icon {
-        font-size: 0.8rem;
-      }
-    }
-    
-    .header-text {
-      flex: 1;
-      
-      .page-title {
-        font-size: 2rem;
-        font-weight: 600;
-        margin: 0;
-        color: var(--text-color);
-      }
-      
-      .page-subtitle {
-        font-size: 1rem;
-        color: var(--text-secondary);
-        margin: 0.25rem 0 0 0;
-        opacity: 0.8;
-      }
-    }
-  }
-}
-
-.personal-intro {
-  background: linear-gradient(135deg, var(--card-background), rgba(86, 156, 214, 0.05));
-  border-radius: 16px;
-  padding: 2.5rem;
   margin-bottom: 3rem;
-  border: 1px solid var(--border-color);
-  text-align: center;
-  
-  h1 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-  }
-  
-  .intro-content {
-    max-width: 600px;
-    margin: 0 auto;
-    
-    .intro-text {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--text-color);
-      margin-bottom: 1rem;
-      opacity: 0.9;
-      
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
 
-.timeline {
-  .timeline-section {
-    &:first-child {
-      .section-title {
-        margin-top: 0;
-      }
-    }
-    
-    .section-title {
-      position: relative;
-      padding-left: 1rem;
-      
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 4px;
-        height: 2rem;
-        background: var(--accent-color);
-        border-radius: 2px;
-      }
-    }
-  }
-}
-
-.old-header-style {
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
     margin: 0;
     text-align: left;
@@ -189,20 +77,8 @@
   }
 
   .about-header {
-    .header-content {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.75rem;
-      
-      .back-button {
-        align-self: flex-start;
-      }
-      
-      .header-text {
-        .page-title {
-          font-size: 1.75rem;
-        }
-      }
+    h1 {
+      font-size: 2rem;
     }
   }
 
@@ -210,14 +86,8 @@
     padding: 1.5rem;
     margin-bottom: 2rem;
 
-    h1 {
-      font-size: 1.5rem;
-    }
-    
-    .intro-content {
-      .intro-text {
-        font-size: 1rem;
-      }
+    p {
+      font-size: 1rem;
     }
   }
 }
@@ -228,30 +98,16 @@
   }
 
   .about-header {
-    .header-content {
-      .header-text {
-        .page-title {
-          font-size: 1.5rem;
-        }
-        
-        .page-subtitle {
-          font-size: 0.9rem;
-        }
-      }
+    h1 {
+      font-size: 1.75rem;
     }
   }
 
   .personal-intro {
     padding: 1.25rem;
 
-    h1 {
-      font-size: 1.3rem;
-    }
-    
-    .intro-content {
-      .intro-text {
-        font-size: 0.95rem;
-      }
+    p {
+      font-size: 0.95rem;
     }
   }
 }
