@@ -95,7 +95,7 @@ export const APP_CONSTANTS = {
 
   BUTTONS: {
     VIEW_RESUME: 'View Resume',
-    GET_IN_TOUCH: 'Get In Touch',
+    GET_IN_TOUCH: "Let's Talk",
     KNOW_MORE: 'Know More About Me',
     VIEW_GITHUB: 'View GitHub',
   },

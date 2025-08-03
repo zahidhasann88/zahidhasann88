@@ -3,12 +3,24 @@
   <div class="content-wrapper">
     <div class="text-content">
       <section class="hero-section" role="banner">
-        <h1 class="name" [attr.aria-label]="profile.greeting">
-          {{ profile.greeting }}
-        </h1>
-        <p class="tagline" [attr.aria-label]="profile.tagline">
-          {{ profile.tagline }}
-        </p>
+        <div class="hero-content">
+          <h1 class="name" [attr.aria-label]="profile.greeting">
+            {{ profile.greeting }}
+          </h1>
+          <p class="tagline" [attr.aria-label]="profile.tagline">
+            {{ profile.tagline }}
+          </p>
+          <div class="hero-highlight">
+            <span class="highlight-text">Building scalable systems & crafting exceptional user experiences</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="quick-intro" role="main">
+        <div class="intro-content">
+          <p class="intro-text">{{ aboutMe.part1 }}</p>
+          <p class="intro-text">{{ aboutMe.part2 }}</p>
+        </div>
       </section>
 
       <section
@@ -35,18 +47,163 @@
         </div>
       </section>
 
-      <section class="about-section" role="main">
-        <div class="about-text-container">
-          <p class="about-text">{{ aboutMe.part1 }}</p>
-          <p class="about-text">{{ aboutMe.part2 }}</p>
-          <p class="about-text">{{ aboutMe.part3 }}</p>
+      @if (componentState.projects && componentState.projects.length > 0) {
+      <section
+        class="featured-project-section"
+        role="region"
+        [attr.aria-label]="sectionTitles.FEATURED_PROJECTS"
+      >
+        <div class="section-header">
+          <h2>{{ sectionTitles.FEATURED_PROJECTS }}</h2>
+          <p class="section-subtitle">Recent work that showcases my technical expertise</p>
         </div>
 
+        <div class="projects-grid">
+          @for (project of componentState.projects; track project.name) {
+          <article
+            class="project-item"
+            [attr.aria-label]="'Project: ' + project.name"
+          >
+            <div class="project-header content-header-inline">
+              <h3>{{ project.name }}</h3>
+              <a
+                [href]="project.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="link-button"
+                [attr.aria-label]="'View ' + project.name + ' on GitHub'"
+                (click)="onProjectLinkClick(project)"
+              >
+                <fa-icon
+                  [icon]="icons.faGithub"
+                  [attr.aria-hidden]="true"
+                ></fa-icon>
+                {{ buttonLabels.VIEW_GITHUB }}
+              </a>
+            </div>
+
+            <p
+              class="project-description"
+              [innerHTML]="
+                getHighlightedDescription(project.description, project.keywords)
+              "
+              [attr.aria-label]="project.description"
+            ></p>
+          </article>
+          }
+        </div>
+      </section>
+      }
+
+      <section class="value-proposition">
+        <div class="value-content">
+          <h2>What I Bring to Your Team</h2>
+          <div class="value-grid">
+            <div class="value-item">
+              <fa-icon [icon]="icons.faCode" class="value-icon"></fa-icon>
+              <h3>Technical Excellence</h3>
+              <p>Full-stack expertise with modern technologies, clean architecture, and scalable solutions.</p>
+            </div>
+            <div class="value-item">
+              <fa-icon [icon]="icons.faUsers" class="value-icon"></fa-icon>
+              <h3>Collaborative Mindset</h3>
+              <p>Strong communication skills and experience working with cross-functional teams.</p>
+            </div>
+            <div class="value-item">
+              <fa-icon [icon]="icons.faRocket" class="value-icon"></fa-icon>
+              <h3>Results-Driven</h3>
+              <p>Focus on delivering business value through efficient, maintainable, and performant code.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="journey-teaser">
+        <div class="teaser-content">
+          <h2>My Engineering Journey</h2>
+          <p class="teaser-text">{{ aboutMe.part3 }}</p>
+          <div class="journey-highlights">
+            <div class="highlight-item">
+              <span class="highlight-number">5+</span>
+              <span class="highlight-label">Years Experience</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-number">10+</span>
+              <span class="highlight-label">Technologies Mastered</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-number">∞</span>
+              <span class="highlight-label">Problems Solved</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section-wrapper">
         <div
           class="cta-section"
           role="group"
           aria-label="Call to action buttons"
         >
+          <h2 class="cta-heading">Let's Build Something Great Together</h2>
+          <p class="cta-description">Ready to discuss your next project or explore opportunities?</p>
+          
+          <div class="cta-buttons">
+            <a
+              [href]="'mailto:' + constants.PROFILE.EMAIL"
+              class="cta-button primary"
+              [attr.aria-label]="buttonLabels.GET_IN_TOUCH"
+              (click)="onContactClick()"
+            >
+              <fa-icon
+                [icon]="icons.faEnvelope"
+                [attr.aria-hidden]="true"
+              ></fa-icon>
+              {{ buttonLabels.GET_IN_TOUCH }}
+            </a>
+
+            <a
+              [href]="componentState.config.cvLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="cta-button secondary"
+              [attr.aria-label]="buttonLabels.VIEW_RESUME"
+              (click)="onCvLinkClick()"
+            >
+              <fa-icon
+                [icon]="icons.faArrowRightLong"
+                [attr.aria-hidden]="true"
+              ></fa-icon>
+              {{ buttonLabels.VIEW_RESUME }}
+            </a>
+
+            <a
+              [routerLink]="['/about-me']"
+              class="cta-button tertiary"
+              [attr.aria-label]="buttonLabels.KNOW_MORE"
+            >
+              <fa-icon
+                [icon]="icons.faArrowRightLong"
+                [attr.aria-hidden]="true"
+              ></fa-icon>
+              {{ buttonLabels.KNOW_MORE }}
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  } @else {
+  <div
+    class="component-loading"
+    role="status"
+    aria-label="Loading page content"
+  >
+    <div class="loading-spinner" [attr.aria-hidden]="true"></div>
+    <span class="sr-only">Loading page content...</span>
+  </div>
+  }
+</div>
           <a
             [href]="componentState.config.cvLink"
             target="_blank"

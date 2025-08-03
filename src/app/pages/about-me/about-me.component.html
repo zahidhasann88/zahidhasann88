@@ -1,7 +1,7 @@
 <div class="about-container" [@pageLoadAnimation] [@routeAnimations]>
   @if (isLoaded) {
   <header class="about-header" role="banner">
-    <h1 class="page-title">
+    <div class="header-content">
       <button
         type="button"
         class="back-button"
@@ -13,10 +13,26 @@
           [icon]="icons.SOLID.ARROW_LEFT"
           [attr.aria-hidden]="true"
         ></fa-icon>
+        <span>Back</span>
       </button>
-      {{ constants.SECTION_TITLES.ABOUT_ME }}
-    </h1>
+      
+      <div class="header-text">
+        <h1 class="page-title">{{ constants.SECTION_TITLES.ABOUT_ME }}</h1>
+        <p class="page-subtitle">The story behind the code</p>
+      </div>
+    </div>
   </header>
+
+  <section class="personal-intro" role="main">
+    <h1 class="page-title">
+      Welcome to my journey
+    </h1>
+    <div class="intro-content">
+      <p class="intro-text">{{ config.aboutMe.part1 }}</p>
+      <p class="intro-text">{{ config.aboutMe.part2 }}</p>
+      <p class="intro-text">{{ config.aboutMe.part3 }}</p>
+    </div>
+  </section>
 
   <main class="timeline" role="main">
     @for (section of timelineSections; track trackSection(sectionIndex,
