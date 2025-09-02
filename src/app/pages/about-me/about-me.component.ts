@@ -9,7 +9,7 @@ import {
   pageLoadAnimation,
   routeAnimations,
 } from '../../core/utils/animation/animations';
-import { TimelineSection, Config } from '../../core/models/config.interfaces';
+import { TimelineSection, Config, SocialLink } from '../../core/models/config.interfaces';
 import { ConfigService } from '../../core/services/config.service';
 import {
   APP_CONSTANTS,
@@ -60,6 +60,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   goBack(): void {
     this.location.back();
   }
+
   onExternalLinkClick(url: string, linkText: string): void {
     if (url.startsWith('http')) {
       window.open(url, '_blank', 'noopener,noreferrer');
@@ -69,6 +70,11 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   onEmailLinkClick(email: string): void {
     console.log(`Email link clicked: ${email}`);
     window.location.href = email;
+  }
+
+  onSocialLinkClick(socialLink: SocialLink): void {
+    console.log(`Social link clicked: ${socialLink.name}`);
+    window.open(socialLink.url, '_blank', 'noopener,noreferrer');
   }
 
   isExternalLink(url: string): boolean {

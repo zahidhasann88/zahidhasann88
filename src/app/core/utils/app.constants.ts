@@ -226,35 +226,75 @@ export const SOCIAL_LINKS_DATA = [
 
 export const CONTENT_DATA = {
   ABOUT_ME: {
-    PART_1: `My name is Zahid Hasan, also known as Zahid. I'm a Software Engineer based in Dhaka, Bangladesh.`,
-    PART_2: `Currently, my focus is on web applications and infrastructure, with a background interest in cloud technologies and distributed systems. I'm passionate about finding creative solutions to complex challenges and building tools that empower others to achieve more.`,
-    PART_3: ` Welcome to my web corner where I share my journey in software development and explore new technologies that keep me curious and motivated.`,
+    PART_1: `Hi, I’m Zahid Hasan, a Full-Stack Engineer based in Dhaka with 4+ years of experience building scalable, 
+    reliable systems. I focus on backend development while contributing to frontend features, with a strong interest in 
+    system design and large-scale applications.`,
+    PART_2: `Over the years, I’ve worked on building APIs, designing databases, and creating systems that balance performance, 
+    reliability, and maintainability. I enjoy tackling complex challenges, optimizing workflows, and ensuring that software 
+    not only works but is intuitive, maintainable, and scalable for the long term.`,
+    PART_3: `Here, I share my journey in software development, insights from real projects, lessons learned from solving 
+    challenging problems, and ideas that keep me learning and growing. Beyond coding, I explore system architecture, 
+    product design, and ways to improve the development lifecycle to deliver real-world impact.`,
   },
 
   TIMELINE_DESCRIPTIONS: {
-    ENGINEERING: `At the core of every great application is a backend that's thoughtfully built and resilient. I specialize in building that foundation—developing APIs that manage data efficiently, designing scalable database architectures, and ensuring systems remain reliable as they grow. While I thrive behind the scenes, I also step into frontend development to bridge the gap and deliver cohesive user experiences. Writing clean, maintainable code is a priority because I believe software should be intuitive to understand and easy to evolve. I enjoy breaking down complex problems and turning them into practical, high-performing solutions. For me, engineering is about balancing precision and pragmatism to build tools that work — reliably and quietly.`,
+    ENGINEERING: `At the core of every great application is a backend that's thoughtfully built and resilient. 
+    I specialize in building that foundation—developing APIs that manage data efficiently, designing scalable database 
+    architectures, and ensuring systems remain reliable as they grow. While I thrive behind the scenes, I also contribute 
+    to frontend development to bridge the gap and deliver cohesive user experiences. Writing clean, maintainable code is 
+    a priority because I believe software should be intuitive to understand and easy to evolve. I enjoy breaking down 
+    complex problems and turning them into practical, high-performing solutions. For me, development is about balancing 
+    precision and pragmatism to build tools that work—reliably and quietly.`,
 
-    PRODUCT: `Great products begin with a deep understanding of the real problems people face. I enjoy collaborating closely with teams to bridge the gap between user needs and practical solutions we can build. My approach focuses on asking thoughtful questions, prototyping early, and iterating based on feedback. Over time, I've learned that building something truly valuable isn't just about adding features — it's about knowing what to leave out to keep things simple and effective.`,
+    PRODUCT: `Great products begin with a deep understanding of the real problems people face. I enjoy collaborating closely 
+    with teams to bridge the gap between user needs and practical solutions we can build. My approach focuses on asking 
+    thoughtful questions, prototyping early, and iterating based on feedback. Over time, I've learned that building something 
+    truly valuable isn’t just about adding features—it’s about knowing what to leave out to keep things simple and effective.`,
 
-    PROBLEM_SOLVING: `Every bug is a puzzle, every feature is an opportunity to make someone's day better. I approach problems methodically—breaking them down, understanding the root cause, and finding solutions that are sustainable. I'm that person who actually enjoys debugging sessions and finds satisfaction in refactoring messy code into something beautiful. Sometimes the best solution is the simplest one.`,
+    PROBLEM_SOLVING: `Every bug is a puzzle, every feature is an opportunity to make someone's day better. I approach problems 
+    methodically—breaking them down, understanding the root cause, and finding solutions that are sustainable. I actually enjoy 
+    debugging sessions and find satisfaction in refactoring messy code into something clean and efficient. Often, the best 
+    solution is the simplest one.`,
 
-    FRONTEND_TECH: `More than just what users see, the frontend is about making sure everything runs smoothly behind the scenes — syncing perfectly with backend systems and delivering a seamless, dependable experience. Crafting components that communicate well, manage data efficiently, and respond without delay is essential. The goal is to simplify complex processes into interfaces that feel natural and reliable. Keeping up with the latest frontend tools helps keep these systems strong and adaptable.`,
+    FRONTEND_TECH: `The frontend is more than what users see — it’s about ensuring smooth, seamless interaction with backend 
+    systems. I develop components that communicate efficiently, manage data effectively, and respond without delay. 
+    The goal is to turn complex processes into interfaces that feel natural, intuitive, and reliable. Staying updated 
+    with modern frontend tools ensures these systems remain adaptable and maintainable.`,
 
-    BACKEND_DB: `Backends are where the core of an application lives — the place where complex logic, data, and performance come together. My focus is on crafting APIs that don't just work, but feel clear and predictable for frontend teams to build upon. I design databases with growth in mind, so they can handle increasing demands without breaking a sweat. Performance and security aren't just boxes to check; they're woven into the fabric of everything I build, ensuring the system stays strong and reliable long-term.`,
+    BACKEND_DB: `The backend is where the core of an application lives — the place where complex logic, data, and performance 
+    come together. I focus on developing APIs that are not only functional but clear and predictable for frontend teams to 
+    build upon. I design databases with scalability in mind, ensuring they handle growing demands without compromising 
+    reliability. Performance and security aren’t just checkboxes; they’re integral to everything I build, keeping systems 
+    strong and dependable over the long term.`,
 
-    DEV_WORKFLOW: `Good tools make good developers great. I'm passionate about setting up development environments that boost productivity and reduce friction. From automated testing to deployment pipelines, I believe in investing time upfront to save hours later.`,
+    DEV_WORKFLOW: `Good tools make good developers great. I focus on setting up development environments that boost 
+    productivity and minimize friction. From automated testing to deployment pipelines, investing in robust workflows 
+    upfront saves time and ensures more reliable, maintainable systems in the long run.`,
 
-    BEGINNING: `Started my coding journey with a simple HTML page and thought I was a wizard when I made text change colors. Those late nights learning JavaScript fundamentals, struggling with CSS layouts, and the pure joy of seeing my first dynamic web page work—that's when I knew I found my calling. Every error message was a lesson, and every working feature felt like magic.`,
+    BEGINNING: `I started my coding journey with C, a structured programming language, and later explored C++, an 
+    object-oriented language. Those late nights learning programming fundamentals, struggling with syntax and logic, 
+    and the sheer joy of seeing my first working program run—that’s when I knew I found my calling. Every error message 
+    was a lesson, and every working feature felt like magic.`,
 
-    BUILDING_REAL: `This is when things got serious. Started building actual applications that people could use, not just tutorial projects. Learned about databases, APIs, authentication, and all the "boring" stuff that makes applications actually work in the real world. Also discovered that deployment is an art form and that "it works on my machine" is not a valid argument.`,
+    BUILDING_REAL: `This is when things got serious. I began building real applications that people could actually use, 
+    not just tutorial projects. I learned about databases, APIs, authentication, and all the behind-the-scenes work that 
+    makes applications run in the real world. Deployment quickly became an art form, and I discovered that “it works on 
+    my machine” is never a valid excuse.`,
 
-    SCALING_ARCH: `Started thinking beyond individual features to entire systems. Learned about microservices, database optimization, caching strategies, and how to design systems that don't fall over when more than 10 people use them. Discovered that premature optimization is real, but so is the pain of rebuilding everything when you didn't plan for growth.`,
+    SCALING_ARCH: `As my experience grew, I started thinking beyond individual features to entire systems. I explored 
+    microservices, database optimization, caching strategies, and designing systems that scale reliably. 
+    I learned the value of planning for growth and balancing it with avoiding premature optimization.`,
 
-    LEARNING_GREAT: `We continue learning everyday.`,
+    LEARNING_GREAT: `Learning never stops. Every project, bug, and feature teaches me something new, and I continue to explore, 
+    experiment, and refine my skills every day.`,
 
-    NOT_CODING: `I'm a curious person by nature. I love reading about technology trends, watching YouTube videos about random engineering topics, and occasionally attempting to cook something more complex than instant noodles (with mixed results). I also enjoy long walks where I inevitably end up thinking about code architecture or that bug I couldn't fix earlier.`,
+    NOT_CODING: `I’m naturally curious. I enjoy reading about technology trends, watching videos on engineering and software 
+    topics, and occasionally attempting to cook something more complex than instant noodles (with mixed results). I also like 
+    long walks, where I often find myself thinking about code architecture or that tricky bug I couldn’t fix earlier.`,
 
-    LETS_CONNECT: `I'm always up for interesting conversations about technology, product development, or just about anything really. Whether you want to discuss a project idea, share a cool technical challenge, or just chat about the latest developments in our field, feel free to reach out. The best collaborations often start with simple conversations.`,
+    LETS_CONNECT: `I’m always open to interesting conversations—whether about technology, product development, or anything in 
+    between. If you want to discuss a project idea, share a challenging problem, or just chat about the latest trends in our 
+    field, feel free to reach out. The best collaborations often start with simple conversations.`,
   },
 } as const;
 

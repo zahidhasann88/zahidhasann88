@@ -1,21 +1,46 @@
 <div class="about-container" [@pageLoadAnimation] [@routeAnimations]>
   @if (isLoaded) {
   <header class="about-header" role="banner">
-    <h1 class="page-title">
-      <button
-        type="button"
-        class="back-button"
-        (click)="goBack()"
-        [attr.aria-label]="'Go back to previous page'"
-        title="Go back"
+    <div class="header-content">
+      <h1 class="page-title">
+        <button
+          type="button"
+          class="back-button"
+          (click)="goBack()"
+          [attr.aria-label]="'Go back to previous page'"
+          title="Go back"
+        >
+          <fa-icon
+            [icon]="icons.SOLID.ARROW_LEFT"
+            [attr.aria-hidden]="true"
+          ></fa-icon>
+        </button>
+        {{ constants.SECTION_TITLES.ABOUT_ME }}
+      </h1>
+      
+      <section
+        class="social-links"
+        role="navigation"
+        [attr.aria-label]="'Connect with me'"
       >
-        <fa-icon
-          [icon]="icons.SOLID.ARROW_LEFT"
-          [attr.aria-hidden]="true"
-        ></fa-icon>
-      </button>
-      {{ constants.SECTION_TITLES.ABOUT_ME }}
-    </h1>
+        <div class="social-icons">
+          @for (link of config.socialLinks; track link.name) {
+          <a
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [title]="link.name"
+            [attr.aria-label]="'Connect with me on ' + link.name"
+            (click)="onSocialLinkClick(link)"
+            class="social-icon-link"
+          >
+            <fa-icon [icon]="link.icon" [attr.aria-hidden]="true"></fa-icon>
+            <span class="sr-only">{{ link.name }}</span>
+          </a>
+          }
+        </div>
+      </section>
+    </div>
   </header>
 
   <main class="timeline" role="main">

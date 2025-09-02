@@ -28,7 +28,7 @@ export const USER_CONFIG: Readonly<Config> = {
         // What I Do Section
         items: [
           {
-            title: 'Engineering',
+            title: 'Development',
             description: CONTENT_DATA.TIMELINE_DESCRIPTIONS.ENGINEERING,
             link: {
               url: APP_CONSTANTS.URLS.GITHUB,
