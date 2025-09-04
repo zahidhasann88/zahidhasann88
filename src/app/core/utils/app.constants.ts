@@ -33,7 +33,7 @@ import {
 export const APP_CONSTANTS = {
   URLS: {
     CV_LINK:
-      'https://drive.google.com/file/d/1MaNcZwY-6WDsI3bR61ARWA-snUp-sOha/view?usp=sharing',
+      'https://drive.google.com/file/d/1dT6D97FJcMQ8QwSxD8S1viAWTs3YPqRf/view?usp=sharing',
     GITHUB: 'https://github.com/zahidhasann88',
     LINKEDIN: 'https://linkedin.com/in/zahidhasann',
     TWITTER: 'https://x.com/zahidhasann15',
