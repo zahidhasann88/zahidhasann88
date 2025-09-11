@@ -7,13 +7,6 @@
   }
 }
 
-.profile-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  overflow-x: hidden;
-}
-
 .about-section {
   margin-bottom: 2rem;
 }
@@ -54,17 +47,5 @@
       font-size: 0.75rem !important;
       padding: 0.4rem 0.6rem !important;
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .profile-container {
-    padding: 1.5rem 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-container {
-    padding: 1rem 0.75rem;
   }
 }

@@ -47,7 +47,7 @@ export const APP_CONSTANTS = {
     NAME: 'Zahid Hasan',
     TITLE: 'Full-Stack Engineer',
     GREETING: "👋 Hello, I'm Zahid!",
-    TAGLINE: 'Full-Stack Engineer & Building Things for Internet',
+    TAGLINE: 'Software Engineer & Building Things for Internet',
     EMAIL: 'zahidhasann67@gmail.com',
   },
 
@@ -226,15 +226,9 @@ export const SOCIAL_LINKS_DATA = [
 
 export const CONTENT_DATA = {
   ABOUT_ME: {
-    PART_1: `Hi, I’m Zahid Hasan, a Full-Stack Engineer based in Dhaka with 4+ years of experience building scalable, 
-    reliable systems. I focus on backend development while contributing to frontend features, with a strong interest in 
-    system design and large-scale applications.`,
-    PART_2: `Over the years, I’ve worked on building APIs, designing databases, and creating systems that balance performance, 
-    reliability, and maintainability. I enjoy tackling complex challenges, optimizing workflows, and ensuring that software 
-    not only works but is intuitive, maintainable, and scalable for the long term.`,
-    PART_3: `Here, I share my journey in software development, insights from real projects, lessons learned from solving 
-    challenging problems, and ideas that keep me learning and growing. Beyond coding, I explore system architecture, 
-    product design, and ways to improve the development lifecycle to deliver real-world impact.`,
+    PART_1: `Hi, I’m Zahid Hasan, a Software Engineer from Dhaka, Bangladesh. I have over 4 years of experience creating software that’s reliable, easy to use, and built to adapt as needs grow. Most of my work focuses on backend development—building APIs, designing databases, and shaping system architecture, but I also enjoy contributing to frontend features that make the final product user-friendly. I like being involved from start to finish, turning ideas into real products that run smoothly for people.`,
+    PART_2: `For me, building good software is about balance. It’s not just about making something work today, but making sure it continues to work well in the future. I enjoy solving tough problems, simplifying complex workflows, and designing systems that are scalable, maintainable, and easy to use. I’m especially interested in large-scale applications and system design, where even small decisions can have a big impact on performance and reliability.`,
+    PART_3: ``,
   },
 
   TIMELINE_DESCRIPTIONS: {

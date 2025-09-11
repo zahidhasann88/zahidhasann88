@@ -1,4 +1,4 @@
-<div class="profile-container" [@pageLoadAnimation] [@routeAnimations]>
+<div class="page-container" [@pageLoadAnimation] [@routeAnimations]>
   @if (isLoaded) {
   <div class="content-wrapper">
     <div class="text-content">
@@ -75,7 +75,7 @@
             {{ buttonLabels.GET_IN_TOUCH }}
           </a>
 
-          <a
+          <!-- <a
             [routerLink]="['/about-me']"
             class="cta-button tertiary"
             [attr.aria-label]="buttonLabels.KNOW_MORE"
@@ -85,7 +85,7 @@
               [attr.aria-hidden]="true"
             ></fa-icon>
             {{ buttonLabels.KNOW_MORE }}
-          </a>
+          </a> -->
         </div>
       </section>
 
