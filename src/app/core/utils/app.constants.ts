@@ -33,7 +33,7 @@ import {
 export const APP_CONSTANTS = {
   URLS: {
     CV_LINK:
-      'https://drive.google.com/file/d/1dT6D97FJcMQ8QwSxD8S1viAWTs3YPqRf/view?usp=sharing',
+      'https://drive.google.com/file/d/1yazt7VCmWK9K3phh6JNmggA1JHl15pEX/view?usp=sharing',
     GITHUB: 'https://github.com/zahidhasann88',
     LINKEDIN: 'https://linkedin.com/in/zahidhasann',
     TWITTER: 'https://x.com/zahidhasann15',
@@ -226,8 +226,8 @@ export const SOCIAL_LINKS_DATA = [
 
 export const CONTENT_DATA = {
   ABOUT_ME: {
-    PART_1: `Hi, I’m Zahid Hasan, a Software Engineer from Dhaka, Bangladesh. I have over 4 years of experience creating software that’s reliable, easy to use, and built to adapt as needs grow. Most of my work focuses on backend development—building APIs, designing databases, and shaping system architecture, but I also enjoy contributing to frontend features that make the final product user-friendly. I like being involved from start to finish, turning ideas into real products that run smoothly for people.`,
-    PART_2: `For me, building good software is about balance. It’s not just about making something work today, but making sure it continues to work well in the future. I enjoy solving tough problems, simplifying complex workflows, and designing systems that are scalable, maintainable, and easy to use. I’m especially interested in large-scale applications and system design, where even small decisions can have a big impact on performance and reliability.`,
+    PART_1: `Hi, I’m Zahid Hasan, a Software Engineer from Dhaka, Bangladesh. I have over 4 years of experience creating software that’s reliable, easy to use, and built to adapt as needs grow. Most of my work focuses on backend development—building APIs, designing databases, and shaping system architecture—but I also enjoy contributing to frontend features that make the final product user-friendly. I like being involved from start to finish, turning ideas into real products that run smoothly for people.`,
+    PART_2: `For me, building good software is about balance. It’s not just about making something work today, but making sure it continues to work well in the future. I enjoy solving tough problems, simplifying complex workflows, and designing data-driven, automation-first systems that are scalable, maintainable, and easy to use. I’m especially interested in large-scale applications and system design, where even small decisions can have a big impact on performance and reliability.`,
     PART_3: ``,
   },
 
