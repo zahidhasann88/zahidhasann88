@@ -1,8 +1,14 @@
-# Hi there 👋, I'm Zahid Hasan  
+# 👋 Hi, I'm Zahid Hasan  
 
-Full-Stack Engineer | System Design | Learning & Building  
+- Passionate about **designing efficient architectures**  
+- Love working on **data-driven and automation-first solutions**  
+- Ask me about: **system optimization, backend engineering, and APIs**  
+- Philosophy: **Code should be clean, scalable, and future-ready**  
+- You can reach me anytime at **zahidhasann67@gmail.com**  
 
-- Currently focused on **large-scale systems**  
-- Exploring **AI, analytics, and sustainability-focused apps**  
-- Ask me about: JavaScript/TypeScript, Golang/C#, SQL/Database Design  
-- Approach: Building systems that scale with simplicity and reliability  
+---
+
+### 🔗 Connect with me  
+
+[![LinkedIn](https://skillicons.dev/icons?i=linkedin)](https://www.linkedin.com/in/zahidhasann) 
+[![X](https://skillicons.dev/icons?i=twitter)](https://x.com/zahidhasann15)
