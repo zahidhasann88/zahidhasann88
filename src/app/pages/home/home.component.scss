@@ -7,6 +7,16 @@
   }
 }
 
+::ng-deep .number-highlight {
+  color: #569CD6;
+  font-weight: 500;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #7db3e8;
+  }
+}
+
 .about-section {
   margin-bottom: 2rem;
 }

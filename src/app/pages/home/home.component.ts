@@ -74,6 +74,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.highlightService.highlightKeywords(description, keywords);
   }
 
+  getHighlightedText(text: string): SafeHtml {
+    return this.highlightService.highlightNumbers(text);
+  }
+
   onCvLinkClick(): void {
     window.open(this.componentState.config.cvLink, '_blank');
   }

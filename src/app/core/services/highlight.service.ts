@@ -21,4 +21,15 @@ export class HighlightService {
 
     return this.sanitizer.bypassSecurityTrustHtml(escapedText);
   }
+
+  highlightNumbers(text: string): SafeHtml {
+    if (!text) {
+      return this.sanitizer.bypassSecurityTrustHtml(text);
+    }
+
+    const numberRegex = /\b\d+(?:\.\d+)?\b/g;
+    const highlightedText = text.replace(numberRegex, '<span class="number-highlight">$&</span>');
+
+    return this.sanitizer.bypassSecurityTrustHtml(highlightedText);
+  }
 }

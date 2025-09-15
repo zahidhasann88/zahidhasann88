@@ -37,9 +37,9 @@
 
       <section class="about-section" role="main">
         <div class="about-text-container">
-          <p class="about-text">{{ aboutMe.part1 }}</p>
-          <p class="about-text">{{ aboutMe.part2 }}</p>
-          <p class="about-text">{{ aboutMe.part3 }}</p>
+          <p class="about-text" [innerHTML]="getHighlightedText(aboutMe.part1)"></p>
+          <p class="about-text" [innerHTML]="getHighlightedText(aboutMe.part2)"></p>
+          <p class="about-text" [innerHTML]="getHighlightedText(aboutMe.part3)"></p>
         </div>
 
         <div
