@@ -33,7 +33,7 @@ import {
 export const APP_CONSTANTS = {
   URLS: {
     CV_LINK:
-      'https://drive.google.com/file/d/1yazt7VCmWK9K3phh6JNmggA1JHl15pEX/view?usp=sharing',
+      'https://drive.google.com/file/d/1xZjyQFiROXwYWjAx2je-zQdKtoufhYub/view?usp=sharing',
     GITHUB: 'https://github.com/zahidhasann88',
     LINKEDIN: 'https://linkedin.com/in/zahidhasann',
     TWITTER: 'https://x.com/zahidhasann15',
@@ -47,7 +47,7 @@ export const APP_CONSTANTS = {
     NAME: 'Zahid Hasan',
     TITLE: 'Full-Stack Engineer',
     GREETING: "👋 Hello, I'm Zahid!",
-    TAGLINE: 'Software Engineer & Building Things for Internet',
+    TAGLINE: 'Software Engineer & Building software that works well today and grows for tomorrow.',
     EMAIL: 'zahidhasann67@gmail.com',
   },
 
