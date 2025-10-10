@@ -22,6 +22,10 @@ import {
   faTools,
   faArrowRightLong,
   faLocationDot,
+  faBriefcase,
+  faSun,
+  faMoon,
+  faDesktop,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -141,6 +145,10 @@ export const FONT_AWESOME_ICONS = {
     TROPHY: faTrophy,
     TOOLS: faTools,
     LOCATION_DOT: faLocationDot,
+    BRIEFCASE: faBriefcase,
+    SUN: faSun,
+    MOON: faMoon,
+    DESKTOP: faDesktop,
   },
 
   BRANDS: {

@@ -94,6 +94,7 @@ export interface Icons {
   readonly faStackOverflow: IconDefinition;
   readonly faMedium: IconDefinition;
   readonly faLocationDot: IconDefinition;
+  readonly faBriefcase: IconDefinition;
 }
 
 export interface Config {

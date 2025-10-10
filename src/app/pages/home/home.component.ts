@@ -38,6 +38,90 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   readonly constants = APP_CONSTANTS;
 
+  // Experience data
+  readonly experienceData = [
+    {
+      company: 'Tech Solutions Ltd.',
+      position: 'Senior Software Engineer',
+      period: '2022 - Present',
+      location: 'Dhaka, Bangladesh',
+      description: 'Led backend development initiatives and designed scalable system architectures. Collaborated with cross-functional teams to deliver high-performance web applications.',
+      achievements: [
+        'Improved system performance by 40% through database optimization',
+        'Led migration to microservices architecture',
+        'Mentored junior developers and established coding standards'
+      ]
+    },
+    {
+      company: 'Digital Innovations Inc.',
+      position: 'Software Engineer',
+      period: '2020 - 2022',
+      location: 'Dhaka, Bangladesh',
+      description: 'Developed and maintained full-stack applications using modern technologies. Focused on creating robust APIs and intuitive user interfaces.',
+      achievements: [
+        'Built RESTful APIs serving 10k+ daily requests',
+        'Implemented automated testing reducing bugs by 60%',
+        'Collaborated on successful product launches'
+      ]
+    }
+  ];
+
+  // Education data
+  readonly educationData = [
+    {
+      institution: 'North South University',
+      degree: 'Bachelor of Science in Computer Science',
+      period: '2016 - 2020',
+      location: 'Dhaka, Bangladesh',
+      description: 'Focused on software engineering, algorithms, and system design. Participated in programming competitions and technical projects.',
+      achievements: [
+        'Dean\'s List for academic excellence',
+        'Led university programming club',
+        'Completed thesis on distributed systems'
+      ]
+    }
+  ];
+
+  // Skills data
+  readonly skillsData = {
+    technical: [
+      { category: 'Frontend', skills: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS'] },
+      { category: 'Backend', skills: ['Node.js', 'Express.js', 'Python', 'Django', 'FastAPI', 'REST APIs'] },
+      { category: 'Database', skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Database Design'] },
+      { category: 'DevOps', skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'Linux', 'Nginx'] },
+      { category: 'Tools', skills: ['VS Code', 'Postman', 'Figma', 'Jira', 'Slack', 'GitHub'] }
+    ],
+    soft: ['Problem Solving', 'Team Leadership', 'Communication', 'Project Management', 'Mentoring', 'Adaptability']
+  };
+
+  // Certifications data
+  readonly certificationsData = [
+    {
+      name: 'AWS Certified Solutions Architect',
+      issuer: 'Amazon Web Services',
+      date: '2023',
+      credentialId: 'AWS-CSA-123456',
+      description: 'Demonstrated expertise in designing distributed systems on AWS platform.'
+    },
+    {
+      name: 'Professional Scrum Master I',
+      issuer: 'Scrum.org',
+      date: '2022',
+      credentialId: 'PSM-789012',
+      description: 'Certified in agile methodologies and scrum framework implementation.'
+    }
+  ];
+
+  // Tab state management
+  activeTab: string = 'experience';
+  
+  readonly tabs = [
+    { id: 'experience', label: 'Experience', icon: 'faBriefcase' },
+    { id: 'education', label: 'Education', icon: 'faGraduationCap' },
+    { id: 'skills', label: 'Skills', icon: 'faCode' },
+    { id: 'certifications', label: 'Certifications', icon: 'faTrophy' }
+  ];
+
   ngOnInit(): void {
     this.initializeComponent();
   }
@@ -88,6 +172,19 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onProjectLinkClick(project: Project): void {
     window.open(project.url, '_blank');
+  }
+
+  // Tab management methods
+  switchTab(tabId: string): void {
+    this.activeTab = tabId;
+  }
+
+  isActiveTab(tabId: string): boolean {
+    return this.activeTab === tabId;
+  }
+
+  getTabIcon(iconName: string) {
+    return (this.componentState?.config?.icons as any)?.[iconName];
   }
 
   get buttonLabels() {

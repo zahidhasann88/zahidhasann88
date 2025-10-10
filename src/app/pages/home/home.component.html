@@ -3,46 +3,219 @@
   <div class="content-wrapper">
     <div class="text-content">
       <section class="hero-section" role="banner">
-        <h1 class="name" [attr.aria-label]="profile.greeting">
-          {{ profile.greeting }}
-        </h1>
-        <div class="location-info" [attr.aria-label]="'Located in Dhaka, Bangladesh'">
-          <fa-icon [icon]="icons.faLocationDot" [attr.aria-hidden]="true"></fa-icon>
-          <span>Dhaka, Bangladesh</span>
-        </div>
-        <p class="tagline" [attr.aria-label]="profile.tagline">
-          {{ profile.tagline }}
-        </p>
-        
-        <div
-          class="social-links"
-          role="navigation"
-          [attr.aria-label]="sectionTitles.CONNECT_WITH_ME"
-        >
-          <div class="social-icons">
-            @for (link of componentState.socialLinks; track link.name) {
-            <a
-              [href]="link.url"
-              target="_blank"
-              rel="noopener noreferrer"
-              [title]="link.name"
-              [attr.aria-label]="'Connect with me on ' + link.name"
-              (click)="onSocialLinkClick(link)"
-              class="social-icon-link"
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="name" [attr.aria-label]="profile.greeting">
+              {{ profile.greeting }}
+            </h1>
+            <div class="location-info" [attr.aria-label]="'Located in Dhaka, Bangladesh'">
+              <fa-icon [icon]="icons.faLocationDot" [attr.aria-hidden]="true"></fa-icon>
+              <span>Dhaka, Bangladesh</span>
+            </div>
+            <p class="tagline" [attr.aria-label]="profile.tagline">
+              {{ profile.tagline }}
+            </p>
+            
+            <div
+              class="social-links"
+              role="navigation"
+              [attr.aria-label]="sectionTitles.CONNECT_WITH_ME"
             >
-              <fa-icon [icon]="link.icon" [attr.aria-hidden]="true"></fa-icon>
-              <span class="sr-only">{{ link.name }}</span>
-            </a>
-            }
+              <div class="social-icons">
+                @for (link of componentState.socialLinks; track link.name) {
+                <a
+                  [href]="link.url"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  [title]="link.name"
+                  [attr.aria-label]="'Connect with me on ' + link.name"
+                  (click)="onSocialLinkClick(link)"
+                  class="social-icon-link"
+                >
+                  <fa-icon [icon]="link.icon" [attr.aria-hidden]="true"></fa-icon>
+                  <span class="sr-only">{{ link.name }}</span>
+                </a>
+                }
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-image">
+            <img 
+              src="assets/images/profile-photo.png" 
+              alt="Zahid Hasan - Software Engineer"
+              class="profile-image"
+              loading="eager"
+            />
           </div>
         </div>
       </section>
 
       <section class="about-section" role="main">
+        <h2 class="section-title">About Me</h2>
         <div class="about-text-container">
           <p class="about-text" [innerHTML]="getHighlightedText(aboutMe.part1)"></p>
           <p class="about-text" [innerHTML]="getHighlightedText(aboutMe.part2)"></p>
           <p class="about-text" [innerHTML]="getHighlightedText(aboutMe.part3)"></p>
+        </div>
+      </section>
+
+      <!-- Tabbed Portfolio Sections -->
+      <section class="portfolio-tabs-section" role="region" aria-label="Portfolio Information">
+        <!-- Tab Navigation -->
+        <div class="tab-navigation" role="tablist">
+          @for (tab of tabs; track tab.id) {
+          <button
+            role="tab"
+            [attr.aria-selected]="isActiveTab(tab.id)"
+            [attr.aria-controls]="tab.id + '-panel'"
+            [id]="tab.id + '-tab'"
+            class="tab-button"
+            [class.active]="isActiveTab(tab.id)"
+            (click)="switchTab(tab.id)"
+          >
+            <fa-icon 
+              [icon]="getTabIcon(tab.icon)" 
+              [attr.aria-hidden]="true">
+            </fa-icon>
+            <span>{{ tab.label }}</span>
+          </button>
+          }
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+          <!-- Experience Tab -->
+          <div
+            *ngIf="isActiveTab('experience')"
+            id="experience-panel"
+            role="tabpanel"
+            [attr.aria-labelledby]="'experience-tab'"
+            class="tab-panel experience-panel"
+          >
+            <div class="experience-container">
+              @for (job of experienceData; track job.company) {
+              <div class="experience-item">
+                <div class="experience-header">
+                  <div class="experience-title">
+                    <h3 class="job-title">{{ job.position }}</h3>
+                    <p class="company-name">{{ job.company }}</p>
+                  </div>
+                  <div class="experience-meta">
+                    <span class="job-period">{{ job.period }}</span>
+                    <span class="job-location">
+                      <fa-icon [icon]="icons.faLocationDot" [attr.aria-hidden]="true"></fa-icon>
+                      {{ job.location }}
+                    </span>
+                  </div>
+                </div>
+                <p class="job-description">{{ job.description }}</p>
+                <ul class="job-achievements" *ngIf="job.achievements?.length">
+                  @for (achievement of job.achievements; track achievement) {
+                  <li>{{ achievement }}</li>
+                  }
+                </ul>
+              </div>
+              }
+            </div>
+          </div>
+
+          <!-- Education Tab -->
+          <div
+            *ngIf="isActiveTab('education')"
+            id="education-panel"
+            role="tabpanel"
+            [attr.aria-labelledby]="'education-tab'"
+            class="tab-panel education-panel"
+          >
+            <div class="education-container">
+              @for (edu of educationData; track edu.institution) {
+              <div class="education-item">
+                <div class="education-header">
+                  <div class="education-title">
+                    <h3 class="degree-title">{{ edu.degree }}</h3>
+                    <p class="institution-name">{{ edu.institution }}</p>
+                  </div>
+                  <div class="education-meta">
+                    <span class="education-period">{{ edu.period }}</span>
+                    <span class="education-location">
+                      <fa-icon [icon]="icons.faLocationDot" [attr.aria-hidden]="true"></fa-icon>
+                      {{ edu.location }}
+                    </span>
+                  </div>
+                </div>
+                <p class="education-description">{{ edu.description }}</p>
+                <ul class="education-achievements" *ngIf="edu.achievements?.length">
+                  @for (achievement of edu.achievements; track achievement) {
+                  <li>{{ achievement }}</li>
+                  }
+                </ul>
+              </div>
+              }
+            </div>
+          </div>
+
+          <!-- Skills Tab -->
+          <div
+            *ngIf="isActiveTab('skills')"
+            id="skills-panel"
+            role="tabpanel"
+            [attr.aria-labelledby]="'skills-tab'"
+            class="tab-panel skills-panel"
+          >
+            <div class="skills-container">
+              <div class="technical-skills">
+                <h3 class="skills-category-title">Technical Skills</h3>
+                <div class="skills-grid">
+                  @for (skillGroup of skillsData.technical; track skillGroup.category) {
+                  <div class="skill-group">
+                    <h4 class="skill-category">{{ skillGroup.category }}</h4>
+                    <div class="skill-tags">
+                      @for (skill of skillGroup.skills; track skill) {
+                      <span class="skill-tag">{{ skill }}</span>
+                      }
+                    </div>
+                  </div>
+                  }
+                </div>
+              </div>
+              <div class="soft-skills">
+                <h3 class="skills-category-title">Soft Skills</h3>
+                <div class="soft-skills-list">
+                  @for (skill of skillsData.soft; track skill) {
+                  <span class="soft-skill-tag">{{ skill }}</span>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications Tab -->
+          <div
+            *ngIf="isActiveTab('certifications')"
+            id="certifications-panel"
+            role="tabpanel"
+            [attr.aria-labelledby]="'certifications-tab'"
+            class="tab-panel certifications-panel"
+          >
+            <div class="certifications-container">
+              @for (cert of certificationsData; track cert.credentialId) {
+              <div class="certification-item">
+                <div class="certification-header">
+                  <div class="certification-title">
+                    <h3 class="cert-name">{{ cert.name }}</h3>
+                    <p class="cert-issuer">{{ cert.issuer }}</p>
+                  </div>
+                  <div class="certification-meta">
+                    <span class="cert-date">{{ cert.date }}</span>
+                    <span class="cert-id" *ngIf="cert.credentialId">ID: {{ cert.credentialId }}</span>
+                  </div>
+                </div>
+                <p class="cert-description">{{ cert.description }}</p>
+              </div>
+              }
+            </div>
+          </div>
         </div>
       </section>
     </div>

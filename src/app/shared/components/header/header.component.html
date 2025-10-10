@@ -29,6 +29,19 @@
             {{ buttonLabels.VIEW_RESUME }}
           </button>
         </li>
+        <li class="theme-toggle">
+          <button 
+            class="theme-btn"
+            (click)="onThemeToggle()"
+            [attr.aria-label]="'Switch to ' + (themeService.isDarkMode() ? 'light' : 'dark') + ' mode'"
+            [title]="'Switch to ' + (themeService.isDarkMode() ? 'light' : 'dark') + ' mode'"
+          >
+            <fa-icon 
+              [icon]="getThemeIcon()" 
+              [attr.aria-hidden]="true"
+            ></fa-icon>
+          </button>
+        </li>
       </ul>
     </nav>
   </header>

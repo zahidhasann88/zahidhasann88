@@ -1,24 +1,7 @@
 <footer class="footer" role="contentinfo">
   <div class="footer-content">
-    <nav
-      class="footer-social-links"
-      role="navigation"
-      aria-label="Social media links"
-    >
-      @for (link of footerSocialLinks; track link.name) {
-      <a
-        [href]="link.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        [title]="'Visit my ' + link.name + ' profile'"
-        [attr.aria-label]="'Visit my ' + link.name + ' profile'"
-        class="footer-social-link"
-        (click)="onSocialLinkClick(link, $event)"
-      >
-        <fa-icon [icon]="link.icon" [attr.aria-hidden]="true"></fa-icon>
-        <span class="sr-only">{{ link.name }}</span>
-      </a>
-      }
-    </nav>
+    <p class="copyright">
+      © 2025 Zahid Hasan. All rights reserved.
+    </p>
   </div>
 </footer>
