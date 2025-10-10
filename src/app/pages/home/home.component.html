@@ -6,32 +6,35 @@
         <h1 class="name" [attr.aria-label]="profile.greeting">
           {{ profile.greeting }}
         </h1>
+        <div class="location-info" [attr.aria-label]="'Located in Dhaka, Bangladesh'">
+          <fa-icon [icon]="icons.faLocationDot" [attr.aria-hidden]="true"></fa-icon>
+          <span>Dhaka, Bangladesh</span>
+        </div>
         <p class="tagline" [attr.aria-label]="profile.tagline">
           {{ profile.tagline }}
         </p>
-      </section>
-
-      <section
-        class="social-links"
-        role="navigation"
-        [attr.aria-label]="sectionTitles.CONNECT_WITH_ME"
-      >
-        <span class="social-label">{{ sectionTitles.CONNECT_WITH_ME }}</span>
-        <div class="social-icons">
-          @for (link of componentState.socialLinks; track link.name) {
-          <a
-            [href]="link.url"
-            target="_blank"
-            rel="noopener noreferrer"
-            [title]="link.name"
-            [attr.aria-label]="'Connect with me on ' + link.name"
-            (click)="onSocialLinkClick(link)"
-            class="social-icon-link"
-          >
-            <fa-icon [icon]="link.icon" [attr.aria-hidden]="true"></fa-icon>
-            <span class="sr-only">{{ link.name }}</span>
-          </a>
-          }
+        
+        <div
+          class="social-links"
+          role="navigation"
+          [attr.aria-label]="sectionTitles.CONNECT_WITH_ME"
+        >
+          <div class="social-icons">
+            @for (link of componentState.socialLinks; track link.name) {
+            <a
+              [href]="link.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              [title]="link.name"
+              [attr.aria-label]="'Connect with me on ' + link.name"
+              (click)="onSocialLinkClick(link)"
+              class="social-icon-link"
+            >
+              <fa-icon [icon]="link.icon" [attr.aria-hidden]="true"></fa-icon>
+              <span class="sr-only">{{ link.name }}</span>
+            </a>
+            }
+          </div>
         </div>
       </section>
 
@@ -41,109 +44,7 @@
           <p class="about-text" [innerHTML]="getHighlightedText(aboutMe.part2)"></p>
           <p class="about-text" [innerHTML]="getHighlightedText(aboutMe.part3)"></p>
         </div>
-
-        <div
-          class="cta-section"
-          role="group"
-          aria-label="Call to action buttons"
-        >
-          <a
-            [href]="componentState.config.cvLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cta-button primary"
-            [attr.aria-label]="buttonLabels.VIEW_RESUME"
-            (click)="onCvLinkClick()"
-          >
-            <fa-icon
-              [icon]="icons.faArrowRightLong"
-              [attr.aria-hidden]="true"
-            ></fa-icon>
-            {{ buttonLabels.VIEW_RESUME }}
-          </a>
-
-          <a
-            [href]="'mailto:' + constants.PROFILE.EMAIL"
-            class="cta-button secondary"
-            [attr.aria-label]="buttonLabels.GET_IN_TOUCH"
-            (click)="onContactClick()"
-          >
-            <fa-icon
-              [icon]="icons.faEnvelope"
-              [attr.aria-hidden]="true"
-            ></fa-icon>
-            {{ buttonLabels.GET_IN_TOUCH }}
-          </a>
-
-          <!-- <a
-            [routerLink]="['/about-me']"
-            class="cta-button tertiary"
-            [attr.aria-label]="buttonLabels.KNOW_MORE"
-          >
-            <fa-icon
-              [icon]="icons.faArrowRightLong"
-              [attr.aria-hidden]="true"
-            ></fa-icon>
-            {{ buttonLabels.KNOW_MORE }}
-          </a> -->
-        </div>
       </section>
-
-      <!-- @if (componentState.projects && componentState.projects.length > 0) {
-      <section
-        class="featured-project-section"
-        role="region"
-        [attr.aria-label]="sectionTitles.FEATURED_PROJECTS"
-      >
-        <div class="section-header">
-          <h2>{{ sectionTitles.FEATURED_PROJECTS }}</h2>
-        </div>
-
-        <div class="projects-grid">
-          @for (project of componentState.projects; track project.name) {
-          <article
-            class="project-item"
-            [attr.aria-label]="'Project: ' + project.name"
-          >
-            <div class="project-header content-header-inline">
-              <h3>{{ project.name }}</h3>
-              <a
-                [href]="project.url"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="link-button"
-                [attr.aria-label]="'View ' + project.name + ' on GitHub'"
-                (click)="onProjectLinkClick(project)"
-              >
-                <fa-icon
-                  [icon]="icons.faGithub"
-                  [attr.aria-hidden]="true"
-                ></fa-icon>
-                {{ buttonLabels.VIEW_GITHUB }}
-              </a>
-            </div>
-
-            <p
-              class="project-description"
-              [innerHTML]="
-                getHighlightedDescription(project.description, project.keywords)
-              "
-              [attr.aria-label]="project.description"
-            ></p>
-          </article>
-          }
-        </div>
-      </section>
-      } @if (!componentState.projects || componentState.projects.length === 0) {
-      <section
-        class="loading-projects"
-        role="status"
-        aria-label="Loading projects"
-      >
-        <div class="loading-spinner" [attr.aria-hidden]="true"></div>
-        <span class="sr-only">Loading featured projects...</span>
-      </section>
-      } -->
     </div>
   </div>
   } @else {

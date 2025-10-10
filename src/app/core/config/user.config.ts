@@ -180,5 +180,6 @@ export const USER_CONFIG: Readonly<Config> = {
     faGraduationCap: FONT_AWESOME_ICONS.SOLID.GRADUATION_CAP,
     faTrophy: FONT_AWESOME_ICONS.SOLID.TROPHY,
     faTools: FONT_AWESOME_ICONS.SOLID.TOOLS,
+    faLocationDot: FONT_AWESOME_ICONS.SOLID.LOCATION_DOT,
   },
 };

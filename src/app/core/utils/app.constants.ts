@@ -21,6 +21,7 @@ import {
   faTrophy,
   faTools,
   faArrowRightLong,
+  faLocationDot,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -33,7 +34,7 @@ import {
 export const APP_CONSTANTS = {
   URLS: {
     CV_LINK:
-      'https://drive.google.com/file/d/1xZjyQFiROXwYWjAx2je-zQdKtoufhYub/view?usp=sharing',
+      'https://docs.google.com/viewerng/viewer?url=https://storage.googleapis.com/simplify-resumes/d95d7c87-7f6d-4afc-a5c0-e25bc2d31a9c/a5d59a37-1880-4480-bc61-fbae053df2be/1760091824.pdf?Expires%3D1760696625%26GoogleAccessId%3Dgcs-signing-service-account%2540mifflin-backend.iam.gserviceaccount.com%26Signature%3DA8pSLmAZKIWNKP%252BBQ%252BgsEXs5tUlzO3e4SDd9hvRe22VKFIl2mdaa1g7lak29DaKjZSDs5iaEJ21or29sTw7ZPYVF8JDU35hmOWwr%252FS3kr57x2ZzctJjnxI%252BWPGEpqRl0pQ6DNpud7ZYKUhAQ%252FUiT1ik%252F8ZQWYqY93zuFy2xpIVPilxaIeC5FAK%252BfxnQqVvojtES19%252BATv7wdxsqKEYltcluUZKrMG8ZXIK9SubBOaax0Jx63jk7%252Bo1qR8lltwuoaX%252FAAypaO6UTE8oTBwFv1dDHAVh6E0BgLF%252BM1o3vt02HjFQqK2EBs1mTxCffjjuooyd3EyH1h0QXHEf5QsHHsWA%253D%253D',
     GITHUB: 'https://github.com/zahidhasann88',
     LINKEDIN: 'https://linkedin.com/in/zahidhasann',
     TWITTER: 'https://x.com/zahidhasann15',
@@ -45,9 +46,10 @@ export const APP_CONSTANTS = {
 
   PROFILE: {
     NAME: 'Zahid Hasan',
-    TITLE: 'Full-Stack Engineer',
-    GREETING: "👋 Hello, I'm Zahid!",
-    TAGLINE: 'Software Engineer & Building software that works well today and grows for tomorrow.',
+    TITLE: '',
+    GREETING: "I'm a Software Engineer.",
+    TAGLINE:
+      'Software Engineer specializing in scalable backend development. Passionate about clean architecture, efficient system design, and building reliable applications that create meaningful impact. Interested in exploring distributed systems and large-scale software design.',
     EMAIL: 'zahidhasann67@gmail.com',
   },
 
@@ -138,6 +140,7 @@ export const FONT_AWESOME_ICONS = {
     GRADUATION_CAP: faGraduationCap,
     TROPHY: faTrophy,
     TOOLS: faTools,
+    LOCATION_DOT: faLocationDot,
   },
 
   BRANDS: {

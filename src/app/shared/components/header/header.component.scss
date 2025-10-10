@@ -18,7 +18,7 @@ nav {
   align-items: center;
   max-width: 800px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1.25rem 1rem;
   box-sizing: border-box;
 }
 
@@ -51,8 +51,9 @@ nav {
     }
 
     .logo-text {
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: var(--font-size-xl);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--line-height-tight);
       letter-spacing: -0.5px;
     }
   }
@@ -64,21 +65,29 @@ nav ul {
   padding: 0;
   margin: 0;
   flex-direction: row;
+  align-items: center;
+  gap: 2rem;
 }
 
 nav li {
-  margin-left: 2rem;
+  margin: 0;
+
+  &.resume-action {
+    margin-left: 0.5rem;
+  }
 }
 
 nav a {
   color: var(--secondary-color);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
   letter-spacing: 0.5px;
   position: relative;
   transition: color var(--transition-speed);
+  padding: 0.25rem 0.5rem;
 
   &:hover {
     color: var(--accent-color);
@@ -104,6 +113,42 @@ nav a {
   }
 }
 
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--accent-color);
+  color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 6px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  text-decoration: none;
+  min-width: 110px;
+  justify-content: center;
+
+  &:hover {
+    background: transparent;
+    color: var(--accent-color);
+    transform: translateY(-1px);
+  }
+
+  fa-icon {
+    font-size: var(--font-size-xs);
+    transition: transform var(--transition-speed) ease;
+  }
+
+  &:hover fa-icon {
+    transform: translateX(2px);
+  }
+}
+
 @media (min-height: 844px) {
   .site-wrapper {
     min-height: 95vh;
@@ -121,12 +166,83 @@ nav a {
       }
 
       .logo-text {
-        font-size: 1.6rem;
+        font-size: var(--font-size-2xl);
       }
     }
   }
 
   nav a {
-    font-size: 0.95rem;
+    font-size: var(--font-size-base);
+  }
+
+  .resume-btn {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-sm);
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 0.75rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  nav ul {
+    gap: 1.5rem;
+  }
+
+  nav a {
+    font-size: var(--font-size-sm);
+    padding: 0.2rem 0.4rem;
+  }
+
+  .logo {
+    .logo-link {
+      .logo-text {
+        font-size: var(--font-size-lg);
+      }
+    }
+  }
+
+  .resume-btn {
+    padding: 0.35rem 0.7rem;
+    font-size: var(--font-size-xs);
+    min-width: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0.75rem;
+  }
+
+  nav ul {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: var(--font-size-xs);
+    padding: 0.15rem 0.3rem;
+  }
+
+  .logo {
+    .logo-link {
+      .logo-text {
+        font-size: var(--font-size-base);
+      }
+    }
+  }
+
+  .resume-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: var(--font-size-xs);
+    min-width: 80px;
   }
 }

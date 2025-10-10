@@ -37,24 +37,28 @@
     flex: 1 !important;
     min-width: 0 !important;
     margin: 0 !important;
+    font-size: var(--font-size-xl) !important;
+    font-weight: var(--font-weight-semibold) !important;
+    line-height: var(--line-height-tight) !important;
   }
 
   .view-link,
   .link-button {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
+    font-size: var(--font-size-sm) !important;
   }
 
   @media (max-width: 480px) {
     gap: 0.5rem !important;
 
     h3 {
-      font-size: 0.9rem !important;
+      font-size: var(--font-size-lg) !important;
     }
 
     .view-link,
     .link-button {
-      font-size: 0.75rem !important;
+      font-size: var(--font-size-xs) !important;
       padding: 0.4rem 0.6rem !important;
     }
   }

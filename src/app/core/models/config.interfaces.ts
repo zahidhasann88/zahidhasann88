@@ -93,6 +93,7 @@ export interface Icons {
   readonly faXTwitter: IconDefinition;
   readonly faStackOverflow: IconDefinition;
   readonly faMedium: IconDefinition;
+  readonly faLocationDot: IconDefinition;
 }
 
 export interface Config {

@@ -16,6 +16,19 @@
             <span class="underline"></span>
           </a>
         </li>
+        <li class="resume-action">
+          <button 
+            class="resume-btn"
+            (click)="onResumeClick()"
+            [attr.aria-label]="buttonLabels.VIEW_RESUME"
+          >
+            <fa-icon 
+              [icon]="icons.SOLID.ARROW_RIGHT_LONG" 
+              [attr.aria-hidden]="true"
+            ></fa-icon>
+            {{ buttonLabels.VIEW_RESUME }}
+          </button>
+        </li>
       </ul>
     </nav>
   </header>

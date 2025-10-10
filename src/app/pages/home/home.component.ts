@@ -78,10 +78,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     return this.highlightService.highlightNumbers(text);
   }
 
-  onCvLinkClick(): void {
-    window.open(this.componentState.config.cvLink, '_blank');
-  }
-
   onContactClick(): void {
     window.location.href = `mailto:${this.constants.PROFILE.EMAIL}`;
   }
