@@ -1,0 +1,19 @@
+<div class="certifications-container">
+  @for (cert of certificationsData; track cert.credentialId) {
+  <div class="certification-item">
+    <div class="certification-header">
+      <div class="certification-title">
+        <h3 class="cert-name">{{ cert.name }}</h3>
+        <p class="cert-issuer">{{ cert.issuer }}</p>
+      </div>
+      <div class="certification-meta">
+        <span class="cert-date">{{ cert.date }}</span>
+        @if (cert.credentialId) {
+        <span class="cert-id">ID: {{ cert.credentialId }}</span>
+        }
+      </div>
+    </div>
+    <p class="cert-description">{{ cert.description }}</p>
+  </div>
+  }
+</div>

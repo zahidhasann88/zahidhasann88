@@ -1,0 +1,27 @@
+<div class="education-container">
+  @for (edu of educationData; track edu.institution) {
+  <div class="education-item">
+    <div class="education-header">
+      <div class="education-title">
+        <h3 class="degree-title">{{ edu.degree }}</h3>
+        <p class="institution-name">{{ edu.institution }}</p>
+      </div>
+      <div class="education-meta">
+        <span class="education-period">{{ edu.period }}</span>
+        <span class="education-location">
+          <fa-icon [icon]="icons.faLocationDot" [attr.aria-hidden]="true"></fa-icon>
+          {{ edu.location }}
+        </span>
+      </div>
+    </div>
+    <p class="education-description">{{ edu.description }}</p>
+    @if (edu.achievements?.length) {
+    <ul class="education-achievements">
+      @for (achievement of edu.achievements; track achievement) {
+        <li>{{ achievement }}</li>
+      }
+    </ul>
+    }
+  </div>
+  }
+</div>

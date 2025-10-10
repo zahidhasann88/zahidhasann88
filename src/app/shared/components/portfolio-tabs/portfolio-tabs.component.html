@@ -1,0 +1,27 @@
+<section class="portfolio-tabs-section" role="region" aria-label="Portfolio Information">
+  <!-- Tab Navigation -->
+  <div class="tab-navigation" role="tablist">
+    @for (tab of tabs; track tab.id) {
+    <button
+      role="tab"
+      [attr.aria-selected]="isActiveTab(tab.id)"
+      [attr.aria-controls]="tab.id + '-panel'"
+      [id]="tab.id + '-tab'"
+      class="tab-button"
+      [class.active]="isActiveTab(tab.id)"
+      (click)="switchTab(tab.id)"
+    >
+      <fa-icon 
+        [icon]="getTabIcon(tab.icon)" 
+        [attr.aria-hidden]="true">
+      </fa-icon>
+      <span>{{ tab.label }}</span>
+    </button>
+    }
+  </div>
+
+  <!-- Tab Content Container -->
+  <div class="tab-content">
+    <ng-content></ng-content>
+  </div>
+</section>

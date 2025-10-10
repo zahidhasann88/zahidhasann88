@@ -78,6 +78,7 @@ export interface Icons {
   readonly faCode: IconDefinition;
   readonly faRocket: IconDefinition;
   readonly faUsers: IconDefinition;
+  readonly faUser: IconDefinition;
   readonly faBug: IconDefinition;
   readonly faBookOpen: IconDefinition;
   readonly faGamepad: IconDefinition;

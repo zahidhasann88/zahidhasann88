@@ -1,0 +1,25 @@
+<div class="skills-container">
+  <div class="technical-skills">
+    <h3 class="skills-category-title">Technical Skills</h3>
+    <div class="skills-grid">
+      @for (skillGroup of skillsData.technical; track skillGroup.category) {
+      <div class="skill-group">
+        <h4 class="skill-category">{{ skillGroup.category }}</h4>
+        <div class="skill-tags">
+          @for (skill of skillGroup.skills; track skill) {
+          <span class="skill-tag">{{ skill }}</span>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="soft-skills">
+    <h3 class="skills-category-title">Soft Skills</h3>
+    <div class="soft-skills-list">
+      @for (skill of skillsData.soft; track skill) {
+      <span class="soft-skill-tag">{{ skill }}</span>
+      }
+    </div>
+  </div>
+</div>

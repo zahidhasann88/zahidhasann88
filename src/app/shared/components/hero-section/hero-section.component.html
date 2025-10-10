@@ -1,0 +1,48 @@
+<section class="hero-section" role="banner">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="name" [attr.aria-label]="profile?.greeting">
+        {{ profile?.greeting }}
+      </h1>
+      <div class="location-info" [attr.aria-label]="'Located in Dhaka, Bangladesh'">
+        <fa-icon [icon]="icons?.faLocationDot" [attr.aria-hidden]="true"></fa-icon>
+        <span>Dhaka, Bangladesh</span>
+      </div>
+      <p class="tagline" [attr.aria-label]="profile?.tagline">
+        {{ profile?.tagline }}
+      </p>
+      
+      <div
+        class="social-links"
+        role="navigation"
+        [attr.aria-label]="sectionTitles?.CONNECT_WITH_ME"
+      >
+        <div class="social-icons">
+          @for (link of socialLinks; track link.name) {
+          <a
+            [href]="link.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            [title]="link.name"
+            [attr.aria-label]="'Connect with me on ' + link.name"
+            (click)="onSocialLinkClick(link)"
+            class="social-icon-link"
+          >
+            <fa-icon [icon]="link.icon" [attr.aria-hidden]="true"></fa-icon>
+            <span class="sr-only">{{ link.name }}</span>
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-image">
+      <img 
+        src="assets/images/profile-photo.png" 
+        alt="Zahid Hasan - Software Engineer"
+        class="profile-image"
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>

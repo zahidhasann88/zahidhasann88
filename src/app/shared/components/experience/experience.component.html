@@ -1,0 +1,23 @@
+<div class="experience-container">
+  @for (job of experienceData; track job.company) {
+  <div class="experience-item">
+    <div class="experience-header">
+      <div class="experience-title">
+        <h3 class="job-title">{{ job.position }}</h3>
+        <p class="company-name">{{ job.company }}</p>
+      </div>
+      <div class="experience-meta">
+        <span class="job-period">{{ job.period }}</span>
+        <span class="job-location">
+          <fa-icon [icon]="icons.faLocationDot" [attr.aria-hidden]="true"></fa-icon>
+          {{ job.location }}
+        </span>
+      </div>
+    </div>
+    <p class="job-description">{{ job.description }}</p>
+    @if (job.achievements?.length) {
+    <ul class="job-achievements">@for (achievement of job.achievements; track achievement) {<li>{{ achievement }}</li>}</ul>
+    }
+  </div>
+  }
+</div>
