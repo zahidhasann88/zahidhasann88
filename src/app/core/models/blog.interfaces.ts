@@ -34,3 +34,60 @@ export interface LearningResource {
   featured?: boolean;
   tags: string[];
 }
+
+export interface Project {
+  id: number;
+  name: string;
+  full_name: string;
+  description: string | null;
+  html_url: string;
+  homepage: string | null;
+  stargazers_count: number;
+  forks_count: number;
+  language: string | null;
+  topics: string[];
+  created_at: string;
+  updated_at: string;
+  pushed_at: string;
+  size: number;
+  open_issues_count: number;
+  license: {
+    key: string;
+    name: string;
+    spdx_id: string;
+    url: string;
+    node_id: string;
+  } | null;
+  private: boolean;
+  fork: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+}
+
+export interface GitHubUser {
+  login: string;
+  id: number;
+  avatar_url: string;
+  html_url: string;
+  name: string;
+  company: string | null;
+  blog: string;
+  location: string | null;
+  email: string | null;
+  bio: string | null;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ProjectContribution {
+  type: 'feature' | 'bug-fix' | 'documentation' | 'refactor' | 'other';
+  description: string;
+  pullRequestUrl?: string;
+  issueUrl?: string;
+  date: Date;
+}

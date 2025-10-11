@@ -1,0 +1,94 @@
+<div class="projects-page">
+  <!-- Page Header -->
+  <section class="projects-section">
+    <div class="section-header">
+      <h1>Open Source Contributions</h1>
+      <p>
+        My involvement in the open source community through contributions to
+        other projects and my own starred repositories.
+      </p>
+    </div>
+    <div class="container">
+      <!-- Repositories Section -->
+      <div
+        class="repositories-grid"
+        *ngIf="allRepositories$ | async as repositories; else loading"
+      >
+        <div
+          class="repository-card"
+          [ngClass]="repo.repoType"
+          *ngFor="let repo of repositories; trackBy: trackByRepoId"
+        >
+          <div class="repo-header">
+            <h3 class="repo-title">
+              <a
+                [href]="repo.html_url"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ repo.repoType === "starred" ? repo.name : repo.full_name }}
+              </a>
+            </h3>
+            <div class="repo-meta">
+              <fa-icon
+                *ngIf="repo.repoType === 'starred'"
+                [icon]="icons.BRANDS.GITHUB"
+                class="github-corner-icon"
+              ></fa-icon>
+            </div>
+          </div>
+
+          <p class="repo-description" *ngIf="repo.description">
+            {{ repo.description }}
+          </p>
+
+          <div
+            class="repo-topics"
+            *ngIf="
+              repo.repoType === 'starred' &&
+              repo.topics &&
+              repo.topics.length > 0
+            "
+          >
+            <span class="topic-tag" *ngFor="let topic of repo.topics">
+              {{ topic }}
+            </span>
+          </div>
+
+          <div class="repo-stats" *ngIf="repo.repoType === 'starred'">
+            <div class="stat">
+              <fa-icon [icon]="icons.SOLID.STAR"></fa-icon>
+              <span>{{ repo.stargazers_count }}</span>
+            </div>
+            <div class="stat" *ngIf="repo.license">
+              <fa-icon [icon]="icons.SOLID.BOOK_OPEN"></fa-icon>
+              <span>{{ repo.license.name }}</span>
+            </div>
+          </div>
+
+          <div class="repo-dates" *ngIf="repo.repoType === 'starred'">
+            <div class="date-info">
+              <fa-icon [icon]="icons.SOLID.CALENDAR"></fa-icon>
+              <span>Created: {{ formatDate(repo.created_at) }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <ng-template #loading>
+        <div class="loading-state">
+          <fa-icon [icon]="icons.SOLID.ROCKET" class="loading-icon"></fa-icon>
+          <p>Loading repositories...</p>
+        </div>
+      </ng-template>
+
+      <!-- Empty State -->
+      <div class="empty-state" *ngIf="(allRepositories$ | async)?.length === 0">
+        <fa-icon [icon]="icons.SOLID.CODE" class="empty-icon"></fa-icon>
+        <p>No repositories found.</p>
+        <small>Check back soon for new repositories and contributions!</small>
+      </div>
+    </div>
+  </section>
+</div>

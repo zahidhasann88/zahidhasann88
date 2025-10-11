@@ -27,6 +27,14 @@ import {
   faSun,
   faMoon,
   faDesktop,
+  faStar,
+  faExternalLink,
+  faCodeBranch,
+  faFolder,
+  faClock,
+  faThLarge,
+  faGlobe,
+  faMobile,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -151,6 +159,14 @@ export const FONT_AWESOME_ICONS = {
     SUN: faSun,
     MOON: faMoon,
     DESKTOP: faDesktop,
+    STAR: faStar,
+    EXTERNAL_LINK: faExternalLink,
+    CODE_BRANCH: faCodeBranch,
+    FOLDER: faFolder,
+    CLOCK: faClock,
+    GRID: faThLarge,
+    GLOBE: faGlobe,
+    MOBILE: faMobile,
   },
 
   BRANDS: {
