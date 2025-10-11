@@ -22,8 +22,19 @@ export class HeaderComponent {
   readonly icons = FONT_AWESOME_ICONS;
 
   navItems = [
-    { path: '/home', label: 'Home' },
+    { path: '/', label: 'Home' },
+    { path: '/blog', label: 'Blog' },
   ];
+
+  isMobileMenuOpen = false;
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+  }
 
   onResumeClick(): void {
     this.configService.getConfig().subscribe((config: Config) => {

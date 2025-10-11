@@ -101,7 +101,7 @@ export const APP_CONSTANTS = {
   },
 
   BUTTONS: {
-    VIEW_RESUME: 'View Resume',
+    VIEW_RESUME: 'Resume',
     GET_IN_TOUCH: 'Get In Touch',
     KNOW_MORE: 'Know More About Me',
     VIEW_GITHUB: 'View GitHub',

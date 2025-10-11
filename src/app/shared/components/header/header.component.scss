@@ -70,6 +70,63 @@ nav ul {
   gap: 2rem;
 }
 
+.desktop-nav {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+// Mobile Menu Button (hidden by default)
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+
+  .hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: var(--text-color);
+    transition: all 0.3s ease;
+    margin: 3px 0;
+
+    &:nth-child(1) {
+      transform-origin: top left;
+    }
+
+    &:nth-child(2) {
+      transform-origin: center;
+    }
+
+    &:nth-child(3) {
+      transform-origin: bottom left;
+    }
+
+    &.open:nth-child(1) {
+      transform: rotate(45deg) translate(2px, 2px);
+    }
+
+    &.open:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    &.open:nth-child(3) {
+      transform: rotate(-45deg) translate(2px, -2px);
+    }
+  }
+}
+
 nav li {
   margin: 0;
 
@@ -101,7 +158,8 @@ nav a {
   .underline {
     position: absolute;
     bottom: -5px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
     background-color: var(--accent-color);
@@ -119,8 +177,8 @@ nav a {
   align-items: center;
   gap: 0.4rem;
   padding: 0.4rem 0.8rem;
-  background: var(--accent-color);
-  color: var(--background-color);
+  background: transparent;
+  color: var(--accent-color);
   border: 2px solid var(--accent-color);
   border-radius: 6px;
   font-size: var(--font-size-sm);
@@ -135,8 +193,8 @@ nav a {
   justify-content: center;
 
   &:hover {
-    background: transparent;
-    color: var(--accent-color);
+    background: var(--accent-color);
+    color: var(--background-color);
     transform: translateY(-1px);
   }
 
@@ -217,57 +275,72 @@ nav a {
 @media (max-width: 768px) {
   nav {
     padding: 1rem 1rem;
-    flex-wrap: wrap;
-    gap: 1rem;
+    position: relative;
   }
 
-  nav ul {
-    gap: 1.5rem;
+  .mobile-menu-btn {
+    display: flex;
   }
 
-  nav a {
-    font-size: var(--font-size-sm);
-    padding: 0.2rem 0.4rem;
-  }
+  .desktop-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background-color);
+    border-top: 1px solid var(--border-color);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 4px 16px var(--shadow-color);
 
-  .logo {
-    .logo-link {
-      .logo-text {
-        font-size: var(--font-size-lg);
+    &.mobile-open {
+      max-height: 400px;
+    }
+
+    li {
+      margin: 0;
+      
+      &.resume-action,
+      &.theme-toggle {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+      font-size: var(--font-size-sm);
+
+      &:last-child {
+        border-bottom: none;
       }
     }
   }
 
   .resume-btn {
-    padding: 0.35rem 0.7rem;
-    font-size: var(--font-size-xs);
-    min-width: 90px;
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-sm);
+    min-width: 100px;
   }
 
   .theme-btn {
     width: 36px;
     height: 36px;
-    margin-left: 0.4rem;
+    margin-left: 0;
   }
 }
 
 @media (max-width: 480px) {
   nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem 1rem;
-  }
-
-  nav ul {
-    width: 100%;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  nav a {
-    font-size: var(--font-size-xs);
-    padding: 0.15rem 0.3rem;
+    padding: 1rem;
   }
 
   .logo {
@@ -278,19 +351,35 @@ nav a {
     }
   }
 
-  .resume-btn {
-    padding: 0.3rem 0.6rem;
-    font-size: var(--font-size-xs);
-    min-width: 80px;
+  .mobile-menu-btn {
+    width: 36px;
+    height: 36px;
+
+    .hamburger-line {
+      width: 20px;
+      margin: 2px 0;
+    }
   }
 
-  .theme-btn {
-    width: 32px;
-    height: 32px;
-    margin-left: 0.3rem;
-    
-    fa-icon {
-      font-size: var(--font-size-sm);
+  .desktop-nav {
+    a {
+      padding: 0.75rem;
+      font-size: var(--font-size-xs);
+    }
+
+    .resume-btn {
+      padding: 0.4rem 0.8rem;
+      font-size: var(--font-size-xs);
+      min-width: 80px;
+    }
+
+    .theme-btn {
+      width: 32px;
+      height: 32px;
+      
+      fa-icon {
+        font-size: var(--font-size-sm);
+      }
     }
   }
 }

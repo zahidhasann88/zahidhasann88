@@ -9,9 +9,24 @@
           <span class="logo-text">Zahid Hasan</span>
         </a>
       </div>
-      <ul>
+
+      <!-- Mobile Menu Button -->
+      <button 
+        class="mobile-menu-btn" 
+        (click)="toggleMobileMenu()" 
+        [attr.aria-expanded]="isMobileMenuOpen"
+        aria-label="Toggle mobile menu"
+        title="Toggle mobile menu"
+      >
+        <span class="hamburger-line" [class.open]="isMobileMenuOpen"></span>
+        <span class="hamburger-line" [class.open]="isMobileMenuOpen"></span>
+        <span class="hamburger-line" [class.open]="isMobileMenuOpen"></span>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <ul class="desktop-nav" [class.mobile-open]="isMobileMenuOpen">
         <li *ngFor="let item of navItems">
-          <a [routerLink]="item.path" routerLinkActive="active">
+          <a [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMobileMenu()">
             {{ item.label }}
             <span class="underline"></span>
           </a>
@@ -19,13 +34,9 @@
         <li class="resume-action">
           <button 
             class="resume-btn"
-            (click)="onResumeClick()"
+            (click)="onResumeClick(); closeMobileMenu()"
             [attr.aria-label]="buttonLabels.VIEW_RESUME"
           >
-            <fa-icon 
-              [icon]="icons.SOLID.ARROW_RIGHT_LONG" 
-              [attr.aria-hidden]="true"
-            ></fa-icon>
             {{ buttonLabels.VIEW_RESUME }}
           </button>
         </li>

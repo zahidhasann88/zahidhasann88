@@ -1,0 +1,84 @@
+<div class="blog-page">
+  <!-- All Posts -->
+  <section class="posts-section">
+    <div class="section-header">
+      <h1>Blog</h1>
+      <p>
+        Sharing my thoughts, experiences, and insights from my journey in
+        software development and technology.
+      </p>
+    </div>
+    <div class="container">
+      <!-- Posts Grid -->
+      <div class="posts-grid" *ngIf="allPosts.length > 0">
+        <article
+          class="post-card"
+          *ngFor="let post of allPosts"
+          (click)="navigateToPost(post.slug)"
+        >
+          <!-- Post Thumbnail -->
+          <div class="card-thumbnail" *ngIf="post.coverImage">
+            <img
+              [src]="post.coverImage"
+              [alt]="post.title + ' thumbnail'"
+              [title]="post.title"
+              class="thumbnail-image"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="card-header">
+            <span class="read-time-badge">
+              <fa-icon
+                [icon]="icons.SOLID.CALENDAR"
+                class="time-icon"
+              ></fa-icon>
+              {{ post.readTime }} min
+            </span>
+            <span class="category-badge" *ngFor="let category of categories$ | async">
+              <ng-container *ngIf="category.id === post.category">
+                <fa-icon
+                  [icon]="getCategoryIcon(category.id)"
+                  class="category-icon"
+                ></fa-icon>
+                <span class="category-text">{{ category.name }}</span>
+              </ng-container>
+            </span>
+          </div>
+
+          <div class="card-content">
+            <h3 class="card-title">{{ post.title }}</h3>
+            <p class="card-description">{{ post.excerpt }}</p>
+          </div>
+
+          <div class="card-footer">
+            <div class="post-meta">
+              <span class="author">
+                <fa-icon
+                  [icon]="icons.SOLID.USER"
+                  class="author-icon"
+                ></fa-icon>
+                {{ post.author }}
+              </span>
+              <span class="date">{{ formatDate(post.publishedDate) }}</span>
+            </div>
+            <div class="post-tags">
+              <span class="tag" *ngFor="let tag of post.tags | slice : 0 : 4"
+                >#{{ tag }}</span
+              >
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" *ngIf="allPosts.length === 0">
+        <fa-icon [icon]="icons.SOLID.BOOK_OPEN" class="empty-icon"></fa-icon>
+        <h3 class="empty-title">No posts available</h3>
+        <p class="empty-description">
+          Check back soon for new blog posts and tutorials!
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,102 @@
+<div class="blog-post-page" *ngIf="post$ | async as post; else notFound">
+  <!-- Navigation -->
+  <nav class="blog-nav">
+    <div class="container">
+      <button class="back-btn" (click)="goBack()">
+        <fa-icon [icon]="icons.SOLID.ARROW_LEFT" class="back-icon"></fa-icon>
+        Back to Blog
+      </button>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="container">
+      <div class="header-content">
+        <!-- Category Badge -->
+        <div class="category-section" *ngFor="let category of categories$ | async">
+          <ng-container *ngIf="category.id === post.category">
+            <div class="category-badge">
+              <fa-icon [icon]="getCategoryIcon(category.id)" class="category-icon"></fa-icon>
+              {{ category.name }}
+            </div>
+          </ng-container>
+        </div>
+
+        <!-- Title -->
+        <h1 class="article-title">{{ post.title }}</h1>
+        
+        <!-- Excerpt -->
+        <p class="article-excerpt">{{ post.excerpt }}</p>
+
+        <!-- Meta Information -->
+        <div class="article-meta">
+          <div class="meta-left">
+            <div class="author-info">
+              <fa-icon [icon]="icons.SOLID.USER" class="author-icon"></fa-icon>
+              <span class="author-name">{{ post.author }}</span>
+            </div>
+            <div class="publish-date">
+              <fa-icon [icon]="icons.SOLID.CALENDAR" class="date-icon"></fa-icon>
+              <span>{{ formatDate(post.publishedDate) }}</span>
+            </div>
+            <div class="read-time">
+              <fa-icon [icon]="icons.SOLID.BRAIN" class="read-icon"></fa-icon>
+              <span>{{ post.readTime }} min read</span>
+            </div>
+          </div>
+          
+          <div class="meta-right">
+            <button class="share-btn" (click)="sharePost(post)">
+              <fa-icon [icon]="icons.SOLID.HANDSHAKE" class="share-icon"></fa-icon>
+              Share
+            </button>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="article-tags">
+          <span class="tag" *ngFor="let tag of post.tags">#{{ tag }}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <main class="article-content">
+    <div class="container">
+      <div class="content-wrapper">
+        <!-- Article Thumbnail -->
+        <div class="article-thumbnail" *ngIf="post.coverImage">
+          <img 
+            [src]="post.coverImage" 
+            [alt]="post.title" 
+            [title]="post.title"
+            class="thumbnail-image"
+          >
+        </div>
+        
+        <div class="article-body" [innerHTML]="post.content"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Not Found Template -->
+<ng-template #notFound>
+  <div class="not-found">
+    <div class="container">
+      <div class="not-found-content">
+        <fa-icon [icon]="icons.SOLID.BOOK_OPEN" class="not-found-icon"></fa-icon>
+        <h1 class="not-found-title">Post Not Found</h1>
+        <p class="not-found-description">
+          The blog post you're looking for doesn't exist or has been moved.
+        </p>
+        <button class="back-btn primary" (click)="goBack()">
+          <fa-icon [icon]="icons.SOLID.ARROW_LEFT" class="btn-icon"></fa-icon>
+          Back to Blog
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
