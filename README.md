@@ -1,18 +1,19 @@
 # Hi there 👋
 
-## Who I am?
+<sub>## Who I am?</sub>
 I’m a **Software Engineer** based in **Dhaka, Bangladesh** with **5 years of experience**.  
 
 🌐 Check out my portfolio: [zahidh.tech](https://zahidh.tech)  
 
 ---
 
-## What I'm doing?
-- Writing **Node.js, Nest.js, JavaScript, TypeScript, Golang, **
+<sub>## What I'm doing?</sub>
+- Writing **Node.js, Nest.js, JavaScript, TypeScript, Golang**  
 - Mostly active on **LinkedIn**
+
 ---
 
-## 💻 Skill Sets
+<sub>## 💻 Skill Sets</sub>
 
 ### 🗄️ Backend
 - **Programming:** Node.js • JavaScript • TypeScript • Golang  
@@ -35,12 +36,10 @@ I’m a **Software Engineer** based in **Dhaka, Bangladesh** with **5 years of e
 
 ---
 
-## 📫 How to reach me?
-- [Twitter](https://x.com/zahidhasann15)  
-- [LinkedIn](https://www.linkedin.com/zahidhasann)   
-- [Email](mailto:zahidhasann67@gmail.com)  
+<sub>## 📫 How to reach me?</sub>
+[🐦 X](https://x.com/zahidhasann15) • [💼 LinkedIn](https://www.linkedin.com/zahidhasann) • [✉️ Email](mailto:zahidhasann67@gmail.com)  
 
 ---
 
-### ⚡ Fun Fact
+<sub>### ⚡ Fun Fact</sub>
 I love exploring **modular architectures** and writing **clean, reusable code** that scales.
