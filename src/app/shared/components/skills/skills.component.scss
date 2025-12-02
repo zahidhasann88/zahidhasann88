@@ -1,2 +1,50 @@
-// Skills component styles will inherit from parent component
-// Placeholder for any component-specific styles if needed
+.skills-container {
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+  
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid #333;
+    border-radius: 8px;
+    aspect-ratio: 1;
+    min-height: 120px;
+  }
+  
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+  }
+  
+  .skill-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    line-height: 1.4;
+  }
+}

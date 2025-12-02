@@ -10,11 +10,22 @@
         (socialLinkClick)="onSocialLinkClick($event)"
       ></app-hero-section>
 
+      <!-- Skills Section -->
+      <div class="section skills-section">
+        <div class="section-header">
+          <h2 class="section-title">Skills</h2>
+          <p class="section-description">Technologies and tools I work with</p>
+        </div>
+        <app-skills [skillsData]="skillsData"></app-skills>
+      </div>
+
       <!-- Experience Section -->
       <div class="section experience-section">
         <div class="section-header">
           <h2 class="section-title">Experience</h2>
-          <p class="section-description">My professional journey and key achievements</p>
+          <p class="section-description">
+            My professional journey and key achievements
+          </p>
         </div>
         <app-experience [experienceData]="experienceData"></app-experience>
       </div>
@@ -23,18 +34,11 @@
       <div class="section education-section">
         <div class="section-header">
           <h2 class="section-title">Education</h2>
-          <p class="section-description">My academic background and learning path</p>
+          <p class="section-description">
+            My academic background and learning path
+          </p>
         </div>
         <app-education [educationData]="educationData"></app-education>
-      </div>
-
-      <!-- Skills Section -->
-      <div class="section skills-section">
-        <div class="section-header">
-          <h2 class="section-title">Skills</h2>
-          <p class="section-description">Technologies and tools I work with</p>
-        </div>
-        <app-skills [skillsData]="skillsData"></app-skills>
       </div>
     </div>
   </div>

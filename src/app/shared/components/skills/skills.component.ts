@@ -11,6 +11,11 @@ export interface SkillsData {
   soft: string[];
 }
 
+export interface Skill {
+  name: string;
+  icon: string;
+}
+
 @Component({
   selector: 'app-skills',
   standalone: true,
@@ -23,6 +28,16 @@ export class SkillsComponent implements OnInit {
     technical: [],
     soft: []
   };
+
+  skills: Skill[] = [
+    { name: 'JavaScript', icon: 'assets/icons/javascript.svg' },
+    { name: 'TypeScript', icon: 'assets/icons/ts-logo.svg' },
+    { name: 'Node.js', icon: 'assets/icons/nodejs.svg' },
+    { name: 'Express.js', icon: 'assets/icons/expressjs.svg' },
+    { name: 'Nest.js', icon: 'assets/icons/Nest.js.svg' },
+    { name: 'Golang', icon: 'assets/icons/golang.svg' },
+    // More skills can be added here in the future
+  ];
 
   constructor() { }
 
