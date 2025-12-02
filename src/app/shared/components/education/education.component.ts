@@ -1,15 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { IconDefinition, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 export interface EducationItem {
   institution: string;
   degree: string;
   period: string;
-  location: string;
   description: string;
   achievements?: string[];
+  expanded?: boolean;
 }
 
 @Component({
@@ -24,11 +24,18 @@ export class EducationComponent implements OnInit {
   
   // Icons
   readonly icons = {
-    faLocationDot
+    faChevronDown,
+    faChevronUp
   };
 
   constructor() { }
 
   ngOnInit(): void {
+    // Initialize all items as collapsed
+    this.educationData.forEach(item => item.expanded = false);
+  }
+
+  toggleExpand(index: number): void {
+    this.educationData[index].expanded = !this.educationData[index].expanded;
   }
 }

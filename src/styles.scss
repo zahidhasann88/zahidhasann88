@@ -1260,13 +1260,6 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: 12px;
   background: var(--card-background);
-  transition: all var(--transition-speed) ease;
-
-  &:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
 }
 
 .experience-header,
@@ -1390,12 +1383,6 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: 10px;
   background: var(--card-background);
-  transition: all var(--transition-speed) ease;
-
-  &:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-1px);
-  }
 }
 
 .skill-category {
@@ -1419,15 +1406,7 @@ a:hover {
   border-radius: 20px;
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
-  transition: all var(--transition-speed) ease;
   border: 1px solid var(--accent-color);
-
-  &:hover {
-    background: var(--text-color);
-    color: var(--background-color);
-    border-color: var(--text-color);
-    transform: translateY(-1px);
-  }
 }
 
 .soft-skills-list {
@@ -1445,13 +1424,6 @@ a:hover {
   border-radius: 25px;
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  transition: all var(--transition-speed) ease;
-
-  &:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    transform: translateY(-1px);
-  }
 }
 
 /* Certifications Section */
@@ -1466,13 +1438,6 @@ a:hover {
   border: 1px solid var(--border-color);
   border-radius: 12px;
   background: var(--card-background);
-  transition: all var(--transition-speed) ease;
-
-  &:hover {
-    border-color: var(--primary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
 }
 
 .certification-header {

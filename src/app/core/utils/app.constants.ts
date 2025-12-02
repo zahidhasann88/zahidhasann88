@@ -47,7 +47,7 @@ import {
 export const APP_CONSTANTS = {
   URLS: {
     CV_LINK:
-      'https://docs.google.com/viewerng/viewer?url=https://storage.googleapis.com/simplify-resumes/d95d7c87-7f6d-4afc-a5c0-e25bc2d31a9c/a5d59a37-1880-4480-bc61-fbae053df2be/1760091824.pdf?Expires%3D1760696625%26GoogleAccessId%3Dgcs-signing-service-account%2540mifflin-backend.iam.gserviceaccount.com%26Signature%3DA8pSLmAZKIWNKP%252BBQ%252BgsEXs5tUlzO3e4SDd9hvRe22VKFIl2mdaa1g7lak29DaKjZSDs5iaEJ21or29sTw7ZPYVF8JDU35hmOWwr%252FS3kr57x2ZzctJjnxI%252BWPGEpqRl0pQ6DNpud7ZYKUhAQ%252FUiT1ik%252F8ZQWYqY93zuFy2xpIVPilxaIeC5FAK%252BfxnQqVvojtES19%252BATv7wdxsqKEYltcluUZKrMG8ZXIK9SubBOaax0Jx63jk7%252Bo1qR8lltwuoaX%252FAAypaO6UTE8oTBwFv1dDHAVh6E0BgLF%252BM1o3vt02HjFQqK2EBs1mTxCffjjuooyd3EyH1h0QXHEf5QsHHsWA%253D%253D',
+      'https://drive.google.com/file/d/15ucAHkbZO_a_AB31iRJl1RiiYfwhYb04/view?usp=sharing',
     GITHUB: 'https://github.com/zahidhasann88',
     LINKEDIN: 'https://linkedin.com/in/zahidhasann',
     TWITTER: 'https://x.com/zahidhasann15',
@@ -62,7 +62,7 @@ export const APP_CONSTANTS = {
     TITLE: '',
     GREETING: "I'm a Software Engineer.",
     TAGLINE:
-      'Software Engineer specializing in scalable backend development. Passionate about clean architecture, efficient system design, and building reliable applications that create meaningful impact. Interested in exploring distributed systems and large-scale software design.',
+      'Experienced Software Engineer with 4+ years work across backend, frontend, and cloud systems. Skilled in building reliable microservices and distributed architectures that maintain strong performance at scale. I work primarily with Node.js, Go, React, and modern cloud technologies, with a focus on scalability, fault tolerance, and clean software design.',
     EMAIL: 'zahidhasann67@gmail.com',
   },
 
@@ -90,7 +90,6 @@ export const APP_CONSTANTS = {
     BACKEND: [
       'Golang',
       'Node.js',
-      '.NET Core',
       'PostgreSQL',
       'MySQL',
       'Redis',
@@ -255,8 +254,8 @@ export const SOCIAL_LINKS_DATA = [
 
 export const CONTENT_DATA = {
   ABOUT_ME: {
-    PART_1: `Hi, I’m Zahid Hasan, a Software Engineer from Dhaka, Bangladesh. I have over 4 years of experience creating software that’s reliable, easy to use, and built to adapt as needs grow. Most of my work focuses on backend development—building APIs, designing databases, and shaping system architecture—but I also enjoy contributing to frontend features that make the final product user-friendly. I like being involved from start to finish, turning ideas into real products that run smoothly for people.`,
-    PART_2: `For me, building good software is about balance. It’s not just about making something work today, but making sure it continues to work well in the future. I enjoy solving tough problems, simplifying complex workflows, and designing data-driven, automation-first systems that are scalable, maintainable, and easy to use. I’m especially interested in large-scale applications and system design, where even small decisions can have a big impact on performance and reliability.`,
+    PART_1: ``,
+    PART_2: ``,
     PART_3: ``,
   },
 

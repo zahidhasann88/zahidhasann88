@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { BlogPost, BlogCategory, LearningResource } from '../models/blog.interfaces';
+import {
+  BlogPost,
+  BlogCategory,
+  LearningResource,
+} from '../models/blog.interfaces';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BlogService {
   private blogPostsSubject = new BehaviorSubject<BlogPost[]>([]);
   private categoriesSubject = new BehaviorSubject<BlogCategory[]>([]);
-  
+
   constructor() {
     this.initializeData();
   }
@@ -21,55 +25,67 @@ export class BlogService {
         name: 'Web Development',
         description: 'Frontend and backend web development topics',
         color: '#3B82F6',
-        icon: 'CODE'
+        icon: 'CODE',
       },
       {
         id: 'programming-languages',
         name: 'Programming Languages',
         description: 'Learn different programming languages',
         color: '#10B981',
-        icon: 'BOOK_OPEN'
+        icon: 'BOOK_OPEN',
       },
       {
         id: 'career-development',
         name: 'Career Development',
         description: 'Tips for advancing your programming career',
         color: '#8B5CF6',
-        icon: 'GRADUATION_CAP'
+        icon: 'GRADUATION_CAP',
       },
       {
         id: 'tutorials',
         name: 'Tutorials',
         description: 'Step-by-step guides and tutorials',
         color: '#F59E0B',
-        icon: 'LIGHTBULB'
+        icon: 'LIGHTBULB',
       },
       {
         id: 'resources',
         name: 'Learning Resources',
         description: 'Curated lists of learning materials',
         color: '#EF4444',
-        icon: 'TROPHY'
-      }
+        icon: 'TROPHY',
+      },
     ];
 
     // Initialize blog posts
     const blogPosts: BlogPost[] = [
       {
         id: '1',
-        title: 'My Software Development Learning Journey: Resources That Actually Helped Me',
-        slug: 'software-development-learning-journey',
-        excerpt: 'Over the years, I\'ve collected resources that genuinely helped me grow as a developer. These aren\'t just random bookmarks – these are the ones I keep coming back to.',
+        title: 'Some Useful Resources Which Helped Me Grow My Skills',
+        slug: 'useful-resources-for-developers',
+        excerpt:
+          'A collection of resources that genuinely helped me grow as a developer. These are the materials I keep coming back to for learning and improvement.',
         content: this.getPersonalJourneyContent(),
         author: 'Zahid Hasan',
         publishedDate: new Date('2024-10-11'),
-        tags: ['learning', 'resources', 'journey', 'javascript', 'nodejs', 'go', 'system-design', 'career', 'development'],
+        tags: [
+          'learning',
+          'resources',
+          'journey',
+          'javascript',
+          'nodejs',
+          'go',
+          'system-design',
+          'career',
+          'development',
+        ],
         category: 'resources',
         readTime: 12,
         featured: true,
         coverImage: '/assets/images/nodejs-go-resources.png',
-        metaDescription: 'A personal collection of software development learning resources that actually helped in my journey - from system design to JavaScript, Node.js, Go, and beyond.'
-      }
+        metaDescription:
+          'A personal collection of development resources that helped me grow my skills in system design, JavaScript, Node.js, Go, and more.',
+      },
     ];
 
     this.categoriesSubject.next(categories);
@@ -87,25 +103,25 @@ export class BlogService {
 
   getBlogPostBySlug(slug: string): Observable<BlogPost | undefined> {
     return new BehaviorSubject(
-      this.blogPostsSubject.value.find(post => post.slug === slug)
+      this.blogPostsSubject.value.find((post) => post.slug === slug)
     ).asObservable();
   }
 
   getFeaturedPosts(): Observable<BlogPost[]> {
     return new BehaviorSubject(
-      this.blogPostsSubject.value.filter(post => post.featured)
+      this.blogPostsSubject.value.filter((post) => post.featured)
     ).asObservable();
   }
 
   getPostsByCategory(categoryId: string): Observable<BlogPost[]> {
     return new BehaviorSubject(
-      this.blogPostsSubject.value.filter(post => post.category === categoryId)
+      this.blogPostsSubject.value.filter((post) => post.category === categoryId)
     ).asObservable();
   }
 
   getPostsByTag(tag: string): Observable<BlogPost[]> {
     return new BehaviorSubject(
-      this.blogPostsSubject.value.filter(post => post.tags.includes(tag))
+      this.blogPostsSubject.value.filter((post) => post.tags.includes(tag))
     ).asObservable();
   }
 
@@ -118,7 +134,7 @@ export class BlogService {
   // Method to update existing blog post (for future use)
   updateBlogPost(updatedPost: BlogPost): void {
     const currentPosts = this.blogPostsSubject.value;
-    const index = currentPosts.findIndex(post => post.id === updatedPost.id);
+    const index = currentPosts.findIndex((post) => post.id === updatedPost.id);
     if (index !== -1) {
       currentPosts[index] = updatedPost;
       this.blogPostsSubject.next([...currentPosts]);
@@ -132,8 +148,6 @@ export class BlogService {
         <p>Over the years, I've collected a bunch of resources that genuinely helped me grow as a software developer. These aren't just random links I bookmarked and forgot about – these are the ones I keep coming back to. I'm sharing them here in case they help you too.</p>
 
         <h2>📚 System Design</h2>
-        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop" alt="System Design Architecture" class="section-image">
-        
         <p>System design used to intimidate me. How do you build systems that can handle millions of users? How do Netflix and Twitter scale their infrastructure?</p>
         
         <h3>My Top Pick:</h3>
@@ -150,8 +164,6 @@ export class BlogService {
         <p>These blogs show you how real companies solve real problems. It's not just theory – it's battle-tested knowledge.</p>
 
         <h2>🏗️ Software Architecture</h2>
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop" alt="Software Architecture Patterns" class="section-image">
-        
         <p>Architecture is about making decisions that your future self won't regret. It's the difference between code that's easy to maintain and code that becomes a nightmare.</p>
         
         <h3>Resources I recommend:</h3>
@@ -165,7 +177,6 @@ export class BlogService {
         <h2>💻 Core Technologies</h2>
         
         <h3>JavaScript & Node.js</h3>
-        <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=800&h=400&fit=crop" alt="JavaScript Development" class="section-image">
         
         <p>As someone who specializes in Node.js, I've spent countless hours with JavaScript. Here are the resources that took me from intermediate to confident:</p>
         
@@ -181,8 +192,6 @@ export class BlogService {
         </ul>
 
         <h3>Golang</h3>
-        <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=400&fit=crop" alt="Go Programming" class="section-image">
-        
         <p>Go is my secondary language, and I love its simplicity. Here's where I learned it:</p>
         <ul>
           <li><a href="https://gobyexample.com/" target="_blank" rel="noopener noreferrer">Go by Example</a> – Short, practical examples that get straight to the point</li>
@@ -192,8 +201,6 @@ export class BlogService {
         <p>Go's beauty is in its simplicity. These resources reflect that philosophy.</p>
 
         <h2>�️ Database & SQL</h2>
-        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop" alt="Database Design" class="section-image">
-        
         <p>You can't be a good backend developer without understanding databases. These interactive tutorials made SQL click for me:</p>
         <ul>
           <li><a href="https://sqlzoo.net/wiki/SQL_Tutorial" target="_blank" rel="noopener noreferrer">SQLZoo</a> – Interactive SQL tutorials with instant feedback</li>
@@ -201,9 +208,7 @@ export class BlogService {
         </ul>
         
         <p>Both let you practice queries in your browser. No setup needed.</p>
-
         <h2>🐧 Linux & DevOps</h2>
-        <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=800&h=400&fit=crop" alt="Linux Terminal" class="section-image">
         
         <p>Whether you like it or not, you'll be working with Linux servers. Might as well get comfortable with the command line:</p>
         <ul>
@@ -215,7 +220,6 @@ export class BlogService {
         <h2>🔧 Developer Tools</h2>
         
         <h3>Regular Expressions</h3>
-        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=400&fit=crop" alt="Regex Pattern" class="section-image">
         
         <p>Regex looks like someone smashed their keyboard, but it's incredibly powerful:</p>
         <ul>
@@ -225,10 +229,7 @@ export class BlogService {
         <p>Don't memorize regex. Just bookmark this site and refer to it whenever you need to write a pattern.</p>
 
         <h2>🧠 Data Structures & Algorithms</h2>
-        <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=400&fit=crop" alt="Algorithm Design" class="section-image">
-        
         <p>Let's be honest – coding interviews can be tough. Here's what helped me prepare:</p>
-        
         <h3>Blind 75 Problems:</h3>
         <p>These 75 LeetCode problems cover the most common interview patterns. I found this excellent video series that walks through all of them:</p>
         <ul>

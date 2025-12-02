@@ -10,75 +10,32 @@
         (socialLinkClick)="onSocialLinkClick($event)"
       ></app-hero-section>
 
-      <!-- Portfolio Tabs Component -->
-      <app-portfolio-tabs
-        [tabs]="tabs"
-        [activeTab]="activeTab"
-        (tabChange)="switchTab($event)"
-      >
-        <!-- About Me Tab -->
-        @if (isActiveTab('about')) {
-        <div
-          id="about-panel"
-          role="tabpanel"
-          [attr.aria-labelledby]="'about-tab'"
-          class="tab-panel about-panel"
-        >
-          <app-about-me
-            [aboutMe]="aboutMe"
-            [getHighlightedText]="getHighlightedText.bind(this)"
-          ></app-about-me>
+      <!-- Experience Section -->
+      <div class="section experience-section">
+        <div class="section-header">
+          <h2 class="section-title">Experience</h2>
+          <p class="section-description">My professional journey and key achievements</p>
         </div>
-        }
+        <app-experience [experienceData]="experienceData"></app-experience>
+      </div>
 
-        <!-- Experience Tab -->
-        @if (isActiveTab('experience')) {
-        <div
-          id="experience-panel"
-          role="tabpanel"
-          [attr.aria-labelledby]="'experience-tab'"
-          class="tab-panel experience-panel"
-        >
-          <app-experience [experienceData]="experienceData"></app-experience>
+      <!-- Education Section -->
+      <div class="section education-section">
+        <div class="section-header">
+          <h2 class="section-title">Education</h2>
+          <p class="section-description">My academic background and learning path</p>
         </div>
-        }
+        <app-education [educationData]="educationData"></app-education>
+      </div>
 
-        <!-- Education Tab -->
-        @if (isActiveTab('education')) {
-        <div
-          id="education-panel"
-          role="tabpanel"
-          [attr.aria-labelledby]="'education-tab'"
-          class="tab-panel education-panel"
-        >
-          <app-education [educationData]="educationData"></app-education>
+      <!-- Skills Section -->
+      <div class="section skills-section">
+        <div class="section-header">
+          <h2 class="section-title">Skills</h2>
+          <p class="section-description">Technologies and tools I work with</p>
         </div>
-        }
-
-        <!-- Skills Tab -->
-        @if (isActiveTab('skills')) {
-        <div
-          id="skills-panel"
-          role="tabpanel"
-          [attr.aria-labelledby]="'skills-tab'"
-          class="tab-panel skills-panel"
-        >
-          <app-skills [skillsData]="skillsData"></app-skills>
-        </div>
-        }
-
-        <!-- Certifications Tab -->
-        @if (isActiveTab('certifications')) {
-        <div
-          id="certifications-panel"
-          role="tabpanel"
-          [attr.aria-labelledby]="'certifications-tab'"
-          class="tab-panel certifications-panel"
-        >
-          <app-certifications [certificationsData]="certificationsData"></app-certifications>
-        </div>
-        }
-      </app-portfolio-tabs>
+        <app-skills [skillsData]="skillsData"></app-skills>
+      </div>
     </div>
   </div>
   } @else {

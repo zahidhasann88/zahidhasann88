@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { IconDefinition, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { IconDefinition, faLocationDot, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 export interface ExperienceItem {
   company: string;
@@ -10,6 +10,7 @@ export interface ExperienceItem {
   location: string;
   description: string;
   achievements?: string[];
+  expanded?: boolean;
 }
 
 @Component({
@@ -24,11 +25,22 @@ export class ExperienceComponent implements OnInit {
   
   // Icons
   readonly icons = {
-    faLocationDot
+    faLocationDot,
+    faChevronDown,
+    faChevronUp
   };
 
   constructor() { }
 
   ngOnInit(): void {
+    // Initialize all items as collapsed
+    this.experienceData = this.experienceData.map(item => ({
+      ...item,
+      expanded: false
+    }));
+  }
+
+  toggleExpand(index: number): void {
+    this.experienceData[index].expanded = !this.experienceData[index].expanded;
   }
 }

@@ -26,7 +26,6 @@ import { ExperienceComponent } from '../../shared/components/experience/experien
 import { EducationComponent } from '../../shared/components/education/education.component';
 import { SkillsComponent } from '../../shared/components/skills/skills.component';
 import { CertificationsComponent } from '../../shared/components/certifications/certifications.component';
-import { PortfolioTabsComponent } from '../../shared/components/portfolio-tabs/portfolio-tabs.component';
 import { APP_CONSTANTS } from '../../core/utils/app.constants';
 
 @Component({
@@ -37,12 +36,9 @@ import { APP_CONSTANTS } from '../../core/utils/app.constants';
     RouterModule, 
     FontAwesomeModule,
     HeroSectionComponent,
-    AboutMeComponent,
     ExperienceComponent,
     EducationComponent,
     SkillsComponent,
-    CertificationsComponent,
-    PortfolioTabsComponent
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -65,13 +61,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       position: 'Software Engineer',
       period: '2022 - Present',
       location: 'Dhaka, Bangladesh',
-      description: 'Engineered scalable backend systems with Node.js (Express, NestJS) and Golang (Gin, GORM), developed RESTful APIs with request validation and structured logging to support high-throughput microservices operations.',
+      description: 'At Satcom, I contributed to the development of ERP solutions such as the RMG product and the CA student result automation system, building backend services with Node.js and Go and designing scalable microservices to enhance system reliability and performance. I implemented high-speed, event-driven data pipelines using Kafka and Redis, simplified legacy modules into maintainable services, and facilitated seamless client-server integration, while also improving deployment workflows through automated CI/CD pipelines.',
       achievements: [
-        'Designed and implemented secure inter-service communication using REST APIs with key-based authentication, Redis caching, and Kafka messaging, enabling seamless cross-module data sharing across business domains.',
-        'Implemented Role-Based Access Control (RBAC) with granular permissions, securing data across multi-tenant environments',
-        'Refactored legacy monolithic components into microservices using Node.js, Express.js, and TypeScript, enabling independent scaling and improving system modularity.',
-        'Leveraged React and Angular’s modular component architecture to create reusable, scalable components, simplifying development, improving code consistency, and enabling easier maintenance and debugging.',
-        'Built automated CI/CD pipelines with Docker and GitHub Actions, reducing deployment cycles, and minimizing production incidents through improved stability.'
       ]
     },
     {
@@ -79,10 +70,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       position: 'Junior Software Engineer',
       period: '2021 - 2022',
       location: 'Dhaka, Bangladesh',
-      description: 'Developed backend services using .NET Core Web API and Entity Framework, creating RESTful APIs for an ERP system with organized data models and efficient database operations.',
+      description: 'I worked on developing enterprise-grade features that supported large operational workflows with a focus on reliability and scalability. I improved automated reporting processes to reduce errors and strengthen system stability, and created reusable interface components that accelerated delivery across multiple teams. I also collaborated closely with cross-functional stakeholders to ship major features within tight timelines.',
       achievements: [
-        'Implemented AWS S3 buckets for storing and retrieving large volumes of report data, streamlining data management and retrieval.',
-        'Leveraged Angular with reactive forms and TypeScript to build modular, reusable frontend components, enhancing maintainability and user experience.',
       ]
     },
     {
@@ -90,10 +79,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       position: 'Software Developer',
       period: '2020 - 2021',
       location: 'Remote',
-      description: 'Developed and integrated RESTful APIs using Node.js and Express with MySQL databases, leveraging TypeORM for efficient database modeling and management.',
+      description: 'My role centered on enhancing the labour-market platform by improving workflow efficiency, strengthening access control processes, and refining interface consistency. I focused on delivering scalable improvements that elevated user experience and overall system reliability.',
       achievements: [
-        'Implemented a Node and Express backend using the middleware design pattern to integrate authentication within API routes such as session validation with JWTs (JSON Web Tokens) and password hashing with bcrypt.',
-        'Leveraged React’s modular component architecture to build reusable UI components, enabling rapid development and customization of an interactive, responsive frontend.',
       ]
     }
   ];
@@ -107,8 +94,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       location: 'Dhaka, Bangladesh',
       description: 'Focused on software engineering, algorithms, and system design. Participated in programming competitions and technical projects.',
       achievements: [
-        'Core Member university programming club',
-        'Completed thesis on Machine Learning'
       ]
     }
   ];
@@ -117,7 +102,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   readonly skillsData = {
     technical: [
       { category: 'Frontend', skills: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS'] },
-      { category: 'Backend', skills: ['Node.js', 'Express.js', 'Golang', 'Gin', 'C#', '.NET Core', 'REST APIs'] },
+      { category: 'Backend', skills: ['Node.js', 'Express.js', 'Golang', 'Gin', 'REST APIs'] },
       { category: 'Database', skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Database Design'] },
       { category: 'Cloud & DevOps', skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'Linux', 'Nginx'] },
     ],
@@ -140,17 +125,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       credentialId: '4Z8LV2GW58V2',
       description: 'Learned the fundamentals of artificial intelligence, including its capabilities, limitations, and applications across industries. Gained insights into how AI impacts business strategy, workflow automation, and data-driven decision-making. Developed an understanding of AI terminology, ethical considerations, and how to implement AI solutions effectively in real-world scenarios.'
     }
-  ];
-
-  // Tab state management
-  activeTab: string = 'about';
-  
-  readonly tabs = [
-    { id: 'about', label: 'About Me', icon: 'faUser' },
-    { id: 'experience', label: 'Experience', icon: 'faBriefcase' },
-    { id: 'education', label: 'Education', icon: 'faGraduationCap' },
-    { id: 'skills', label: 'Skills', icon: 'faCode' },
-    { id: 'certifications', label: 'Certifications', icon: 'faTrophy' }
   ];
 
   ngOnInit(): void {
@@ -203,26 +177,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onProjectLinkClick(project: Project): void {
     window.open(project.url, '_blank');
-  }
-
-  // Tab management methods
-  switchTab(tabId: string): void {
-    this.activeTab = tabId;
-  }
-
-  isActiveTab(tabId: string): boolean {
-    return this.activeTab === tabId;
-  }
-
-  getTabIcon(iconName: string) {
-    const iconMap: { [key: string]: any } = {
-      'faUser': this.icons.faUser,
-      'faBriefcase': this.icons.faBriefcase,
-      'faGraduationCap': this.icons.faGraduationCap,
-      'faCode': this.icons.faCode,
-      'faTrophy': this.icons.faTrophy
-    };
-    return iconMap[iconName] || this.icons.faUser;
   }
 
   get buttonLabels() {
