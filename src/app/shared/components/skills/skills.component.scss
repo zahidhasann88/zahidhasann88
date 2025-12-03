@@ -1,4 +1,24 @@
 .skills-container {
+  // Dark mode: white icons
+  :host-context(.dark-theme) .skill-icon img {
+    filter: brightness(0) invert(1);
+  }
+  
+  // Light mode: dark icons
+  :host-context(.light-theme) .skill-icon img {
+    filter: brightness(0);
+  }
+  
+  // Dark mode: white text
+  :host-context(.dark-theme) .skill-name {
+    color: #fff;
+  }
+  
+  // Light mode: dark text
+  :host-context(.light-theme) .skill-name {
+    color: #000;
+  }
+  
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -65,14 +85,12 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      filter: brightness(0) invert(1);
     }
   }
   
   .skill-name {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #fff;
     text-align: center;
     line-height: 1.4;
     
