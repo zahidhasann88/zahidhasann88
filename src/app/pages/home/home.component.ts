@@ -32,8 +32,8 @@ import { APP_CONSTANTS } from '../../core/utils/app.constants';
   selector: 'app-home',
   standalone: true,
   imports: [
-    CommonModule, 
-    RouterModule, 
+    CommonModule,
+    RouterModule,
     FontAwesomeModule,
     HeroSectionComponent,
     ExperienceComponent,
@@ -58,31 +58,43 @@ export class HomeComponent implements OnInit, OnDestroy {
   readonly experienceData = [
     {
       company: 'Satcom IT Limited.',
-      position: 'Software Engineer',
       period: '2022 - Present',
       location: 'Dhaka, Bangladesh',
-      description: 'At Satcom, I contributed to the development of ERP solutions such as the RMG product and the CA student result automation system, building backend services with Node.js and Go and designing scalable microservices to enhance system reliability and performance. I implemented high-speed, event-driven data pipelines using Kafka and Redis, simplified legacy modules into maintainable services, and facilitated seamless client-server integration, while also improving deployment workflows through automated CI/CD pipelines.',
-      achievements: [
-      ]
+      roles: [
+        {
+          position: 'Senior Software Engineer',
+          period: 'February 2026 - Present',
+          description:
+            'Promoted to lead architectural decisions across the ERP product suite. Driving the migration of legacy modules to Go-based microservices, mentoring junior engineers, and owning technical roadmap for high-throughput data pipelines.',
+          achievements: [],
+        },
+        {
+          position: 'Software Engineer',
+          period: 'March 2022 -  Jan 2026',
+          description:
+            'At Satcom, I contributed to the development of ERP solutions such as the RMG product and the CA student result automation system, building backend services with Node.js and Go and designing scalable microservices to enhance system reliability and performance. I implemented high-speed, event-driven data pipelines using Kafka and Redis, simplified legacy modules into maintainable services, and facilitated seamless client-server integration, while also improving deployment workflows through automated CI/CD pipelines.',
+          achievements: [],
+        },
+      ],
     },
     {
       company: 'PQS Japan.',
       position: 'Junior Software Engineer',
       period: '2021 - 2022',
       location: 'Dhaka, Bangladesh',
-      description: 'I worked on developing enterprise-grade features that supported large operational workflows with a focus on reliability and scalability. I improved automated reporting processes to reduce errors and strengthen system stability, and created reusable interface components that accelerated delivery across multiple teams. I also collaborated closely with cross-functional stakeholders to ship major features within tight timelines.',
-      achievements: [
-      ]
+      description:
+        'I worked on developing enterprise-grade features that supported large operational workflows with a focus on reliability and scalability. I improved automated reporting processes to reduce errors and strengthen system stability, and created reusable interface components that accelerated delivery across multiple teams. I also collaborated closely with cross-functional stakeholders to ship major features within tight timelines.',
+      achievements: [],
     },
     {
       company: 'Karmasangsthan Limited.',
       position: 'Software Developer',
       period: '2020 - 2021',
       location: 'Remote',
-      description: 'My role centered on enhancing the labour-market platform by improving workflow efficiency, strengthening access control processes, and refining interface consistency. I focused on delivering scalable improvements that elevated user experience and overall system reliability.',
-      achievements: [
-      ]
-    }
+      description:
+        'My role centered on enhancing the labour-market platform by improving workflow efficiency, strengthening access control processes, and refining interface consistency. I focused on delivering scalable improvements that elevated user experience and overall system reliability.',
+      achievements: [],
+    },
   ];
 
   // Education data
@@ -92,21 +104,48 @@ export class HomeComponent implements OnInit, OnDestroy {
       degree: 'Bachelor of Science in Software Engineering',
       period: '2017 - 2020',
       location: 'Dhaka, Bangladesh',
-      description: 'Focused on software engineering, algorithms, and system design. Participated in programming competitions and technical projects.',
-      achievements: [
-      ]
-    }
+      description:
+        'Focused on software engineering, algorithms, and system design. Participated in programming competitions and technical projects.',
+      achievements: [],
+    },
   ];
 
   // Skills data
   readonly skillsData = {
     technical: [
-      { category: 'Frontend', skills: ['Angular', 'React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'SCSS'] },
-      { category: 'Backend', skills: ['Node.js', 'Express.js', 'Golang', 'Gin', 'REST APIs'] },
-      { category: 'Database', skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Database Design'] },
-      { category: 'Cloud & DevOps', skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'Linux', 'Nginx'] },
+      {
+        category: 'Frontend',
+        skills: [
+          'Angular',
+          'React',
+          'TypeScript',
+          'JavaScript',
+          'HTML5',
+          'CSS3',
+          'SCSS',
+        ],
+      },
+      {
+        category: 'Backend',
+        skills: ['Node.js', 'Express.js', 'Golang', 'Gin', 'REST APIs'],
+      },
+      {
+        category: 'Database',
+        skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Database Design'],
+      },
+      {
+        category: 'Cloud & DevOps',
+        skills: ['Git', 'Docker', 'AWS', 'CI/CD', 'Linux', 'Nginx'],
+      },
     ],
-    soft: ['Problem Solving', 'Team Leadership', 'Communication', 'Project Management', 'Mentoring', 'Adaptability']
+    soft: [
+      'Problem Solving',
+      'Team Leadership',
+      'Communication',
+      'Project Management',
+      'Mentoring',
+      'Adaptability',
+    ],
   };
 
   // Certifications data
@@ -116,15 +155,17 @@ export class HomeComponent implements OnInit, OnDestroy {
       issuer: 'Amazon Web Services',
       date: '2025',
       credentialId: '148239f4-1caf-4adb-929a-5a4fae50f9b0',
-      description: 'Introduction to Cloud 101 – Gained foundational knowledge of AWS cloud services, created simple cloud applications in a virtual lab, and understood key technical roles for cloud computing success..'
+      description:
+        'Introduction to Cloud 101 – Gained foundational knowledge of AWS cloud services, created simple cloud applications in a virtual lab, and understood key technical roles for cloud computing success..',
     },
     {
       name: 'AI For Everyone',
       issuer: 'Coursera',
       date: '2020',
       credentialId: '4Z8LV2GW58V2',
-      description: 'Learned the fundamentals of artificial intelligence, including its capabilities, limitations, and applications across industries. Gained insights into how AI impacts business strategy, workflow automation, and data-driven decision-making. Developed an understanding of AI terminology, ethical considerations, and how to implement AI solutions effectively in real-world scenarios.'
-    }
+      description:
+        'Learned the fundamentals of artificial intelligence, including its capabilities, limitations, and applications across industries. Gained insights into how AI impacts business strategy, workflow automation, and data-driven decision-making. Developed an understanding of AI terminology, ethical considerations, and how to implement AI solutions effectively in real-world scenarios.',
+    },
   ];
 
   ngOnInit(): void {
@@ -149,7 +190,7 @@ export class HomeComponent implements OnInit, OnDestroy {
           socialLinks,
           currentYear: this.configService.getCurrentYear(),
         })),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((state) => {
         this.componentState = state;
@@ -158,7 +199,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   getHighlightedDescription(
     description: string,
-    keywords: readonly string[]
+    keywords: readonly string[],
   ): SafeHtml {
     return this.highlightService.highlightKeywords(description, keywords);
   }

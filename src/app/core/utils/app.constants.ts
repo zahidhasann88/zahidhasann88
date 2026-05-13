@@ -47,7 +47,7 @@ import {
 export const APP_CONSTANTS = {
   URLS: {
     CV_LINK:
-      'https://drive.google.com/file/d/15ucAHkbZO_a_AB31iRJl1RiiYfwhYb04/view?usp=sharing',
+      'https://drive.google.com/file/d/1kmLz_x6-65tNFR-OGj5tG94mr6naK7sV/view?usp=sharing',
     GITHUB: 'https://github.com/zahidhasann88',
     LINKEDIN: 'https://linkedin.com/in/zahidhasann',
     TWITTER: 'https://x.com/zahidhasann15',
@@ -59,10 +59,10 @@ export const APP_CONSTANTS = {
 
   PROFILE: {
     NAME: 'Zahid Hasan',
-    TITLE: '',
-    GREETING: "I'm a Software Engineer.",
+    TITLE: 'Senior Software Engineer',
+    GREETING: "Senior Software Engineer.",
     TAGLINE:
-      'Experienced Software Engineer with 4+ years work across backend, frontend, and cloud systems. Skilled in building reliable microservices and distributed architectures that maintain strong performance at scale. I work primarily with Node.js, Go, React, and modern cloud technologies, with a focus on scalability, fault tolerance, and clean software design.',
+      'Full-Stack Engineer with 5+ years building and maintaining distributed systems across finance, manufacturing, and operations domains. Works across the full stack, designing microservices and Kafka event-driven pipelines in Node.js, optimizing PostgreSQL and Redis for performance, and handling deployment infrastructure with Docker, Nginx, and AWS. Comfortable contributing to Angular and React frontends when needed.',
     EMAIL: 'zahidhasann67@gmail.com',
   },
 

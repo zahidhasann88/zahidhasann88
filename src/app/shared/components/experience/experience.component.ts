@@ -3,13 +3,21 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconDefinition, faLocationDot, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
-export interface ExperienceItem {
-  company: string;
+export interface ExperienceRole {
   position: string;
   period: string;
-  location: string;
   description: string;
   achievements?: string[];
+}
+
+export interface ExperienceItem {
+  company: string;
+  period: string;
+  location: string;
+  position?: string;
+  description?: string;
+  achievements?: string[];
+  roles?: ExperienceRole[];
   expanded?: boolean;
 }
 
