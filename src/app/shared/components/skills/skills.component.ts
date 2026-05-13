@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../../core/services/theme.service';
 
 export interface SkillGroup {
   category: string;
@@ -29,6 +30,8 @@ export class SkillsComponent implements OnInit {
     soft: [],
   };
 
+  themeService = inject(ThemeService);
+
   skills: Skill[] = [
     { name: 'Node.js', icon: 'assets/icons/nodejs.svg' },
     { name: 'JavaScript', icon: 'assets/icons/javascript.svg' },
@@ -38,10 +41,16 @@ export class SkillsComponent implements OnInit {
     { name: 'Golang', icon: 'assets/icons/golang.svg' },
     { name: 'MySQL', icon: 'assets/icons/mysql.svg' },
     { name: 'PostgreSQL', icon: 'assets/icons/postgres.svg' },
+    { name: 'Cassandra', icon: 'assets/icons/cassandra.svg' },
+    { name: 'ClickHouse', icon: 'assets/icons/clickhouse.svg' },
     { name: 'Git', icon: 'assets/icons/git.svg' },
     { name: 'Docker', icon: 'assets/icons/docker.svg' },
     { name: 'AWS', icon: 'assets/icons/aws.svg' },
+<<<<<<< HEAD
     { name: 'NGINX', icon: 'assets/icons/nginx.svg' },
+=======
+    { name: 'Kubernetes', icon: 'assets/icons/kubernetes.svg' },
+>>>>>>> 92385f24d018dd784ed3384b5b9ecbd53e8363ff
     { name: 'Kafka', icon: 'assets/icons/kafka.svg' },
     { name: 'Redis', icon: 'assets/icons/redis.svg' },
     { name: 'React', icon: 'assets/icons/react.svg' },
