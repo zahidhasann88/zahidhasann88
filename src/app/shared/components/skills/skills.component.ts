@@ -21,12 +21,12 @@ export interface Skill {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss']
+  styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent implements OnInit {
   @Input() skillsData: SkillsData = {
     technical: [],
-    soft: []
+    soft: [],
   };
 
   skills: Skill[] = [
@@ -41,16 +41,17 @@ export class SkillsComponent implements OnInit {
     { name: 'Git', icon: 'assets/icons/git.svg' },
     { name: 'Docker', icon: 'assets/icons/docker.svg' },
     { name: 'AWS', icon: 'assets/icons/aws.svg' },
+    { name: 'NGINX', icon: 'assets/icons/nginx.svg' },
     { name: 'Kafka', icon: 'assets/icons/kafka.svg' },
     { name: 'Redis', icon: 'assets/icons/redis.svg' },
     { name: 'React', icon: 'assets/icons/react.svg' },
     { name: 'Next.js', icon: 'assets/icons/nextjs.svg' },
+    { name: 'Angular', icon: 'assets/icons/angular.svg' },
     { name: 'Tailwind', icon: 'assets/icons/tailwind.svg' },
     // More skills can be added here in the future
   ];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

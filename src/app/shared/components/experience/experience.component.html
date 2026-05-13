@@ -9,12 +9,8 @@
     <div class="experience-header" (click)="toggleExpand(i)">
       <div class="experience-main">
         <div class="experience-title">
-          @if (job.roles?.length) {
           <h3 class="job-title">{{ job.company }}</h3>
-          } @else {
-          <h3 class="job-title">{{ job.position }}</h3>
-          <p class="company-name">{{ job.company }}</p>
-          }
+          <p class="company-name">{{ getCurrentPosition(job) }}</p>
         </div>
         <div class="experience-meta">
           <span class="job-period">{{ job.period }}</span>
@@ -34,9 +30,9 @@
     </div>
 
     <div class="experience-details" [class.show]="job.expanded">
-      @if (job.roles?.length) {
       <ul class="role-timeline">
-        @for (role of job.roles; track role.position; let isLastRole = $last) {
+        @for (role of getRoles(job); track role.position; let isLastRole =
+        $last) {
         <li class="role-item" [class.last-role]="isLastRole">
           <div class="role-header">
             <h4 class="role-title">{{ role.position }}</h4>
@@ -53,16 +49,6 @@
         </li>
         }
       </ul>
-      } @else {
-      <p class="job-description">{{ job.description }}</p>
-      @if (job.achievements?.length) {
-      <ul class="job-achievements">
-        @for (achievement of job.achievements; track achievement) {
-        <li>{{ achievement }}</li>
-        }
-      </ul>
-      }
-      }
     </div>
   </div>
   }

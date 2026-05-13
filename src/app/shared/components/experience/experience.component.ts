@@ -51,4 +51,25 @@ export class ExperienceComponent implements OnInit {
   toggleExpand(index: number): void {
     this.experienceData[index].expanded = !this.experienceData[index].expanded;
   }
+
+  getRoles(job: ExperienceItem): ExperienceRole[] {
+    if (job.roles?.length) {
+      return job.roles;
+    }
+    return [
+      {
+        position: job.position ?? '',
+        period: job.period,
+        description: job.description ?? '',
+        achievements: job.achievements,
+      },
+    ];
+  }
+
+  getCurrentPosition(job: ExperienceItem): string {
+    if (job.roles?.length) {
+      return job.roles[0].position;
+    }
+    return job.position ?? '';
+  }
 }
